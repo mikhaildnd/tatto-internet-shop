@@ -1,0 +1,161 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  // .footer__item
+  &__item {
+    background-color: $black;
+    &--bg-grey {
+      background-color: rgb(59, 59, 59);
+    }
+  }
+  // .footer__nav
+  &__nav {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  // .footer__info
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(60px, 1fr) min-content min-content;
+    grid-template-areas:
+      'logo contacts'
+      'privacy privacy'
+      'rights rights ';
+    row-gap: 18px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @media (min-width: 650px) {
+      grid-template-rows: minmax(60px, 1fr) min-content;
+      grid-template-areas:
+        'logo contacts'
+        'privacy rights';
+    }
+    @media (min-width: $md3) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: minmax(80px, 1fr) min-content min-content;
+      grid-template-areas:
+        'logo . . contacts'
+        '. privacy privacy .'
+        '. rights rights .';
+      column-gap: 40px;
+      row-gap: 0;
+    }
+  }
+  // .footer__logo
+  &__logo {
+    grid-area: logo;
+    svg {
+      height: 30px;
+      width: 111px;
+    }
+    @media (min-width: $md4) {
+      svg {
+        height: 32px;
+        width: 120px;
+      }
+    }
+  }
+  // .footer__copyright
+  &__copyright {
+    grid-area: rights;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3%;
+    color: darken($white, 40%);
+    @media (min-width: $md3) {
+      justify-self: center;
+    }
+  }
+  &__privacy {
+    grid-area: privacy;
+    font-size: 13px;
+    font-weight: 400;
+    a {
+      color: darken($white, 40%);
+      &:hover {
+        color: $white;
+      }
+    }
+    @media (min-width: $md3) {
+      justify-self: center;
+      margin-bottom: 5px;
+    }
+  }
+  // .footer__contacts
+  &__contacts {
+    grid-area: contacts;
+  }
+  // .footer__ask-form
+  &__ask-form {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3%;
+    color: darken($white, 40%);
+    text-transform: uppercase;
+  }
+}
+
+.nav-footer {
+  display: grid;
+  grid-template-areas:
+    'solutions'
+    'about'
+    'blog'
+    'contacts';
+  grid-template-columns: 1fr;
+  row-gap: 32px;
+  @media (min-width: $md6) {
+    grid-template-areas:
+      'solutions about'
+      'blog contacts';
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+  }
+  @media (min-width: $md3) {
+    grid-template-areas: 'solutions about blog contacts';
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+  }
+  // .footer__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $md7) {
+      &--solutions {
+        grid-area: solutions;
+      }
+      &--about {
+        grid-area: about;
+      }
+      &--blog {
+        grid-area: blog;
+      }
+      &--contacts {
+        grid-area: contacts;
+      }
+    }
+  }
+  // .footer__link
+  &__link {
+    hyphens: auto;
+    color: darken($white, 30%);
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (min-width: $md7) {
+      font-size: 13px;
+    }
+    &--general {
+      position: relative;
+      color: $white;
+      font-weight: 700;
+      letter-spacing: 3%;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+  }
+}

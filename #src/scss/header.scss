@@ -1,0 +1,421 @@
+//====================================================================================================
+.header {
+  // display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  transition: all 0.2s ease;
+  transform: none;
+
+  // & .contacts-menu {
+  //   @media (max-width: $md6) {
+  //     display: none;
+  //   }
+  // }
+
+  &--fixed {
+    background-color: #fff;
+    // transform: translateY(0%);
+    .header__content {
+      border-bottom: 0;
+    }
+    .logo path {
+      fill: #1e468a;
+    }
+    .header__trigger {
+      span {
+        background-color: $brand;
+        &::before,
+        &::after {
+          background-color: $brand;
+        }
+      }
+    }
+    .header-nav__item {
+      color: $black;
+      &:hover {
+        color: lighten($black, 20%);
+      }
+    }
+    .contacts-menu__item {
+      color: $black;
+      &:hover {
+        color: lighten($black, 20%);
+      }
+      &--phone {
+        color: $brand;
+      }
+    }
+  }
+  &--fixed.active {
+    .logo path {
+      fill: $white;
+    }
+    .header__trigger {
+      span {
+        &::before,
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+  &--hide {
+    transform: translateY(-100%);
+  }
+  // .header__content
+  &__content {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    // width: 100%; //для IE нужно явно задать ширину, чтобы нормально отобразилось //?Но если поставить маргины с боков, то справа контент уедет за границу экрана
+    // padding-top: 23px;
+    // padding-bottom: 23px;
+    border-bottom: 1px solid darken($white, 70%);
+    @media (max-width: $md2) {
+      height: 60px;
+    }
+    @media (max-width: $md6) {
+      justify-content: space-between;
+    }
+  }
+  // .header__logo
+  &__logo {
+    svg {
+      height: 24px;
+      width: 88px;
+    }
+    margin-right: 127px;
+    @media (max-width: 1325px) {
+      margin-right: 40px;
+    }
+    @media (min-width: $md3) {
+      svg {
+        height: 32px;
+        width: 120px;
+      }
+    }
+    @media (max-width: $md2) {
+      position: relative;
+      z-index: 2;
+      margin-right: 75px;
+    }
+    @media (max-width: 625px) {
+      margin-right: 30px;
+    }
+    @media (max-width: $md5) {
+      margin-right: 18px;
+    }
+  }
+  // .header__nav
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+  // .header__contacts
+  &__contacts {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 0px auto;
+  }
+  // .header__dropdown
+  &__dropdown {
+    display: none;
+    @media (max-width: $md2) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.609);
+      &.active {
+        display: block;
+      }
+    }
+    // .header__dropdown .header-nav
+    & .header-nav {
+      display: flex;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      // .header__dropdown .header-nav__list
+      &__list {
+        @media (max-width: $md2) {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          max-height: 100%;
+          margin: 0; //! У ориг. листа отриц.
+        }
+      }
+      // .header__dropdown .header-nav__item
+      &__item {
+        font-size: 16px;
+        line-height: 1.25;
+        padding: 0;
+        color: $white;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        &:hover {
+          color: darken($white, 20%);
+        }
+        // @media (max-width: $md2) {
+        //   font-size: 16px;
+        //   line-height: 20px;
+        //   padding: 17px 0;
+        // }
+      }
+    }
+    // .header__dropdown .contacts-menu
+    & .contacts-menu {
+      display: block;
+      // @media (min-width: $md4) {
+      //   display: none;
+      // }
+      // .header__dropdown .contacts-menu__list
+      &__list {
+        display: block;
+        // @media (max-width: $md4) {
+        //   flex-direction: column;
+        //   align-items: flex-start;
+        // }
+      }
+      // .header__dropdown .contacts-menu__item
+      &__item {
+        color: $white;
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+        &:hover {
+          color: darken($white, 20%);
+        }
+        &--popup {
+          color: darken($white, 40%);
+        }
+        @media (max-width: $md4) {
+          display: block;
+        }
+      }
+    }
+  }
+  // .header__dropdown-inner
+  &__dropdown-inner {
+    width: 100%;
+    height: 100%;
+    max-width: 392px;
+    padding-top: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: $brand;
+    background-image: url('../img/hero-img-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-position: 0 0;
+    background-position: center;
+    @media (min-width: $md5) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+  // .header__dropdown-menu
+  &__dropdown-menu {
+    // padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  // .header-nav__trigger
+  &__trigger {
+    display: none;
+    @media (max-width: $md2) {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: content-box;
+      width: 34px;
+      height: 16px;
+      background: 0 0;
+      border: 0;
+      user-select: none;
+      span {
+        position: relative;
+        display: inline-block;
+        width: 34px;
+        height: 2px;
+        vertical-align: bottom;
+        background-color: #fff;
+        transition: background-color 0.3s 0.5s;
+        &::after,
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          transform-origin: 50% 50%;
+          transition: top 0.3s 0.3s, transform 0.3s;
+        }
+        &::before {
+          top: 7px;
+        }
+        &::after {
+          top: -7px;
+        }
+      }
+      &.active {
+        span {
+          background: 0 0;
+          &::before,
+          &::after {
+            top: 0;
+            transition: top 0.3s, transform 0.3s 0.5s;
+          }
+          &::before {
+            transform: rotate3d(0, 0, 1, 45deg);
+          }
+          &::after {
+            transform: rotate3d(0, 0, 1, -45deg);
+          }
+        }
+      }
+    }
+    @media (max-width: $md5) {
+      width: 25px;
+    }
+  }
+}
+//========================================================================================================================================================
+.logo {
+  // .logo__img//todo мб удалить
+  &__img {
+  }
+  // .logo__link//todo мб удалить
+  &__link {
+  }
+  path {
+    transition: fill 0.2s ease;
+    fill: white;
+  }
+}
+//========================================================================================================================================================
+.header-nav {
+  @media (max-width: $md2) {
+    display: none;
+  }
+  // .header-nav__list
+  &__list {
+    display: flex;
+    margin: 0px -16px;
+  }
+  // .header-nav__item
+  &__item {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0px 16px;
+    color: $white;
+    transition: color 0.2s ease 0s;
+    white-space: nowrap;
+    &:hover {
+      color: darken($white, 20%);
+    }
+    @media (max-width: 1200px) {
+      padding: 0 8px;
+    }
+  }
+  // .header-nav__link
+  &__link {
+    color: inherit;
+  }
+}
+//========================================================================================================================================================
+//*Плашка с номером тел. и кнопкой попапа
+.contacts-menu {
+  display: none;
+  @media (min-width: 390px) {
+    display: block;
+  }
+  // .contacts-menu__list
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0px -16px;
+    @media (max-width: 1080px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @media (max-width: 1200px) {
+      margin: 0 -8px;
+    }
+    @media (max-width: $md2) {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  // .contacts-menu__item
+  &__item {
+    margin: 0px 16px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    color: $white;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: color 0.2s ease 0s;
+    white-space: nowrap;
+    &:hover {
+      color: darken($white, 20%);
+    }
+    @media (max-width: 1200px) {
+      margin: 0 8px;
+    }
+    @media (max-width: 1080px) {
+      &:first-child {
+        margin-bottom: 3px;
+      }
+    }
+    @media (max-width: $md2) {
+      &:first-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--phone {
+      @media (max-width: $md2) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+      @media (max-width: $md5) {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+    &--popup {
+      font-weight: 500;
+      color: darken($white, 40%);
+      &:hover {
+        color: $white;
+      }
+      @media (max-width: $md2) {
+        font-size: 12px;
+        letter-spacing: normal;
+      }
+      @media (max-width: $md4) {
+        display: none;
+      }
+    }
+  }
+  // .contacts-menu__link
+  &__link {
+    color: inherit;
+  }
+}
