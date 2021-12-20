@@ -119,7 +119,7 @@ export const html = () => {
   );
 };
 
-// Styles
+// styles
 export const styles = () => {
   return (
     gulp
@@ -152,7 +152,7 @@ export const styles = () => {
   );
 };
 
-// Images
+// images
 export const images = () => {
   return gulp
     .src(_path.src.images)
@@ -184,7 +184,7 @@ export const images = () => {
     .pipe(gulp.dest(_path.build.images));
 };
 
-// Clean
+// clean
 export const clean = () => {
   return del(_path.clean);
 };

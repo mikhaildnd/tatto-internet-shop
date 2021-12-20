@@ -6,7 +6,7 @@
 
 //<Подключаем шрифты>=======================================================================================
 //&display=swap&subset=cyrillic-ext
-@import url(https://fonts.googleapis.com/css?family=Inter:300,regular,500,700&display=swap&subset=cyrillic-ext);
+// @import url(https://fonts.googleapis.com/css?family=Inter:300,regular,500,700&display=swap&subset=cyrillic-ext);
 @import 'fonts';
 //</Подключаем шрифты>=======================================================================================
 
@@ -15,7 +15,7 @@
 //</Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
-$fontFamily: 'Inter';
+$fontFamily: 'Jost', sans-serif;
 $fontSize: 16;
 //</Шрифт по умолчанию>==========================================================================================
 
@@ -24,7 +24,7 @@ $fontSize: 16;
 //<ПЕРЕМЕННЫЕ>===========================================================================================================
 $minWidth: 320px;
 $maxWidth: 1920px;
-$maxWidthContainer: 1504px;
+$maxWidthContainer: 1256px;
 
 $md1: 1400px;
 $md2: 1024px;
@@ -78,6 +78,7 @@ body {
 // @import 'animations';
 @import 'vars';
 @import 'forms';
+@import 'cart';
 // @import "ui";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
@@ -89,30 +90,4 @@ body {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
-  &__slider-solution {
-    padding-top: 100px;
-    padding-bottom: 30px;
-    @media (min-width: $md4) {
-      padding-top: 120px;
-      padding-bottom: 36px;
-    }
-    // @media (min-width: $md3) {
-    //   padding-bottom: 160px;
-    // }
-    @media (min-width: $md1) {
-      // padding-bottom: 200px;
-      padding-bottom: 84px;
-    }
-  }
-  &__sertification {
-    padding-top: 104px;
-    padding-bottom: 50px;
-    @media (min-width: $md4) {
-      padding-top: 64px;
-      padding-bottom: 72px;
-    }
-    @media (min-width: $md3) {
-      padding-bottom: 80px;
-    }
-  }
 }
