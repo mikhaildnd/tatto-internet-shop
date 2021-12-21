@@ -83,19 +83,25 @@
       </form>
       <div class="header__cart cart">
         <div class="cart__item cart__item--mobile">
-          <span class="cart__price">
-            37 280
-            <span>₽</span>
-          </span>
-          <div class="cart__icon cart__icon--basket cart__icon--has-notify">
-            <span class="cart__notify">17</span>
-          </div>
+          <a href="#" class="cart__link">
+            <span class="cart__price">
+              37 280
+              <span>₽</span>
+            </span>
+            <div class="cart__icon cart__icon--basket cart__icon--has-notify">
+              <span class="cart__notify">17</span>
+            </div>
+          </a>
         </div>
         <div class="cart__item">
-          <div class="cart__icon cart__icon--favorite"></div>
+          <a href="#" class="cart__link">
+            <div class="cart__icon cart__icon--favorite"></div>
+          </a>
         </div>
         <div class="cart__item">
-          <div class="cart__icon cart__icon--login"></div>
+          <a href="#" class="cart__link">
+            <div class="cart__icon cart__icon--login"></div>
+          </a>
         </div>
       </div>
     </div>
@@ -375,10 +381,6 @@
         </ul>
       </div>
     </div>
-    <!-- <button class="header__dropdown-trigger"><span></span></button>
-    <div class="header__logo logo logo--sm">
-      <div class="logo__"></div>
-    </div> -->
     <div class="header__dropdown-menu dropdown-menu">
       <div class="dropdown-menu__inner">
         <nav class="dropdown-menu__nav header-nav">
@@ -448,10 +450,8 @@
               </a>
             </div>
           </div>
-          <div class="contacts__item">
-            <span class="contacts__text contacts__text--work-schedule">
-              Время работы: с 9:00 до 20:00 по мск
-            </span>
+          <div class="contacts__item contacts__item--work-schedule">
+            <span class="contacts__text contacts__text">Время работы: с 9:00 до 20:00 по мск</span>
           </div>
           <div class="contacts__item">
             <a href="mailto:mr.driskell@mail.ru?subject=вопрос" class="contacts__link">
@@ -462,27 +462,40 @@
         </div>
       </div>
     </div>
-    <!-- <div class="header__cart cart">
-      <div class="cart__item cart__item--mobile">
-        <span class="cart__price">
-          37 280
-          <span>₽</span>
-        </span>
-        <div class="cart__icon cart__icon--basket cart__icon--has-notify">
-          <span class="cart__notify">17</span>
-        </div>
-      </div>
-      <div class="cart__item">
-        <div class="cart__icon cart__icon--favorite"></div>
-      </div>
-      <div class="cart__item">
-        <div class="cart__icon cart__icon--login"></div>
-      </div>
-    </div> -->
   </div>
 </header>
 
-      <main class="page"></main>
+      <main class="page">
+        <div class="hero">
+          <!-- <div class="hero__bg">
+            <picture>
+              <img src="img/bg/main-bg-sm.jpg" alt="тату-машинка" />
+            </picture>
+          </div> -->
+          <div class="hero__inner">
+            <!-- <div class="hero__bg">
+              <picture>
+                <img src="img/bg/main-bg-sm.jpg" alt="тату-машинка" />
+              </picture>
+            </div> -->
+            <div class="hero__text-block">
+              <h1 class="hero__heading">
+                Лучшие товары
+                <br />
+                в мире татуировок
+              </h1>
+              <p class="hero__text">
+                Оборудование и расходники для самых ярких и качественных работ
+              </p>
+            </div>
+            <a href="#" class="hero__button button">
+              Смотреть каталог
+              <span class="button__corner button__corner--left"></span>
+              <span class="button__corner button__corner--right"></span>
+            </a>
+          </div>
+        </div>
+      </main>
       <footer class="footer"></footer>
 
     </div>

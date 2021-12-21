@@ -216,31 +216,31 @@ export const fonts = () => {
 };
 
 // Fonts: insert fonts into styles file
-export const fontsInclude = (cb) => {
-  const fileContent = src_folder + '/scss/fonts.scss';
+// export const fontsInclude = (cb) => {
+//   const fileContent = src_folder + '/scss/fonts.scss';
 
-  if (fs.readFileSync(fileContent) !== '') {
-    fs.writeFile(fileContent, '', cb);
-  }
+//   if (fs.readFileSync(fileContent) !== '') {
+//     fs.writeFile(fileContent, '', cb);
+//   }
 
-  fs.readdir(_path.build.fonts, (err, items) => {
-    if (items) {
-      let c_fontname;
-      for (let i = 0; i < items.length; i++) {
-        let fontname = items[i].split('.');
-        fontname = fontname[0];
-        if (c_fontname != fontname) {
-          fs.appendFile(
-            fileContent,
-            '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n',
-            cb
-          );
-        }
-        c_fontname = fontname;
-      }
-    }
-  });
-};
+//   fs.readdir(_path.build.fonts, (err, items) => {
+//     if (items) {
+//       let c_fontname;
+//       for (let i = 0; i < items.length; i++) {
+//         let fontname = items[i].split('.');
+//         fontname = fontname[0];
+//         if (c_fontname != fontname) {
+//           fs.appendFile(
+//             fileContent,
+//             '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n',
+//             cb
+//           );
+//         }
+//         c_fontname = fontname;
+//       }
+//     }
+//   });
+// };
 
 // Server
 export const server = () => {
@@ -266,8 +266,8 @@ export const build = gulp.series(
   clean,
   gulp.parallel(html, styles, scripts, images),
   fontsOtf2ttf,
-  fonts,
-  fontsInclude
+  fonts
+  // fontsInclude
 );
 
 export default gulp.series(build, gulp.parallel(server, watch));

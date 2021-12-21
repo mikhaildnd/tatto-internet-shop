@@ -1,0 +1,36 @@
+//*.socials
+.socials {
+  // .socials__item
+  &__item {
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  // .socials__link
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $white;
+    &:hover {
+      color: $orange;
+    }
+  }
+  // .socials__icon
+  &__icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &--viber {
+      background-image: url(../img/icons/viber.svg);
+    }
+    &--whatsapp {
+      background-image: url(../img/icons/whatsapp.svg);
+    }
+    &--telegram {
+      background-image: url(../img/icons/telegram.svg);
+    }
+  }
+}

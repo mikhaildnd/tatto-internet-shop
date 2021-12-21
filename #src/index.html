@@ -4,7 +4,37 @@
   <body>
     <div class="wrapper">
       @@include('_header.html',{})
-      <main class="page"></main>
+      <main class="page">
+        <div class="hero">
+          <!-- <div class="hero__bg">
+            <picture>
+              <img src="img/bg/main-bg-sm.jpg" alt="тату-машинка" />
+            </picture>
+          </div> -->
+          <div class="hero__inner">
+            <!-- <div class="hero__bg">
+              <picture>
+                <img src="img/bg/main-bg-sm.jpg" alt="тату-машинка" />
+              </picture>
+            </div> -->
+            <div class="hero__text-block">
+              <h1 class="hero__heading">
+                Лучшие товары
+                <br />
+                в мире татуировок
+              </h1>
+              <p class="hero__text">
+                Оборудование и расходники для самых ярких и качественных работ
+              </p>
+            </div>
+            <a href="#" class="hero__button button">
+              Смотреть каталог
+              <span class="button__corner button__corner--left"></span>
+              <span class="button__corner button__corner--right"></span>
+            </a>
+          </div>
+        </div>
+      </main>
       @@include('_footer.html',{})
     </div>
     @@include('_popup.html',{}) @@include('_js.html',{})

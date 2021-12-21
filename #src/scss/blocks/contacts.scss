@@ -1,0 +1,48 @@
+//*.contacts
+.contacts {
+  // .contacts__item
+  &__item {
+    display: flex;
+    align-items: center;
+    &--socials {
+      font-size: 12px;
+    }
+    &--work-schedule {
+      .contacts__text {
+        font-size: 17px;
+        color: $grey;
+        white-space: normal;
+      }
+    }
+  }
+  // .contacts__link
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $white;
+    &:hover {
+      color: $orange;
+    }
+  }
+  // .contacts__icon
+  &__icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &--phone {
+      background-image: url(../img/icons/phone.svg);
+    }
+    &--mail {
+      background-image: url(../img/icons/mail.svg);
+    }
+  }
+  // .contacts__text
+  &__text {
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+}

@@ -3,8 +3,8 @@
   // .cart__item
   &__item {
     display: none;
-    visibility: hidden;
     align-items: center;
+    visibility: hidden;
     &--mobile {
       display: flex;
       visibility: visible;
@@ -23,6 +23,13 @@
       }
     }
   }
+  // .cart__link
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $white;
+  }
+
   // .cart__icon
   &__icon {
     position: relative;

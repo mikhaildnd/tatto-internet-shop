@@ -1,4 +1,56 @@
-@include font("Forum", "Forum", "400", "normal");
-@include font("Jost", "Jost", "400", "normal");
-@include font("Montserrat-Medium", "Montserrat-Medium", "400", "normal");
-@include font("Montserrat-Regular", "Montserrat-Regular", "400", "normal");
+@include font(
+  $font_name: Jost,
+  $file_name: Jost-Light,
+  $weight: 300,
+  $style: normal,
+  $font-display: swap
+);
+@include font(
+  $font_name: Jost,
+  $file_name: Jost-Regular,
+  $weight: 400,
+  $style: normal,
+  $font-display: swap
+);
+@include font(
+  $font_name: Jost,
+  $file_name: Jost-Medium,
+  $weight: 500,
+  $style: normal,
+  $font-display: swap
+);
+@include font(
+  $font_name: Jost,
+  $file_name: Jost-SemiBold,
+  $weight: 600,
+  $style: normal,
+  $font-display: swap
+);
+@include font(
+  $font_name: Jost,
+  $file_name: Jost-Bold,
+  $weight: 700,
+  $style: normal,
+  $font-display: swap
+);
+@include font(
+  $font_name: Forum,
+  $file_name: Forum,
+  $weight: 400,
+  $style: normal,
+  $font-display: swap
+);
+@include font(
+  $font_name: Montserrat,
+  $file_name: Montserrat-Regular,
+  $weight: 400,
+  $style: normal,
+  $font-display: swap
+);
+@include font(
+  $font_name: Montserrat,
+  $file_name: Montserrat-Medium,
+  $weight: 500,
+  $style: normal,
+  $font-display: swap
+);
