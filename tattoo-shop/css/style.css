@@ -375,6 +375,7 @@ body._lock {
 }
 
 .slider-nav {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -408,6 +409,10 @@ body._lock {
 
 .slider-nav.swiper-button-disabled {
   opacity: 0.5;
+}
+
+.slider-nav.swiper-button-disabled {
+  cursor: not-allowed;
 }
 
 .slider-nav--left::before {
@@ -707,10 +712,7 @@ body._lock {
 }
 
 .product-card {
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
-  max-width: 289px;
   padding-top: 15px;
   padding-bottom: 30px;
   background-color: #ffffff;
@@ -774,6 +776,10 @@ body._lock {
   line-height: 1.3;
   color: #636b78;
   text-decoration: line-through;
+}
+
+.product-card__button {
+  width: 100%;
 }
 
 .product-card__button + .counter-card {
@@ -927,8 +933,14 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   height: 28px;
-  width: 83px;
+  max-width: 55%;
+  overflow: hidden;
+  padding: 5px 20px 5px 10px;
   background-color: #ffffff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .tip--new {
@@ -938,22 +950,27 @@ body._lock {
 
 .tip--hit {
   color: #755fbb;
-  border: 1px solid #bb8c5f;
+  border: 1px solid #755fbb;
 }
 
 .tip--action {
   color: #5fbba3;
-  border: 1px solid #bb8c5f;
+  border: 1px solid #5fbba3;
 }
 
 .tip--out {
   color: #636b78;
-  border: 1px solid #bb8c5f;
+  border: 1px solid #636b78;
 }
 
 .tip--sale {
   color: #c82a2a;
-  border: 1px solid #bb8c5f;
+  border: 1px solid #c82a2a;
+}
+
+.tip__text {
+  font-size: 15px;
+  line-height: 1.3;
 }
 
 .header {
@@ -1739,11 +1756,6 @@ body._lock {
   top: 100%;
 }
 
-.product-offers {
-  padding-top: 60px;
-  padding-bottom: 67px;
-}
-
 .product-offers__inner {
   max-width: 1256px;
   margin-left: auto;
@@ -1751,6 +1763,8 @@ body._lock {
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
+  padding-top: 60px;
+  padding-bottom: 30px;
 }
 
 .product-offers__categories {
@@ -1758,21 +1772,23 @@ body._lock {
 }
 
 .categories__button {
+  padding: 5px 10px;
+  text-align: center;
   cursor: pointer;
-  margin-right: 24px;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.15;
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
-  max-width: -webkit-min-content;
-  max-width: -moz-min-content;
-  max-width: min-content;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   white-space: nowrap;
 }
 
 .categories__button.swiper-slide-thumb-active {
   color: #bb8c5f;
+}
+
+.categories__button.swiper-slide-thumb-active span {
   border-bottom: 1px solid #bb8c5f;
 }
 
@@ -1781,11 +1797,32 @@ body._lock {
 }
 
 .products__list {
-  height: 808px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 
-.products__list .swiper-slide {
-  height: calc((100% - 20px) / 2);
+.products__list-item {
+  max-width: 309px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.products__button {
+  min-width: 275px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .catalog-grid__inner {
@@ -2403,6 +2440,7 @@ body._lock {
 
 .checkbox {
   position: relative;
+  cursor: pointer;
 }
 
 .checkbox__input {
@@ -2489,6 +2527,19 @@ main {
 
   .brands__slider-inner {
     height: 140px;
+  }
+}
+
+@media (min-width: 516px) {
+  .products__list {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .products__list-item {
+    width: 50%;
+    max-width: none;
   }
 }
 
@@ -2750,9 +2801,13 @@ main {
     bottom: 72px;
   }
 
-  .product-offers {
+  .product-offers__inner {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
+  }
+
+  .products__list-item {
+    width: calc(100% / 3);
   }
 
   .catalog-grid__heading {
@@ -3075,9 +3130,13 @@ main {
     display: block;
   }
 
-  .product-offers {
+  .product-offers__inner {
     padding-top: 120px;
-    padding-bottom: 120px;
+    padding-bottom: 60px;
+  }
+
+  .products__list-item {
+    width: calc(100% / 4);
   }
 
   .catalog-grid__inner {

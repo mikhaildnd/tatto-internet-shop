@@ -52,6 +52,7 @@
 
 //Navigation
 .slider-nav {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +78,9 @@
   }
   &.swiper-button-disabled {
     opacity: 0.5;
+  }
+  &.swiper-button-disabled {
+    cursor: not-allowed;
   }
   &--left {
     &::before {

@@ -53,23 +53,23 @@ function initSwiperSliders(selector, options = {}) {
   });
 }
 
-initSwiperSliders('.products__list', {
-  modules: [Grid],
-  slidesPerView: 4,
-  slidesPerGroup: 4,
-  spaceBetween: 20,
-  grid: {
-    rows: 2,
-    fill: 'row',
-  },
-  // loop: true,
-  // centeredSlides: true,
-  // breakpoints: {
-  //   480: {
-  //     slidesPerView: 1.5,
-  //   },
-  // },
-});
+// initSwiperSliders('.products__list', {
+//   modules: [Grid],
+//   slidesPerView: 4,
+//   slidesPerGroup: 4,
+//   spaceBetween: 20,
+//   grid: {
+//     rows: 2,
+//     fill: 'row',
+//   },
+//   // loop: true,
+//   // centeredSlides: true,
+//   // breakpoints: {
+//   //   480: {
+//   //     slidesPerView: 1.5,
+//   //   },
+//   // },
+// });
 
 // //*Слайдер внутри карточки товара
 // initSwiperSliders('.gallery-card__slider', {
@@ -89,10 +89,10 @@ const categoriesListSlider = new Swiper('.product-offers__categories', {
   slidesPerView: 1.5,
   freeMode: true,
   watchSlidesProgress: true,
-  // spaceBetween: 24,
+  spaceBetween: 10,
   breakpoints: {
     480: {
-      slidesPerView: 2.5,
+      slidesPerView: 2.3,
     },
     576: {
       slidesPerView: 3.5,
@@ -106,7 +106,8 @@ const categoriesListSlider = new Swiper('.product-offers__categories', {
 const productsListSlider = new Swiper('.product-offers__products', {
   modules: [Thumbs],
   slidesPerView: 1,
-  spaceBetween: 300,
+  spaceBetween: 150,
+  autoHeight: true,
   thumbs: {
     swiper: categoriesListSlider,
   },
