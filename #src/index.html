@@ -4,34 +4,1512 @@
   <body>
     <div class="wrapper">
       @@include('_header.html',{})
-      <main class="page">
+      <main>
         <div class="hero">
-          <!-- <div class="hero__bg">
-            <picture>
-              <img src="img/bg/main-bg-sm.jpg" alt="тату-машинка" />
-            </picture>
-          </div> -->
-          <div class="hero__inner">
-            <!-- <div class="hero__bg">
-              <picture>
-                <img src="img/bg/main-bg-sm.jpg" alt="тату-машинка" />
-              </picture>
-            </div> -->
-            <div class="hero__text-block">
-              <h1 class="hero__heading">
-                Лучшие товары
-                <br />
-                в мире татуировок
-              </h1>
-              <p class="hero__text">
-                Оборудование и расходники для самых ярких и качественных работ
-              </p>
+          <div class="hero__slider swiper">
+            <div class="swiper-wrapper">
+              <div class="hero__slide swiper-slide">
+                <div class="hero__bg"></div>
+                <div class="hero__inner">
+                  <div class="hero__text-block">
+                    <h1 class="hero__heading">
+                      Лучшие товары
+                      <br />
+                      в мире татуировок
+                    </h1>
+                    <p class="hero__text">
+                      Оборудование и расходники для самых ярких и качественных работ
+                    </p>
+                  </div>
+                  <a href="#" class="hero__button button button--orange">
+                    Смотреть каталог
+                    <span class="button__corner button__corner--left"></span>
+                    <span class="button__corner button__corner--right"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="hero__slide swiper-slide">
+                <div class="hero__bg"></div>
+                <div class="hero__inner">
+                  <div class="hero__text-block">
+                    <h1 class="hero__heading">
+                      Лучшие товары
+                      <br />
+                      в мире татуировок
+                    </h1>
+                    <p class="hero__text">
+                      Оборудование и расходники для самых ярких и качественных работ
+                    </p>
+                  </div>
+                  <a href="#" class="hero__button button button--orange">
+                    Смотреть каталог
+                    <span class="button__corner button__corner--left"></span>
+                    <span class="button__corner button__corner--right"></span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <a href="#" class="hero__button button">
-              Смотреть каталог
-              <span class="button__corner button__corner--left"></span>
-              <span class="button__corner button__corner--right"></span>
-            </a>
+            <div class="hero__slider-nav">
+              <div class="hero__slider-nav-inner">
+                <div class="hero__slider-control">
+                  <div class="swiper-button-prev">
+                    <span></span>
+                  </div>
+                  <div class="slider-pagination slider-pagination--hero"></div>
+                  <div class="swiper-button-next">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="product-offers">
+          <div class="product-offers__inner">
+            <div class="product-offers__categories categories swiper">
+              <ul class="swiper-wrapper">
+                <span class="categories__button swiper-slide">Хиты продаж</span>
+                <span class="categories__button swiper-slide">Самые популярные</span>
+                <span class="categories__button swiper-slide">Новые поступления</span>
+                <span class="categories__button swiper-slide">Акционные товары</span>
+              </ul>
+            </div>
+            <div class="product-offers__products products swiper">
+              <div class="products__inner swiper-wrapper">
+                <ul class="swiper-slide">
+                  <div class="products__list swiper">
+                    <div class="swiper-wrapper">
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/2.jpg"
+                                        alt="Тату-машинка. Артикул: 2"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="products__list-item swiper-slide">
+                        <div class="product-card">
+                          <div class="product-card__top">
+                            <div class="product-card__gallery gallery-card">
+                              <div class="gallery-card__slider swiper">
+                                <div class="swiper-wrapper">
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                  <div class="gallery-card__slide swiper-slide">
+                                    <picture>
+                                      <img
+                                        src="img/products/1.jpg"
+                                        alt="Тату-машинка. Артикул: 1"
+                                      />
+                                    </picture>
+                                  </div>
+                                </div>
+                                <div class="gallery-card__pagination"></div>
+                              </div>
+                            </div>
+                            <div class="product-card__inner">
+                              <p class="product-card__product-name">
+                                Foxxx Kitsune Mini Black Vintage RCA
+                              </p>
+                              <span class="product-card__price">6 000 ₽</span>
+                              <span class="product-card__old-price">8000</span>
+                            </div>
+                            <div class="product-card__tip tip tip--new">
+                              <span class="tip__text">Новинка</span>
+                            </div>
+                            <button class="product-card__favorites"></button>
+                          </div>
+                          <div class="product-card__bottom">
+                            <div class="product-card__inner">
+                              <button class="product-card__button button button--light button--sm">
+                                Добавить в корзину
+                                <span class="button__corner button__corner--left"></span>
+                                <span class="button__corner button__corner--right"></span>
+                              </button>
+                              <div class="product-card__counter counter-card">
+                                <button
+                                  class="counter-card__button counter-card__button--decr"
+                                ></button>
+                                <div class="counter-card__content">
+                                  <span class="counter-card__count">
+                                    15
+                                    <span>шт</span>
+                                  </span>
+                                  <span class="counter-card__text">В корзине</span>
+                                </div>
+                                <button
+                                  class="counter-card__button counter-card__button--incr"
+                                ></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+                <ul class="products__list swiper-slide swiper">
+                  <div class="swiper-wrapper">
+                    <li class="products__list-item swiper-slide">
+                      <div class="product-card">
+                        <div class="product-card__top">
+                          <div class="product-card__gallery gallery-card">
+                            <div class="gallery-card__slider swiper">
+                              <div class="swiper-wrapper">
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="gallery-card__pagination"></div>
+                            </div>
+                          </div>
+                          <div class="product-card__inner">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Vintage RCA
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8000</span>
+                          </div>
+                          <div class="product-card__tip tip tip--new">
+                            <span class="tip__text">Новинка</span>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </div>
+                        <div class="product-card__bottom">
+                          <div class="product-card__inner">
+                            <button class="product-card__button button button--light button--sm">
+                              Добавить в корзину
+                              <span class="button__corner button__corner--left"></span>
+                              <span class="button__corner button__corner--right"></span>
+                            </button>
+                            <div class="product-card__counter counter-card">
+                              <button
+                                class="counter-card__button counter-card__button--decr"
+                              ></button>
+                              <div class="counter-card__content">
+                                <span class="counter-card__count">
+                                  15
+                                  <span>шт</span>
+                                </span>
+                                <span class="counter-card__text">В корзине</span>
+                              </div>
+                              <button
+                                class="counter-card__button counter-card__button--incr"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="products__list-item swiper-slide">
+                      <div class="product-card">
+                        <div class="product-card__top">
+                          <div class="product-card__gallery gallery-card">
+                            <div class="gallery-card__slider swiper">
+                              <div class="swiper-wrapper">
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="gallery-card__pagination"></div>
+                            </div>
+                          </div>
+                          <div class="product-card__inner">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Vintage RCA
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8000</span>
+                          </div>
+                          <div class="product-card__tip tip tip--new">
+                            <span class="tip__text">Новинка</span>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </div>
+                        <div class="product-card__bottom">
+                          <div class="product-card__inner">
+                            <button class="product-card__button button button--light button--sm">
+                              Добавить в корзину
+                              <span class="button__corner button__corner--left"></span>
+                              <span class="button__corner button__corner--right"></span>
+                            </button>
+                            <div class="product-card__counter counter-card">
+                              <button
+                                class="counter-card__button counter-card__button--decr"
+                              ></button>
+                              <div class="counter-card__content">
+                                <span class="counter-card__count">
+                                  15
+                                  <span>шт</span>
+                                </span>
+                                <span class="counter-card__text">В корзине</span>
+                              </div>
+                              <button
+                                class="counter-card__button counter-card__button--incr"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+                <ul class="products__list swiper-slide swiper">
+                  <div class="swiper-wrapper">
+                    <li class="products__list-item swiper-slide">
+                      <div class="product-card">
+                        <div class="product-card__top">
+                          <div class="product-card__gallery gallery-card">
+                            <div class="gallery-card__slider swiper">
+                              <div class="swiper-wrapper">
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="gallery-card__pagination"></div>
+                            </div>
+                          </div>
+                          <div class="product-card__inner">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Vintage RCA
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8000</span>
+                          </div>
+                          <div class="product-card__tip tip tip--new">
+                            <span class="tip__text">Новинка</span>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </div>
+                        <div class="product-card__bottom">
+                          <div class="product-card__inner">
+                            <button class="product-card__button button button--light button--sm">
+                              Добавить в корзину
+                              <span class="button__corner button__corner--left"></span>
+                              <span class="button__corner button__corner--right"></span>
+                            </button>
+                            <div class="product-card__counter counter-card">
+                              <button
+                                class="counter-card__button counter-card__button--decr"
+                              ></button>
+                              <div class="counter-card__content">
+                                <span class="counter-card__count">
+                                  15
+                                  <span>шт</span>
+                                </span>
+                                <span class="counter-card__text">В корзине</span>
+                              </div>
+                              <button
+                                class="counter-card__button counter-card__button--incr"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="products__list-item swiper-slide">
+                      <div class="product-card">
+                        <div class="product-card__top">
+                          <div class="product-card__gallery gallery-card">
+                            <div class="gallery-card__slider swiper">
+                              <div class="swiper-wrapper">
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="gallery-card__pagination"></div>
+                            </div>
+                          </div>
+                          <div class="product-card__inner">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Vintage RCA
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8000</span>
+                          </div>
+                          <div class="product-card__tip tip tip--new">
+                            <span class="tip__text">Новинка</span>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </div>
+                        <div class="product-card__bottom">
+                          <div class="product-card__inner">
+                            <button class="product-card__button button button--light button--sm">
+                              Добавить в корзину
+                              <span class="button__corner button__corner--left"></span>
+                              <span class="button__corner button__corner--right"></span>
+                            </button>
+                            <div class="product-card__counter counter-card">
+                              <button
+                                class="counter-card__button counter-card__button--decr"
+                              ></button>
+                              <div class="counter-card__content">
+                                <span class="counter-card__count">
+                                  15
+                                  <span>шт</span>
+                                </span>
+                                <span class="counter-card__text">В корзине</span>
+                              </div>
+                              <button
+                                class="counter-card__button counter-card__button--incr"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+                <ul class="products__list swiper-slide swiper">
+                  <div class="swiper-wrapper">
+                    <li class="products__list-item swiper-slide">
+                      <div class="product-card">
+                        <div class="product-card__top">
+                          <div class="product-card__gallery gallery-card">
+                            <div class="gallery-card__slider swiper">
+                              <div class="swiper-wrapper">
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="gallery-card__pagination"></div>
+                            </div>
+                          </div>
+                          <div class="product-card__inner">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Vintage RCA
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8000</span>
+                          </div>
+                          <div class="product-card__tip tip tip--new">
+                            <span class="tip__text">Новинка</span>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </div>
+                        <div class="product-card__bottom">
+                          <div class="product-card__inner">
+                            <button class="product-card__button button button--light button--sm">
+                              Добавить в корзину
+                              <span class="button__corner button__corner--left"></span>
+                              <span class="button__corner button__corner--right"></span>
+                            </button>
+                            <div class="product-card__counter counter-card">
+                              <button
+                                class="counter-card__button counter-card__button--decr"
+                              ></button>
+                              <div class="counter-card__content">
+                                <span class="counter-card__count">
+                                  15
+                                  <span>шт</span>
+                                </span>
+                                <span class="counter-card__text">В корзине</span>
+                              </div>
+                              <button
+                                class="counter-card__button counter-card__button--incr"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="products__list-item swiper-slide">
+                      <div class="product-card">
+                        <div class="product-card__top">
+                          <div class="product-card__gallery gallery-card">
+                            <div class="gallery-card__slider swiper">
+                              <div class="swiper-wrapper">
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                                <div class="gallery-card__slide swiper-slide">
+                                  <picture>
+                                    <img src="img/products/1.jpg" alt="Тату-машинка. Артикул: 1" />
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="gallery-card__pagination"></div>
+                            </div>
+                          </div>
+                          <div class="product-card__inner">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Vintage RCA
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8000</span>
+                          </div>
+                          <div class="product-card__tip tip tip--new">
+                            <span class="tip__text">Новинка</span>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </div>
+                        <div class="product-card__bottom">
+                          <div class="product-card__inner">
+                            <button class="product-card__button button button--light button--sm">
+                              Добавить в корзину
+                              <span class="button__corner button__corner--left"></span>
+                              <span class="button__corner button__corner--right"></span>
+                            </button>
+                            <div class="product-card__counter counter-card">
+                              <button
+                                class="counter-card__button counter-card__button--decr"
+                              ></button>
+                              <div class="counter-card__content">
+                                <span class="counter-card__count">
+                                  15
+                                  <span>шт</span>
+                                </span>
+                                <span class="counter-card__text">В корзине</span>
+                              </div>
+                              <button
+                                class="counter-card__button counter-card__button--incr"
+                              ></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="catalog-grid">
+          <div class="catalog-grid__inner">
+            <h2 class="catalog-grid__heading">Каталог</h2>
+            <ul class="catalog-grid__list">
+              <li class="catalog-grid__list-item catalog-grid__list-item--sets item-catalog">
+                <h3 class="item-catalog__heading">
+                  <a href="#" class="item-catalog__link">Тату наборы</a>
+                </h3>
+                <div class="item-catalog__image">
+                  <picture>
+                    <source srcset="img/catalog/tattoo-set.webp" type="image/webp" />
+                    <img src="img/catalog/tattoo-set.jpg" alt="тату-наборы" />
+                  </picture>
+                </div>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--holders item-catalog">
+                <h3 class="item-catalog__heading">
+                  <a href="#" class="item-catalog__link">Держатели</a>
+                </h3>
+                <div class="item-catalog__image">
+                  <picture>
+                    <source srcset="img/catalog/holder.webp" type="image/webp" />
+                    <img src="img/catalog/holder.jpg" alt="тату-наборы" />
+                  </picture>
+                </div>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--machines item-catalog">
+                <h3 class="item-catalog__heading">
+                  <a href="#" class="item-catalog__link">Тату машинки</a>
+                </h3>
+                <div class="item-catalog__image">
+                  <picture>
+                    <source srcset="img/catalog/tatto-machine.webp" type="image/webp" />
+                    <img src="img/catalog/tatto-machine.jpg" alt="тату-наборы" />
+                  </picture>
+                </div>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--pedals item-catalog">
+                  <h3 class="item-catalog__heading">
+                    <a href="#" class="item-catalog__link">Педали и провода</a>
+                  </h3>
+                  <div class="item-catalog__image">
+                    <picture>
+                      <source srcset="img/catalog/pedals-wires.webp" type="image/webp" />
+                      <img src="img/catalog/pedals-wires.jpg" alt="тату-наборы" />
+                    </picture>
+                  </div>
+                </a>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--paints item-catalog">
+                  <h3 class="item-catalog__heading">
+                    <a href="#" class="item-catalog__link">Краски</a>
+                  </h3>
+                  <div class="item-catalog__image">
+                    <picture>
+                      <source srcset="img/catalog/paints-alt.webp" type="image/webp" />
+                      <img src="img/catalog/paints-alt.jpg" alt="тату-наборы" />
+                    </picture>
+                  </div>
+                </a>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--power item-catalog">
+                  <h3 class="item-catalog__heading">
+                    <a href="#" class="item-catalog__link">Блоки питания</a>
+                  </h3>
+                  <div class="item-catalog__image">
+                    <picture>
+                      <source srcset="img/catalog/power-unit.webp" type="image/webp" />
+                      <img src="img/catalog/power-unit.jpg" alt="тату-наборы" />
+                    </picture>
+                  </div>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--tips item-catalog">
+                  <h3 class="item-catalog__heading">
+                    <a href="#" class="item-catalog__link">Наконечники</a>
+                  </h3>
+                  <div class="item-catalog__image">
+                    <picture>
+                      <source srcset="img/catalog/tips.webp" type="image/webp" />
+                      <img src="img/catalog/tips.jpg" alt="тату-наборы" />
+                    </picture>
+                  </div>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--needles item-catalog">
+                  <h3 class="item-catalog__heading">
+                    <a href="#" class="item-catalog__link">Иглы</a>
+                  </h3>
+                  <div class="item-catalog__image">
+                    <picture>
+                      <source srcset="img/catalog/needles.webp" type="image/webp" />
+                      <img src="img/catalog/needles.jpg" alt="тату-наборы" />
+                    </picture>
+                  </div>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--consumables item-catalog">
+                <h3 class="item-catalog__heading">
+                  <a href="#" class="item-catalog__link">Расходные материалы</a>
+                </h3>
+                <div class="item-catalog__image">
+                  <picture>
+                    <source srcset="img/catalog/consumables.webp" type="image/webp" />
+                    <img src="img/catalog/consumables.jpg" alt="тату-наборы" />
+                  </picture>
+                </div>
+              </li>
+              <li class="catalog-grid__list-item catalog-grid__list-item--accessories item-catalog">
+                <h3 class="item-catalog__heading">
+                  <a href="#" class="item-catalog__link">Аксессуары</a>
+                </h3>
+                <div class="item-catalog__image">
+                  <picture>
+                    <source srcset="img/catalog/accessories-alt.webp" type="image/webp" />
+                    <img src="img/catalog/accessories-alt.jpg" alt="тату-наборы" />
+                  </picture>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="banners">
+          <div class="banners__inner">
+            <div class="banners__item item-banner">
+              <div class="item-banner__inner">
+                <span class="item-banner__text">Краски Lip Nitn</span>
+                <div class="item-banner__link-wrapper">
+                  <a href="#" class="item-banner__link">Смотреть в каталоге</a>
+                </div>
+              </div>
+              <div class="item-banner__bg">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="img/banners/banner-1-lg.jpg" />
+                  <source media="(min-width: 375px)" srcset="img/banners/banner-1-md.jpg" />
+                  <img src="img/banners/banner-1-sm.jpg" alt="баннер-1" />
+                </picture>
+              </div>
+            </div>
+            <div class="banners__item item-banner">
+              <div class="item-banner__inner">
+                <span class="item-banner__text">
+                  Foxx viper —
+                  <br />
+                  хит 2021 года
+                </span>
+                <div class="item-banner__link-wrapper">
+                  <a href="#" class="item-banner__link">Смотреть в каталоге</a>
+                </div>
+              </div>
+              <div class="item-banner__bg">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="img/banners/banner-2-lg.jpg" />
+                  <source media="(min-width: 375px)" srcset="img/banners/banner-2-md.jpg" />
+                  <img src="img/banners/banner-2-sm.jpg" alt="баннер-1" />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brands">
+          <div class="brands__inner">
+            <h2 class="brands__heading">Наши бренды</h2>
+            <div class="brands__slider">
+              <a href="#" class="brands__link">Смотреть все</a>
+              <div class="brands__slider-inner swiper">
+                <ul class="swiper-wrapper">
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/kurosumi.jpg" alt="brand: Kuro Sumi" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/inkjecta.jpg" alt="brand: Inkjecta" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/irons.jpg" alt="brand: Irons" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/s8t.jpg" alt="brand: S8t" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/spirit.jpg" alt="brand: Spirit" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/hawk.jpg" alt="brand: Hawk" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/spirit.jpg" alt="brand: Spirit" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/hawk.jpg" alt="brand: Hawk" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/spirit.jpg" alt="brand: Spirit" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/hawk.jpg" alt="brand: Hawk" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/spirit.jpg" alt="brand: Spirit" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="brands-item swiper-slide">
+                    <a href="#" class="brands-item__link">
+                      <div class="brands-item__image">
+                        <picture>
+                          <img src="img/brands/hawk.jpg" alt="brand: Hawk" />
+                        </picture>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="slider-nav slider-nav--left swiper-button-prev"></div>
+              <div class="slider-nav slider-nav--right swiper-button-next"></div>
+              <div class="slider-pagination slider-pagination--brands"></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block__inner">
+            <div class="info-block__bg"></div>
+            <div class="info-block__content">
+              <div class="info-block__content-inner">
+                <h2 class="info-block__heading">Тату магазин Mr. Driskell</h2>
+                <div class="info-block__text">
+                  <p>
+                    Приветствуем вас в Tattoo Mall — в нашем тату магазине собираются энтузиасты
+                    индустрии, профессиональные мастера и новички, которые только делают первые шаги
+                    в тату искусстве. Мы знаем, насколько важно грамотно и точно подобрать
+                    инструменты для продуктивных тату сеансов, и помогаем быстро найти то, что
+                    поможет их сделать именно такими.
+                  </p>
+                  <p>
+                    В нашем ассортименте не просто тату оборудование, это буквально целая команда из
+                    грамотных и действительно эффективных помощников на вашем рабочем столе. Пройдя
+                    этап долгих разработок и бесчисленных тестов под пристальным взглядом
+                    отечественных машиностроителей, космецевтов и брендов с мировым именем, эти
+                    товары нарабатывали опыт и каждый день становились лучше, чтобы показать, на что
+                    они способны, и помочь раскрыть ваш потенциал.
+                  </p>
+                </div>
+                <a href="#" class="info-block__button button button--light button--sm">
+                  О компании
+                  <span class="button__corner button__corner--left"></span>
+                  <span class="button__corner button__corner--right"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feedback">
+          <div class="feedback__inner">
+            <h2 class="feedback__heading">Отзывы</h2>
+            <div class="feedback__slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="feedback__card card-feedback">
+                    <div class="card-feedback__photo">
+                      <picture>
+                        <img src="img/feedback/avatar-1.jpg" alt="Арчибальд Семеныч" />
+                      </picture>
+                    </div>
+                    <div class="card-feedback__text">
+                      <p>
+                        Далеко-далеко за словесными горами в стране гласных и согласных живут,
+                        рыбные тексты. Правилами несколько ведущими, маленький буквенных ipsum
+                        составитель по всей живет пор. Меня дал, даже lorem своих жизни сих имеет
+                        подпоясал сбить единственное несколько.
+                      </p>
+                    </div>
+                    <a href="# " class="card-feedback__link"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="feedback__card card-feedback">
+                    <div class="card-feedback__photo">
+                      <picture>
+                        <img src="img/feedback/avatar-2.jpg" alt="Лёха Косой" />
+                      </picture>
+                    </div>
+                    <div class="card-feedback__text">
+                      <p>
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут
+                        рыбные тексты. Дорогу, рекламных проектах! Обеспечивает буквенных, над мир
+                        составитель вершину вопроса злых ручеек реторический рыбными подзаголовок
+                        переулка образ текстов рыбного всемогущая вопрос выйти бросил на берегу
+                        lorem? Запятых, от всех.
+                      </p>
+                    </div>
+                    <a href="# " class="card-feedback__link"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="feedback__card card-feedback">
+                    <div class="card-feedback__photo">
+                      <picture>
+                        <img src="img/feedback/avatar-1.jpg" alt="Адмирал Глинтвейн" />
+                      </picture>
+                    </div>
+                    <div class="card-feedback__text">
+                      <p>
+                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные
+                        тексты. На берегу образ своих над коварных даже, толку повстречался lorem
+                        своего это предупредила диких которое даль правилами, послушавшись инициал
+                        то деревни выйти несколько заголовок мир залетают ты свой.
+                      </p>
+                    </div>
+                    <a href="# " class="card-feedback__link"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="feedback__card card-feedback">
+                    <div class="card-feedback__photo">
+                      <picture>
+                        <img src="img/feedback/avatar-2.jpg" alt="Лёха Косой" />
+                      </picture>
+                    </div>
+                    <div class="card-feedback__text">
+                      <p>
+                        Далеко-далеко за словесными, горами в стране гласных и согласных живут
+                        рыбные тексты. Дорогу, рекламных проектах! Обеспечивает буквенных, над мир
+                        составитель вершину вопроса злых ручеек реторический рыбными подзаголовок
+                        переулка образ текстов рыбного всемогущая вопрос выйти бросил на берегу
+                        lorem? Запятых, от всех.
+                      </p>
+                    </div>
+                    <a href="# " class="card-feedback__link"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-nav slider-nav--left swiper-button-prev"></div>
+              <div class="slider-nav slider-nav--right swiper-button-next"></div>
+              <div class="slider-pagination slider-pagination--feedback"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mailing">
+          <div class="mailing__inner">
+            <div class="mailing__main-content">
+              <h2 class="mailing__heading">Узнавайте первыми</h2>
+              <p class="mailing__desc">
+                Подпишитесь нановостную рассылку с самыми интересными новостями и акциями
+              </p>
+              <form class="mailing__form form">
+                <div class="form__group">
+                  <label class="form__label" for="email">Эл. почта</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="email"
+                      name="email"
+                      value=""
+                      id="email"
+                      required=""
+                      placeholder="tatoo@gmail.ru"
+                    />
+                  </div>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="name">Имя</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="text"
+                      name="name"
+                      value=""
+                      id="name"
+                      required=""
+                      placeholder="Введите имя"
+                    />
+                  </div>
+                </div>
+                <div class="form__group form__group--agreement">
+                  <label class="checkbox checkbox--agreement">
+                    <input
+                      class="checkbox__input"
+                      type="checkbox"
+                      name="agreement"
+                      value="1"
+                      required=""
+                    />
+                    <p class="checkbox__text">
+                      Вы соглашаетесь на обработку ваших персональных данных
+                    </p>
+                  </label>
+                </div>
+                <button class="button button--orange" type="submit">
+                  Подписаться
+                  <span class="button__corner button__corner--left"></span>
+                  <span class="button__corner button__corner--right"></span>
+                </button>
+              </form>
+            </div>
+            <div class="mailing__decorate"></div>
           </div>
         </div>
       </main>
@@ -40,3 +1518,17 @@
     @@include('_popup.html',{}) @@include('_js.html',{})
   </body>
 </html>
+
+<!-- <div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+  </div>
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <div class="swiper-scrollbar"></div>
+</div> -->

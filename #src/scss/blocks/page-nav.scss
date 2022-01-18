@@ -1,0 +1,44 @@
+.page-nav {
+  // .page-nav__list
+  &__list {
+    &--decorate {
+      .page-nav__link {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 5px;
+          height: 20px;
+          bottom: -100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-image: url(../img/icons/page-menu-deco-line.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          opacity: 0;
+          transition: opacity 0.2s linear;
+        }
+        &:hover,
+        &:focus {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  // .page-nav__item
+  &__item {
+  }
+  // .page-nav__link
+  &__link {
+    font-family: inherit;
+    color: $white;
+    white-space: normal;
+    transition: color 0.1s linear;
+    &:hover,
+    &:focus {
+      color: $orange;
+    }
+  }
+}

@@ -2,32 +2,78 @@
   z-index: 0;
   position: relative;
   display: block;
-  padding: 0.9em 3.2em;
+  padding: 0.9em 1.3em;
   font-size: 20px;
   line-height: 1.5;
   text-align: center;
   user-select: none;
   transition: background-color 0.2s linear, color 0.2s linear;
-  //временные
-  color: $white;
-  background-color: $orange-dark;
   border: 2px solid $orange;
-  &:hover,
-  &:focus {
-    background-color: lighten($color: $orange-dark, $amount: 6%);
-    & .button__corner {
-      &::before {
-        border-right-color: lighten($color: $orange-dark, $amount: 6%);
-        border-left-color: lighten($color: $orange-dark, $amount: 6%);
+  &--sm {
+    padding: 0.4em 0.9em;
+  }
+  &--orange {
+    color: $white;
+    background-color: $orange-dark;
+    &:hover,
+    &:focus {
+      background-color: lighten($color: $orange-dark, $amount: 6%);
+      & .button__corner {
+        &::before {
+          border-right-color: lighten($color: $orange-dark, $amount: 6%);
+          border-left-color: lighten($color: $orange-dark, $amount: 6%);
+        }
+      }
+    }
+    &:active {
+      background-color: darken($color: $orange-dark, $amount: 5%);
+      & .button__corner {
+        &::before {
+          border-right-color: darken($color: $orange-dark, $amount: 5%);
+          border-left-color: darken($color: $orange-dark, $amount: 5%);
+        }
       }
     }
   }
-  &:active {
-    background-color: darken($color: $orange, $amount: 5%);
-    & .button__corner {
-      &::before {
-        border-right-color: darken($color: $orange, $amount: 5%);
-        border-left-color: darken($color: $orange, $amount: 5%);
+  &--light {
+    color: $orange;
+    background-color: $bg;
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $orange;
+      & .button__corner {
+        &::before {
+          border-right-color: $orange;
+          border-left-color: $orange;
+        }
+      }
+    }
+    &:active {
+      background-color: darken($color: $orange, $amount: 5%);
+      & .button__corner {
+        &::before {
+          border-right-color: darken($color: $orange, $amount: 5%);
+          border-left-color: darken($color: $orange, $amount: 5%);
+        }
+      }
+    }
+    .button__corner {
+      &--left {
+        &::before {
+          border-right: 16px solid $bg;
+        }
+        &::after {
+          border-right: 20px solid $orange;
+        }
+      }
+      &--right {
+        &::before {
+          border-left: 16px solid $bg;
+        }
+        &::after {
+          border-left: 20px solid $orange;
+        }
       }
     }
   }

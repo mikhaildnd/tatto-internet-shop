@@ -22,11 +22,12 @@ import webp from 'imagemin-webp';
 import fonter from 'gulp-fonter';
 import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
+import named from 'vinyl-named';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import fs from 'fs';
+// import fs from 'fs';
 
 const scss = gulpSass(dartSass);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -69,10 +70,10 @@ export const scripts = () => {
   //Webpack configuration
   const webPackConfig = {
     watch: false,
-    entry: {
-      app: './#src/js/app.js',
-      // vendors: './#src/js/vendors.js',
-    },
+    // entry: {
+    //   app: './#src/js/app.js',
+    //   // vendors: './#src/js/vendors.js',
+    // },
     output: {
       filename: '[name].min.js',
       publicPath: '/js/',
@@ -100,6 +101,7 @@ export const scripts = () => {
   return gulp
     .src(_path.src.js)
     .pipe(plumber())
+    .pipe(named())
     .pipe(webpackStream(webPackConfig))
     .pipe(gulp.dest(_path.build.js))
     .pipe(sync.stream());

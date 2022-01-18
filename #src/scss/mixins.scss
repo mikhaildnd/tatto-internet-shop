@@ -73,3 +73,15 @@
   background-position: center;
   background-size: cover;
 }
+@mixin gutters {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @media (min-width: $md2) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media (min-width: $md1) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

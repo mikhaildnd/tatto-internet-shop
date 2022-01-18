@@ -27,7 +27,7 @@ $minWidth: 320px;
 $maxWidth: 1920px;
 $maxWidthContainer: 1256px;
 
-$md1: 1400px;
+$md1: 1366px;
 $md2: 1024px;
 $md3: 992px;
 $md4: 768px;
@@ -42,6 +42,7 @@ $mainColor: #000;
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 @import 'null';
 body {
+  background-color: #eeeeee;
   color: $mainColor;
   &._lock {
     overflow: hidden;
@@ -52,7 +53,10 @@ body {
 //<ОБОЛОЧКА>===========================================================================================================
 .wrapper {
   width: 100%;
+  max-width: 1920px;
   min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -73,11 +77,14 @@ body {
 // @import 'animations';
 @import 'buttons';
 @import 'forms';
+@import 'blocks/slider-control';
 @import 'blocks/logo';
+@import 'blocks/page-nav';
 @import 'blocks/cart';
 @import 'blocks/search';
 @import 'blocks/contacts';
 @import 'blocks/socials';
+@import 'blocks/product-card';
 // @import "ui";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 

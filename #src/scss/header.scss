@@ -69,6 +69,14 @@
   &__logo {
     grid-area: logo;
     justify-self: center;
+    .logo__img {
+      width: 126px;
+      height: 43px;
+      @media (min-width: $md2) {
+        width: 186px;
+        height: 63px;
+      }
+    }
   }
 
   // .header__contacts
@@ -135,6 +143,9 @@
       @media (min-width: 1200px) {
         margin-right: 60px;
       }
+    }
+    .page-nav__link {
+      white-space: nowrap;
     }
   }
 
@@ -292,53 +303,6 @@
   // .header-nav__sub-link
   &__sub-link {
     color: $white;
-  }
-}
-
-//*page-nav
-.page-nav {
-  // display: flex;
-  // align-items: center;
-  // .page-nav__list
-  &__list {
-    &--decorate {
-      .page-nav__link {
-        position: relative;
-        &::before {
-          content: '';
-          position: absolute;
-          width: 5px;
-          height: 20px;
-          bottom: -100%;
-          left: 50%;
-          transform: translateX(-50%);
-          background-image: url(../img/icons/page-menu-deco-line.svg);
-          background-repeat: no-repeat;
-          background-size: contain;
-          opacity: 0;
-          transition: opacity 0.2s linear;
-        }
-        &:hover,
-        &:focus {
-          &::before {
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
-  // .page-nav__item
-  &__item {
-  }
-  // .page-nav__link
-  &__link {
-    color: $white;
-    white-space: nowrap;
-    transition: color 0.1s linear;
-    &:hover,
-    &:focus {
-      color: $orange;
-    }
   }
 }
 
