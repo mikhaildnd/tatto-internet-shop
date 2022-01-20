@@ -6,7 +6,7 @@
   // height: 384px;
   padding-top: 15px;
   padding-bottom: 30px;
-  background-color: $white;
+  background-color: $bg-card;
   transition: transform 0.1s linear;
   &:hover {
     // transform: translateY(-25px);
@@ -28,7 +28,7 @@
     bottom: 0;
     width: 100%;
     padding-bottom: 30px;
-    background-color: $white;
+    background-color: inherit;
     transform: translateY(calc(100% - 10px));
     box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.25);
   }
@@ -161,12 +161,23 @@
   }
   // .gallery-card__slide
   &__slide {
+    height: 228px;
+    // &.swiper-slide {
+    //   height: 228px;
+    // }
     user-select: none;
     img {
       width: 100%;
       height: 100%;
+      // height: 228px;
       object-fit: cover;
       object-position: center;
+      //Для alt
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      line-height: 100px;
+      font-size: 18px;
     }
   }
   // .gallery-card__pagination
