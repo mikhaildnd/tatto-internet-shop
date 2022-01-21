@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <title>Checkbox</title>
+  <meta charset="UTF-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 25px;
+      font-family: sans-serif;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <label class="check">
+        <input class="check__input" type="checkbox" />
+        <span class="check__box"></span>
+        <span class="check__text">Первый</span>
+      </label>
+      <label class="check">
+        <input class="check__input" type="checkbox" checked />
+        <span class="check__box"></span>
+        Второй
+      </label>
+      <label class="check">
+        <input class="check__input" type="checkbox" disabled />
+        <span class="check__box"></span>
+        Третий
+      </label>
+      <label class="check">
+        <input class="check__input" type="checkbox" checked disabled />
+        <span class="check__box"></span>
+        Четрвертый
+      </label>
+    </div>
+  </body>
+</html>

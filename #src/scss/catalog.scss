@@ -16,6 +16,14 @@
     width: calc(100% / 12 * 9);
     padding-left: 20px;
   }
+  // .catalog__products-panel
+  &__products-panel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 50px;
+  }
   // .catalog__products-container
   &__products-container {
     display: flex;
@@ -46,9 +54,38 @@
   // .filter__group
   &__group {
     border-bottom: 1px solid $grey-light;
+    &--delivery {
+      .group-filter__label {
+        display: flex;
+        align-items: center;
+      }
+      .group-filter__input {
+        margin-right: 20px;
+      }
+    }
+    /* Чекбокс-переключатель */
   }
 }
 .group-filter {
+  &--switcher {
+    .group-filter__top {
+      position: relative;
+      padding-right: 60px;
+    }
+    .group-filter__label.switch {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 4px;
+    }
+  }
+  &--without-arrow {
+    .group-filter__top {
+      &::after {
+        display: none;
+      }
+    }
+  }
   // .group-filter__inner
   &__inner {
   }
@@ -163,15 +200,25 @@
     &--column {
       display: flex;
       flex-direction: column;
-      .group-filter__label {
-        display: flex;
-        align-items: center;
-      }
     }
     &--row {
       display: flex;
+      flex-wrap: wrap;
     }
-    &--minor-gutters {
+    &--label-gutters-bottom {
+      .group-filter__label {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &--input-gutter-right {
+      .group-filter__input {
+        margin-right: 20px;
+      }
+    }
+    &--colors-list {
       margin-left: -5px;
       margin-right: -5px;
       margin-top: -5px;
@@ -179,60 +226,26 @@
       .group-filter__label {
         margin-left: 5px;
         margin-right: 5px;
-      }
-    }
-    &--checkbox-only {
-      .checkbox__input {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        .group-filter__label {
-          margin-bottom: 0;
-        }
-        .checkbox__text {
-          position: initial;
-          display: inline-block;
-          padding-left: 0;
-        }
+        margin-top: 5px;
+        margin-bottom: 5px;
       }
     }
   }
   // .group-filter__label
   &__label {
-    margin-bottom: 10px;
+    /* Флекс, чтобы убрать пробелы между иглайн-блоками */
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    &:last-child {
-      margin-bottom: 0;
-    }
-    span {
-      font-size: 17px;
-      line-height: 1.5;
-    }
+  }
+  // .group-filter__label-text
+  &__label-text {
+    display: inline-block;
+    font-size: 17px;
+    line-height: 1.5;
   }
   //.group-filter__input
   &__input {
-    &--right-gutter {
-      margin-right: 20px;
-    }
-  }
-  &--without-arrow {
-    .group-filter__top {
-      &::after {
-        display: none;
-      }
-    }
-  }
-  &--switcher {
-    .group-filter__top {
-      position: relative;
-      padding-right: 60px;
-    }
-    .group-filter__label.switch {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 4px;
-    }
   }
 }
 
@@ -294,5 +307,75 @@
   }
   // .gallery-card__pagination
   &__pagination {
+  }
+}
+
+.products-panel {
+  // .products-panel__sort
+  &__sort {
+  }
+  // .products-panel__sort-text
+  &__sort-text {
+    margin-right: 20px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: $grey;
+  }
+  // .products-panel__select
+  &__select {
+    // appearance: none;
+    width: 220px;
+    margin-right: 30px;
+    padding: 12px 55px 12px 20px;
+    background-color: $white;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  // .products-panel__change-view
+  &__change-view {
+  }
+}
+.view-change {
+  display: flex;
+  // .view-change__label
+  &__label {
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+  // .view-change__input
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    /* Checked */
+    &:checked + .view-change__icon--grid {
+      background-image: url(../img/icons/view-grid-on.svg);
+    }
+    &:checked + .view-change__icon--list {
+      background-image: url(../img/icons/view-list-on.svg);
+    }
+    /* Focused */
+    &:focus + .view-change__icon {
+      box-shadow: 0 0 7px 0 $orange;
+    }
+  }
+  // .view-change__icon
+  &__icon {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    &--grid {
+      background-image: url(../img/icons/view-grid-off.svg);
+    }
+    &--list {
+      background-image: url(../img/icons/view-list-off.svg);
+    }
   }
 }

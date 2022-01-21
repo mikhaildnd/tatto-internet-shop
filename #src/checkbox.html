@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Checkbox" })
+  <style>
+    body {
+      margin: 0;
+      padding: 25px;
+      font-family: sans-serif;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <label class="check">
+        <input class="check__input" type="checkbox" />
+        <span class="check__box"></span>
+        <span class="check__text">Первый</span>
+      </label>
+      <label class="check">
+        <input class="check__input" type="checkbox" checked />
+        <span class="check__box"></span>
+        Второй
+      </label>
+      <label class="check">
+        <input class="check__input" type="checkbox" disabled />
+        <span class="check__box"></span>
+        Третий
+      </label>
+      <label class="check">
+        <input class="check__input" type="checkbox" checked disabled />
+        <span class="check__box"></span>
+        Четрвертый
+      </label>
+    </div>
+  </body>
+</html>
