@@ -40,49 +40,85 @@
   &--red {
     .checkbox__box {
       background-color: $red;
+      box-shadow: none;
     }
     .checkbox__input:checked + .checkbox__box {
       background-color: $red;
+      box-shadow: 0 0 0 1px $red;
+    }
+    .checkbox__input:focus-visible + .checkbox__box {
+      background-color: $red;
+      box-shadow: 0 0 5px 1px $red;
     }
   }
   &--yellow {
     .checkbox__box {
       background-color: $yellow;
+      box-shadow: none;
     }
     .checkbox__input:checked + .checkbox__box {
       background-color: $yellow;
+      box-shadow: 0 0 0 1px $yellow;
+    }
+    .checkbox__input:focus-visible + .checkbox__box {
+      background-color: $yellow;
+      box-shadow: 0 0 5px 1px $yellow;
     }
   }
   &--green {
     .checkbox__box {
       background-color: $green;
+      box-shadow: none;
     }
     .checkbox__input:checked + .checkbox__box {
       background-color: $green;
+      box-shadow: 0 0 0 1px $green;
+    }
+    .checkbox__input:focus-visible + .checkbox__box {
+      background-color: $green;
+      box-shadow: 0 0 5px 1px $green;
     }
   }
   &--blue {
     .checkbox__box {
       background-color: $blue;
+      box-shadow: none;
     }
     .checkbox__input:checked + .checkbox__box {
       background-color: $blue;
+      box-shadow: 0 0 0 1px $blue;
+    }
+    .checkbox__input:focus-visible + .checkbox__box {
+      background-color: $blue;
+      box-shadow: 0 0 5px 1px $blue;
     }
   }
   &--pink {
     .checkbox__box {
       background-color: $pink;
+      box-shadow: none;
     }
     .checkbox__input:checked + .checkbox__box {
       background-color: $pink;
+      box-shadow: 0 0 0 1px $pink;
+    }
+    .checkbox__input:focus-visible + .checkbox__box {
+      background-color: $pink;
+      box-shadow: 0 0 5px 1px $pink;
     }
   }
   &--grey-dark {
     .checkbox__box {
       background-color: $grey-dark;
+      box-shadow: none;
     }
     .checkbox__input:checked + .checkbox__box {
       background-color: $grey-dark;
+      box-shadow: 0 0 0 1px $grey-dark;
+    }
+    .checkbox__input:focus-visible + .checkbox__box {
+      background-color: $grey-dark;
+      box-shadow: 0 0 5px 1px $grey-dark;
     }
   }
   // .checkbox__input
@@ -102,7 +138,7 @@
       background-image: url(../../img/checkbox/check.svg);
     }
     /* Focused */
-    &:focus + .checkbox__box {
+    &:focus-visible + .checkbox__box {
       box-shadow: 0 0 0 1px $orange, 0 0 0 2px $orange-dark;
     }
     /* Disabled */

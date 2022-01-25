@@ -6,51 +6,165 @@
     display: flex;
     flex-wrap: wrap;
   }
+  // .catalog__breadcrumbs
+  &__breadcrumbs {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 15px;
+    @media (min-width: $md4) {
+      font-size: 17px;
+    }
+    @media (min-width: $md2) {
+      margin-bottom: 30px;
+    }
+  }
+  // .catalog__heading
+  &__heading {
+    width: 100%;
+    font-family: $forum;
+    line-height: 1;
+    font-size: 32px;
+    margin-bottom: 20px;
+    @media (min-width: $md5) {
+      font-size: 36px;
+    }
+    @media (min-width: $md4) {
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+    @media (min-width: $md2) {
+      font-size: 60px;
+      margin-bottom: 40px;
+    }
+  }
   // .catalog__filter
   &__filter {
-    width: calc(100% / 4);
-    padding-right: 20px;
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: $bg;
+    overflow-y: auto;
+    @media (min-width: 1280px) {
+      position: initial;
+      position: sticky;
+      display: block;
+      width: calc(100% / 4);
+      padding-right: 20px;
+    }
   }
   // .catalog__products
   &__products {
-    width: calc(100% / 12 * 9);
-    padding-left: 20px;
+    width: 100%;
+    @media (min-width: 1280px) {
+      width: calc(100% / 12 * 9);
+      padding-left: 20px;
+    }
   }
   // .catalog__products-panel
   &__products-panel {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-areas:
+      'trigger view'
+      'sort sort';
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    gap: 30px;
+    grid-auto-flow: column;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    & > * {
+      align-self: center;
+    }
+    @media (min-width: $md5) {
+      grid-template-areas: 'trigger sort view';
+      grid-template-columns: min-content minmax(0, 1fr) min-content;
+      margin-bottom: 30px;
+    }
+    @media (min-width: 1280px) {
+      margin-bottom: 50px;
+    }
+    .products-panel__filter-trigger {
+      @media (min-width: 1280px) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+    .products-panel__select {
+      width: 100%;
+      @media (min-width: $md7) {
+        width: initial;
+      }
+    }
+    .products-panel__select-list {
+      width: 100%;
+    }
+    .products-panel__label {
+      display: none;
+      @media (min-width: $md7) {
+        display: inline-block;
+      }
+      @media (min-width: $md5) {
+        display: none;
+      }
+      @media (min-width: 658px) {
+        display: block;
+      }
+    }
+    .products-panel__sort {
+      @media (min-width: $md5) {
+        justify-self: end;
+      }
+    }
+    .products-panel__change-view {
+      justify-self: end;
+    }
   }
   // .catalog__products-container
   &__products-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -10px;
-    margin-bottom: -10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 50px;
+    @media (min-width: $md6) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: $md2) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   // .catalog__product-card
   &__product-card {
-    width: calc(100% / 3);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /* чтобы элемент не выпирал, это происходит из-за ширины 'auto', 
+    что означает что элемент грида может увеличиваться в ширину из-за длинного содержимого.
+    Решения: 
+    в минмакс проставить 0
+    grid-template-columns: minmax(0, 1fr) 248px; 
+    В доч. эл. проставить min-width: 0;
+    или overflow: hidden, но овф обрежет элем*/
+    min-width: 0;
+  }
+  // .catalog__button
+  &__button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 275px;
+  }
+  // .catalog__pagination
+  &__pagination {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24px, min-content));
+    justify-content: center;
+    grid-auto-flow: column;
+    column-gap: 10px;
   }
 }
 
 .filter {
-  // .filter__heading
-  &__heading {
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 30px;
-  }
   // .filter__group
   &__group {
     border-bottom: 1px solid $grey-light;
@@ -66,17 +180,42 @@
     /* Чекбокс-переключатель */
   }
 }
+.filter-trigger {
+  display: inline-grid;
+  grid-template-columns: 20px min-content;
+  grid-auto-flow: column;
+  column-gap: 12px;
+  & > * {
+    align-self: center;
+  }
+  // .filter-tirgger__icon
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/icons/filter-icon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  // .filter-tirgger__text
+  &__text {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+    @media (min-width: $md4) {
+      font-size: 20px;
+    }
+    @media (min-width: $md2) {
+      font-size: 22px;
+    }
+  }
+}
 .group-filter {
   &--switcher {
     .group-filter__top {
-      position: relative;
-      padding-right: 60px;
-    }
-    .group-filter__label.switch {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
   &--without-arrow {
@@ -92,14 +231,13 @@
   // .group-filter__top
   &__top {
     position: relative;
-    padding: 20px;
+    padding: 20px 48px 20px 20px;
     cursor: pointer;
-    // margin-bottom: 10px;
     &::after {
       content: '';
       position: absolute;
       top: 50%;
-      right: 4px;
+      right: 20px;
       width: 0;
       height: 0;
       border-left: 5px solid transparent;
@@ -248,101 +386,73 @@
   &__input {
   }
 }
-
-.products {
-  // .products__inner
-  &__inner {
-  }
-  // .products__list
-  &__list {
-  }
-  // .products__list-item
-  &__list-item {
-  }
-  // .products__button
-  &__button {
-  }
-}
-.product-card {
-  // .product-card__top
-  &__top {
-  }
-  // .product-card__gallery
-  &__gallery {
-  }
-  // .product-card__inner
-  &__inner {
-  }
-  // .product-card__product-name
-  &__product-name {
-  }
-  // .product-card__price
-  &__price {
-  }
-  // .product-card__old-price
-  &__old-price {
-  }
-  // .product-card__tip
-  &__tip {
-  }
-  // .product-card__favorites
-  &__favorites {
-  }
-  // .product-card__bottom
-  &__bottom {
-  }
-  // .product-card__button
-  &__button {
-  }
-  // .product-card__counter
-  &__counter {
-  }
-}
-.gallery-card {
-  // .gallery-card__slider
-  &__slider {
-  }
-  // .gallery-card__slide
-  &__slide {
-  }
-  // .gallery-card__pagination
-  &__pagination {
-  }
-}
-
 .products-panel {
+  // .products-panel__filter-trigger
+  &__filter-trigger {
+    grid-area: trigger;
+  }
   // .products-panel__sort
   &__sort {
+    display: flex;
+    align-items: center;
+    grid-area: sort;
   }
-  // .products-panel__sort-text
-  &__sort-text {
-    margin-right: 20px;
+  // .products-panel__select
+  &__select {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    // align-items: center;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 8px solid #000;
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+      /* Чтобы прокликнуть сквозь элемент */
+      pointer-events: none;
+    }
+    & > * {
+      align-self: center;
+    }
+  }
+  // .products-panel__label
+  &__label {
     font-size: 17px;
     line-height: 1.5;
     color: $grey;
   }
-  // .products-panel__select
-  &__select {
-    // appearance: none;
-    width: 220px;
-    margin-right: 30px;
-    padding: 12px 55px 12px 20px;
+  // .products-panel__select-list
+  &__select-list {
+    appearance: none;
+    min-width: 220px;
+    padding: 12px 50px 12px 20px;
     background-color: $white;
+    font-family: inherit;
     font-size: 17px;
     font-weight: 500;
-    line-height: 1.5;
   }
   // .products-panel__change-view
   &__change-view {
+    grid-area: view;
   }
 }
 .view-change {
-  display: flex;
+  display: inline-grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+  & > * {
+    align-self: center;
+  }
   // .view-change__label
   &__label {
-    &:first-child {
-      margin-right: 20px;
-    }
   }
   // .view-change__input
   &__input {
@@ -377,5 +487,81 @@
     &--list {
       background-image: url(../img/icons/view-list-off.svg);
     }
+  }
+}
+.breadcrumbs {
+  // .breadcrumbs__item
+  &__item {
+    font-weight: normal;
+    line-height: 1.5;
+    color: $grey;
+  }
+  // .breadcrumbs__link
+  &__link {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, min-content);
+    column-gap: 5px;
+    color: $grey-light;
+    &::after {
+      content: '/';
+      color: inherit;
+    }
+  }
+}
+.pagination {
+  // .pagination__item
+  &__item {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $grey-light;
+    font-size: 17px;
+    line-height: 1.4;
+    color: $orange-dark;
+    &--prev,
+    &--next {
+      &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-left: 2px solid $orange-dark;
+        border-top: 2px solid $orange-dark;
+      }
+    }
+    // .pagination__item--prev
+    &--prev {
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        margin-left: 2px;
+      }
+    }
+    // .pagination__item--next
+    &--next {
+      &::before {
+        transform: translate(-50%, -50%) rotate(135deg);
+        margin-left: -2px;
+      }
+    }
+    // .pagination__item--active
+    &--active {
+      background-color: $orange;
+      color: $white;
+    }
+    // .pagination__item--disabled
+    &--disabled {
+    }
+  }
+  // .pagination__link
+  &__link {
+    color: inherit;
   }
 }

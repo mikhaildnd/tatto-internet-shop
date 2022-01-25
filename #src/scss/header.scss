@@ -20,10 +20,12 @@
     grid-template-areas: 'dropdown-trigger logo search-trigger';
     grid-template-columns: min-content 1fr min-content;
     column-gap: 20px;
-    align-items: center;
-    align-content: center;
     padding-top: 14px;
     padding-bottom: 11px;
+    /* Префиксер ругается, что ие11 не понимает алигн-итемс в гридах */
+    & > * {
+      align-self: center;
+    }
     @media (min-width: $md5) {
       grid-template-areas: 'dropdown-trigger logo search';
       grid-template-columns: min-content min-content 1fr;

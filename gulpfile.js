@@ -130,11 +130,14 @@ export const styles = () => {
       .pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
       .pipe(groupMedia())
       .pipe(
-        autoprefixer({
-          grid: true,
-          overrideBrowserslist: ['last 5 versions'],
-          cascade: true,
-        })
+        gulpIf(
+          isProd,
+          autoprefixer({
+            grid: true,
+            overrideBrowserslist: ['last 2 versions'],
+            cascade: true,
+          })
+        )
       )
       // .pipe(
       //   webpCss({
