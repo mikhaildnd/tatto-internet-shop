@@ -1,0 +1,20 @@
+.breadcrumbs {
+  // .breadcrumbs__item
+  &__item {
+    font-weight: normal;
+    line-height: 1.5;
+    color: $grey;
+  }
+  // .breadcrumbs__link
+  &__link {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, min-content);
+    column-gap: 5px;
+    color: $grey-light;
+    &::after {
+      content: '/';
+      color: inherit;
+    }
+  }
+}
