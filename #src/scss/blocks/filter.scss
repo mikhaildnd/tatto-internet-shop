@@ -1,0 +1,192 @@
+.filter {
+  // .filter__group
+  &__group {
+    border-bottom: 1px solid $grey-light;
+    &--delivery {
+      .group-filter__label {
+        display: flex;
+        align-items: center;
+      }
+      .group-filter__input {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+.group-filter {
+  &--switcher {
+    .group-filter__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &--without-arrow {
+    .group-filter__top {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  // .group-filter__inner
+  &__inner {
+  }
+  // .group-filter__top
+  &__top {
+    position: relative;
+    padding: 20px 48px 20px 20px;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 8px solid $black;
+      transition: transform 0.1s linear;
+      transform: translateY(-50%);
+    }
+    &.hidden {
+      &::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+  // .group-filter__bottom
+  &__bottom {
+    overflow: hidden;
+    transition: height 0.2s ease-out;
+  }
+  /* Без иннера скрытие скриптом не будет отрабатывать правильно */
+  // .group-filter__bottom-inner
+  &__bottom-inner {
+    margin-bottom: 20px;
+    padding: 10px 30px;
+  }
+  // .group-filter__heading
+  &__heading {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  // .group-filter__range-slider
+  &__range-slider {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    .noUi-horizontal {
+      height: 1px;
+    }
+    //нижний слой трека
+    .noUi-target {
+      box-shadow: none;
+      background: $grey-light;
+      border: none;
+      border-radius: 0;
+    }
+    //активный верхний слой трека
+    .noUi-connect {
+      background: $orange;
+    }
+    //хэндлер
+    .noUi-horizontal .noUi-handle {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      top: 50%;
+      right: -6px; // половина ширины
+      background: $orange;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      transform: translateY(-50%) rotate(45deg);
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    //тач-ареа
+    .noUi-handle .noUi-touch-area {
+      border: 1px solid transparent;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      width: auto;
+      height: auto;
+      transform: rotate(-45deg);
+    }
+    .noUi-handle:hover .noUi-touch-area {
+      border: 1px dashed $orange;
+    }
+  }
+  // .group-filter__track
+  &__track {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  // .group-filter__content
+  &__content {
+    &--range {
+      display: flex;
+      .field {
+        flex: 0 0 calc(50% - 10px);
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
+    }
+    &--column {
+      display: flex;
+      flex-direction: column;
+    }
+    &--row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &--label-gutters-bottom {
+      .group-filter__label {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &--input-gutter-right {
+      .group-filter__input {
+        margin-right: 20px;
+      }
+    }
+    &--colors-list {
+      margin-left: -5px;
+      margin-right: -5px;
+      margin-top: -5px;
+      margin-bottom: -5px;
+      .group-filter__label {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  // .group-filter__label
+  &__label {
+    /* Флекс, чтобы убрать пробелы между инлайн-блоками */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  // .group-filter__label-text
+  &__label-text {
+    display: inline-block;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  //.group-filter__input
+  &__input {
+  }
+}
