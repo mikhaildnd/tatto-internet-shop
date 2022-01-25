@@ -1,0 +1,46 @@
+/* change view type icons */
+.view-change {
+  display: inline-grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+  & > * {
+    align-self: center;
+  }
+  // .view-change__label
+  &__label {
+  }
+  // .view-change__input
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    /* Checked */
+    &:checked + .view-change__icon--grid {
+      background-image: url(../img/icons/view-grid-on.svg);
+    }
+    &:checked + .view-change__icon--list {
+      background-image: url(../img/icons/view-list-on.svg);
+    }
+    /* Focused */
+    &:focus + .view-change__icon {
+      box-shadow: 0 0 7px 0 $orange;
+    }
+  }
+  // .view-change__icon
+  &__icon {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    &--grid {
+      background-image: url(../img/icons/view-grid-off.svg);
+    }
+    &--list {
+      background-image: url(../img/icons/view-list-off.svg);
+    }
+  }
+}
