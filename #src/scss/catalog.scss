@@ -8,16 +8,6 @@
   }
   // .catalog__breadcrumbs
   &__breadcrumbs {
-    display: flex;
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 15px;
-    @media (min-width: $md4) {
-      font-size: 17px;
-    }
-    @media (min-width: $md2) {
-      margin-bottom: 30px;
-    }
   }
   // .catalog__heading
   &__heading {
@@ -40,7 +30,7 @@
   }
   // .catalog__filter
   &__filter {
-    // display: none;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -48,7 +38,10 @@
     bottom: 0;
     z-index: 100;
     background-color: $bg;
-    overflow-y: auto;
+    flex-direction: column;
+    &.open {
+      display: flex;
+    }
     @media (min-width: 1280px) {
       position: initial;
       position: sticky;
