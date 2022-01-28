@@ -1,0 +1,328 @@
+.product {
+  // .product__inner
+  &__inner {
+    @include padding-container($maxWidthContainer, $pl, $pr);
+    @include gutters;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  // .product__breadcrumbs
+  &__breadcrumbs {
+  }
+  // .product__heading
+  &__heading {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    @media (min-width: $md5) {
+      font-size: 26px;
+    }
+    @media (min-width: $md4) {
+      font-size: 30px;
+    }
+  }
+  // .product__card
+  &__card {
+    width: 100%;
+    margin-bottom: 30px;
+    // margin-bottom: 50px;
+  }
+  // .product__card-inner
+  &__card-inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+    @media (min-width: $md4) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    @media (min-width: $md2) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    // margin: -25px -20px;
+  }
+  // .product__details
+  &__details {
+    .details-product__item {
+      margin-bottom: 20px;
+    }
+    @media (min-width: $md4) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+      .details-product__item {
+        width: 50%;
+        padding: 0 10px;
+      }
+    }
+    @media (min-width: $md2) {
+      margin: 0 -20px;
+      .details-product__item {
+        width: 50%;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  // .product__gallery
+  &__gallery {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    @media (min-width: $md5) {
+      width: 45%;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 0;
+    }
+    @media (min-width: $md4) {
+      flex-wrap: nowrap;
+      width: 60%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media (min-width: 920px) {
+      width: 50%;
+    }
+    @media (min-width: $md2) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  // .product__thumbs-slider
+  &__thumbs-slider {
+    width: 100%;
+    @media (min-width: $md4) {
+      order: -1;
+      flex-shrink: 0;
+      width: 83px;
+      margin-right: 10px;
+    }
+  }
+  // .product__thumbs-slider-inner
+  &__thumbs-slider-inner {
+    @media (min-width: $md4) {
+      height: 400px;
+    }
+  }
+  // .product__thumbs-slide
+  &__thumbs-slide {
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      /* Чтоб box-shadow inset ыидеть */
+      position: relative;
+      z-index: -1;
+      /* Для alt */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      border: 1px solid transparent;
+    }
+    &.swiper-slide-thumb-active {
+      & img {
+        border: 1px solid $orange;
+      }
+      /* Почему-то не работает в хрома на телефоне */
+      // box-shadow: inset 0 0 0 1px $red;
+    }
+  }
+  // .product__slider
+  &__slider {
+    width: 100%;
+    margin-bottom: 10px;
+    @media (min-width: $md4) {
+      width: unset;
+      margin-bottom: 0;
+    }
+  }
+  // .product__slide
+  &__slide {
+    img {
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  // .product__info
+  &__info {
+    width: 100%;
+    @media (min-width: $md5) {
+      width: 55%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @media (min-width: $md4) {
+      width: 40%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media (min-width: 920px) {
+      width: 50%;
+    }
+    @media (min-width: $md2) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  // .product__info-inner
+  &__info-inner {
+  }
+  // .product__props
+  &__props {
+    margin-bottom: 20px;
+    // margin-bottom: 40px;
+  }
+  // .product__actions
+  &__actions {
+  }
+  // .product__row
+  &__row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 25px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  // .product__price
+  &__price {
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 15px;
+    margin-right: 27px;
+  }
+  // .product__price-item
+  &__price-item {
+    white-space: nowrap;
+    color: $orange;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    @media (min-width: $md2) {
+      font-size: 24px;
+    }
+    &--old-price {
+      font-size: 15px;
+      font-weight: 400;
+      color: $grey-light;
+      text-decoration: line-through;
+      @media (min-width: $md2) {
+        font-size: 17px;
+      }
+    }
+  }
+  // .product__available
+  &__available {
+    font-size: 17px;
+    line-height: 1.3;
+    color: $grey;
+    span {
+      color: $orange;
+    }
+  }
+  // .product__desc
+  &__desc {
+    font-size: 17px;
+    line-height: 1.4;
+    span {
+      display: block;
+      color: $grey;
+      margin: 0 0 12px;
+    }
+    p {
+      margin: 10px 0;
+    }
+  }
+  // .product__counter
+  &__counter {
+    // margin-right: 40px;
+  }
+  // .product__button
+  &__button {
+    width: 100%;
+    order: 1;
+    margin-top: 20px;
+    // width: 275px;
+    // margin-right: 40px;
+  }
+  // .product__share
+  &__share {
+    margin-left: auto;
+    color: $grey;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    &:active {
+      color: darken($color: $grey, $amount: 20%);
+    }
+  }
+}
+
+.details-product {
+  // .details-product__heading
+  &__heading {
+    font-family: $jost;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  // .details-product__text
+  &__text {
+    font-family: $jost;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.4;
+    p {
+      margin: 15px 0;
+    }
+  }
+  // .details-product__table
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  // .details-product__caption
+  &__caption {
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  // .details-product__tbody
+  &__tbody {
+    border: 1px solid $grey-light;
+  }
+  // .details-product__tr
+  &__tr {
+    &:nth-child(odd) {
+      background-color: $grey-light;
+    }
+  }
+  // .details-product__cell
+  &__cell {
+    font-size: 15px;
+    line-height: 1.4;
+    padding: 20px 12px;
+    letter-spacing: 0.02em;
+    &:first-child {
+      width: 60%;
+    }
+    &:nth-child(2) {
+      width: 40%;
+    }
+  }
+}
