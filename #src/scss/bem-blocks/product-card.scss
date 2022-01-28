@@ -1,23 +1,38 @@
 .product-card {
-  // margin-left: auto;
-  // margin-right: auto;
   position: relative;
   // max-width: 289px;
   // height: 384px;
-  padding-top: 15px;
-  padding-bottom: 30px;
+  // padding-top: 15px;
+  // padding-bottom: 30px;
   background-color: $bg-card;
   transition: transform 0.1s linear;
-  &:hover {
-    // transform: translateY(-25px);
+  &:hover,
+  &:focus {
     .product-card__bottom {
       display: block;
+    }
+  }
+  // .product-card__link
+  &__link {
+    position: relative;
+    display: block;
+    background-color: inherit;
+    color: inherit;
+    &:focus {
+      outline: none;
+      & .product-card__bottom {
+        display: block;
+        box-shadow: 0 8px 3px -4px rgba(0, 0, 0, 0.25);
+      }
     }
   }
   // .product-card__top
   &__top {
     position: relative;
     z-index: 0;
+    padding-top: 60px;
+    // padding-top: 15px;
+    padding-bottom: 30px;
   }
   // .product-card__bottom
   &__bottom {
@@ -30,12 +45,12 @@
     padding-bottom: 30px;
     background-color: inherit;
     transform: translateY(calc(100% - 10px));
-    box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 3px -4px rgba(0, 0, 0, 0.25);
   }
 
   // .product-card__inner
   &__inner {
-    // position: relative;
+    position: relative;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -107,7 +122,7 @@
   }
 }
 .counter-card {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   // .counter-card__button
   &__button {
@@ -135,15 +150,26 @@
         content: '\2212';
       }
     }
+    &--transparent {
+      border: 1px solid transparent;
+      &:active {
+        border: 1px dotted $grey-light;
+      }
+    }
   }
   // .counter-card__content
   &__content {
-    padding: 0 26px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    &--with-border {
+      border: 1px solid $orange;
+    }
   }
   // .counter-card__count
   &__count {
-    display: block;
-    text-align: center;
     font-size: 17px;
   }
   // .counter-card__text
@@ -207,52 +233,80 @@
   height: 28px;
   max-width: 55%;
   overflow: hidden;
-  padding: 5px 20px 5px 10px;
+  padding: 5px 25px 5px 10px;
   background-color: $white;
   user-select: none;
+  border-right-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-right-width: 0;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border: solid transparent;
+    right: 0;
+    top: 50%;
+    width: 0;
+    transform: translateY(-50%);
+  }
+  &::before {
+    z-index: 2;
+    border-right-color: $bg-card;
+    border-width: 13px;
+  }
+  &::after {
+    z-index: 1;
+    border-right-color: initial;
+    border-width: 14px;
+  }
   &--new {
     color: $orange;
-    border: 1px solid $orange;
+    border-top-color: $orange;
+    border-bottom-color: $orange;
+    border-left-color: $orange;
+    &::after {
+      border-right-color: $orange;
+    }
   }
   &--hit {
     color: #755fbb;
-    border: 1px solid #755fbb;
+    border-top-color: #755fbb;
+    border-bottom-color: #755fbb;
+    border-left-color: #755fbb;
+    &::after {
+      border-right-color: #755fbb;
+    }
   }
   &--action {
     color: #5fbba3;
-    border: 1px solid #5fbba3;
+    border-top-color: #5fbba3;
+    border-bottom-color: #5fbba3;
+    border-left-color: #5fbba3;
+    &::after {
+      border-right-color: #5fbba3;
+    }
   }
   &--out {
     color: #636b78;
-    border: 1px solid #636b78;
+    border-top-color: #636b78;
+    border-bottom-color: #636b78;
+    border-left-color: #636b78;
+    &::after {
+      border-right-color: #636b78;
+    }
   }
   &--sale {
     color: #c82a2a;
-    border: 1px solid #c82a2a;
+    border-top-color: #c82a2a;
+    border-bottom-color: #c82a2a;
+    border-left-color: #c82a2a;
+    &::after {
+      border-right-color: #c82a2a;
+    }
   }
   &__text {
     font-size: 15px;
     line-height: 1.3;
   }
-  // &::before,
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  // }
-  // &::before {
-  //   z-index: 2;
-  //   top: 2px;
-  //   right: 0;
-  //   border-top: 12px solid transparent;
-  //   border-bottom: 12px solid transparent;
-  //   border-right: 26px solid transparent;
-  // }
-  // &::after {
-  //   z-index: 1;
-  //   top: 0;
-  //   right: 0;
-  //   border-top: 14px solid transparent;
-  //   border-bottom: 14px solid transparent;
-  //   border-right: 28px solid $orange;
-  // }
 }
