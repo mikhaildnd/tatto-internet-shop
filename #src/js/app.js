@@ -14,7 +14,8 @@ import 'nouislider/dist/nouislider.css';
 import Swiper, { Navigation, Pagination, Thumbs, Grid, EffectCreative, Lazy } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/grid';
-// import 'swiper/css/lazy';
+import 'swiper/css/lazy';
+// import 'swiper/css/thumbs';
 
 // webpSupportTest();
 
@@ -32,42 +33,44 @@ const input0 = document.querySelector('.js-input-left');
 const input1 = document.querySelector('.js-input-right');
 const inputs = [input0, input1];
 
-noUiSlider.create(stepsSlider, {
-  start: [0, 200000],
-  connect: true,
-  step: 1000,
-  range: {
-    'min': 0,
-    'max': 200000,
-  },
-  format: {
-    // 'to' the formatted value. Receives a number.
-    to: function (value) {
-      return parseInt(value);
+if (stepsSlider) {
+  noUiSlider.create(stepsSlider, {
+    start: [0, 200000],
+    connect: true,
+    step: 1000,
+    range: {
+      'min': 0,
+      'max': 200000,
     },
-    from: function (value) {
-      return Number(parseInt(value));
+    format: {
+      // 'to' the formatted value. Receives a number.
+      to: function (value) {
+        return parseInt(value);
+      },
+      from: function (value) {
+        return Number(parseInt(value));
+      },
+      // to: function (value) {
+      //     return value + ',-';
+      // },
+      // 'from' the formatted value.
+      // Receives a string, should return a number.
+      // from: function (value) {
+      //     return Number(value.replace(',-', ''));
+      // }
     },
-    // to: function (value) {
-    //     return value + ',-';
-    // },
-    // 'from' the formatted value.
-    // Receives a string, should return a number.
-    // from: function (value) {
-    //     return Number(value.replace(',-', ''));
-    // }
-  },
-});
+  });
 
-stepsSlider.noUiSlider.on('update', function (values, handle) {
-  inputs[handle].value = values[handle];
-});
-input0.addEventListener('change', function () {
-  stepsSlider.noUiSlider.set([this.value, null]);
-});
-input1.addEventListener('change', function () {
-  stepsSlider.noUiSlider.set([null, this.value]);
-});
+  stepsSlider.noUiSlider.on('update', function (values, handle) {
+    inputs[handle].value = values[handle];
+  });
+  input0.addEventListener('change', function () {
+    stepsSlider.noUiSlider.set([this.value, null]);
+  });
+  input1.addEventListener('change', function () {
+    stepsSlider.noUiSlider.set([null, this.value]);
+  });
+}
 //========================================================================================================================================================
 
 //==Инициализация слайдеров пачкой
@@ -269,4 +272,69 @@ ddButtons.forEach((el) => {
 
     el.classList.toggle('open');
   });
+});
+//========================================================================================================================================================
+const filterTrigger = document.querySelector('.products-panel__filter-trigger');
+const catalogFilter = document.querySelector('.catalog__filter');
+const filterClose = document.querySelector('.filter__close-icon');
+
+if (filterTrigger) {
+  filterTrigger.addEventListener('click', () => {
+    catalogFilter.classList.add('open');
+  });
+}
+if (filterClose) {
+  filterClose.addEventListener('click', () => {
+    catalogFilter.classList.remove('open');
+  });
+}
+
+// function _setFinishHandler(el, fn, eventName) {
+//   let handler = function () {
+//     el.removeEventListener(eventName, handler);
+//     fn();
+//   };
+
+//   el.addEventListener(eventName, handler);
+// }
+
+// _setFinishHandler(filterTrigger, hey, 'click');
+
+// function hey() {
+//   console.log('hey');
+// }
+//========================================================================================================================================================
+//!!!реагируют на порядок
+const productThumbSlider = new Swiper('.product-page .product__thumbs-slider-inner', {
+  modules: [Lazy],
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+  spaceBetween: 10,
+  // direction: 'vertical',
+  preloadImages: false,
+  lazy: true,
+  watchSlidesProgress: true,
+  // height: 410,
+  breakpoints: {
+    768: {
+      direction: 'vertical',
+    },
+  },
+});
+
+const productImageSlider = new Swiper('.product-page .product__slider', {
+  modules: [Thumbs, Lazy],
+  slidesPerView: 1,
+  spaceBetween: 50,
+  preloadImages: false,
+  lazy: true,
+  // autoHeight: true,
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
+  thumbs: {
+    swiper: productThumbSlider,
+  },
 });
