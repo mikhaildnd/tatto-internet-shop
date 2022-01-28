@@ -64,6 +64,18 @@ main {
   padding-right: $pr;
 }
 
+/* Visible-hidden class */
+.vis-hid {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
 /* bem-blocks */
 @import 'bem-blocks/buttons';
 @import 'bem-blocks/forms';
@@ -90,3 +102,4 @@ main {
 @import 'footer';
 @import 'index';
 @import 'catalog';
+@import 'product';
