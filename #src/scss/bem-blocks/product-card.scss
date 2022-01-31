@@ -97,12 +97,24 @@
   // .product-card__counter
   &__counter {
   }
-  // .product-card__tip
-  &__tip {
+  // .product-card__tips
+  &__tips {
     z-index: 1;
     position: absolute;
-    top: 15px;
-    left: 30px;
+    display: grid;
+    grid-template-columns: min-content;
+    grid-template-rows: repeat(auto-fit, minmax(28px, min-content));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px 30px;
+    // top: 15px;
+    // left: 30px;
+  }
+  // .product-card__tips-item
+  &__tips-item {
+    // max-width: 55%;
   }
   // .product-card__favorites
   &__favorites {
@@ -226,47 +238,38 @@
   }
 }
 .tip {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 28px;
-  max-width: 55%;
   overflow: hidden;
   padding: 5px 25px 5px 10px;
-  background-color: $white;
+  background-color: transparent;
   user-select: none;
   border-right-color: transparent;
   border-style: solid;
   border-width: 1px;
   border-right-width: 0;
-  &::before,
-  &::after {
+  &::before {
     content: '';
     position: absolute;
-    border: solid transparent;
-    right: 0;
     top: 50%;
-    width: 0;
-    transform: translateY(-50%);
-  }
-  &::before {
-    z-index: 2;
-    border-right-color: $bg-card;
-    border-width: 13px;
-  }
-  &::after {
-    z-index: 1;
-    border-right-color: initial;
-    border-width: 14px;
+    right: -19px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    transform: translateY(-50%) rotate(45deg);
+    border: 1px solid transparent;
+    background-color: inherit;
   }
   &--new {
     color: $orange;
     border-top-color: $orange;
     border-bottom-color: $orange;
     border-left-color: $orange;
-    &::after {
-      border-right-color: $orange;
+    &::before {
+      border: 1px solid $orange;
     }
   }
   &--hit {
@@ -274,8 +277,8 @@
     border-top-color: #755fbb;
     border-bottom-color: #755fbb;
     border-left-color: #755fbb;
-    &::after {
-      border-right-color: #755fbb;
+    &::before {
+      border: 1px solid #755fbb;
     }
   }
   &--action {
@@ -283,8 +286,9 @@
     border-top-color: #5fbba3;
     border-bottom-color: #5fbba3;
     border-left-color: #5fbba3;
-    &::after {
+    &::before {
       border-right-color: #5fbba3;
+      border: 1px solid #5fbba3;
     }
   }
   &--out {
@@ -292,8 +296,8 @@
     border-top-color: #636b78;
     border-bottom-color: #636b78;
     border-left-color: #636b78;
-    &::after {
-      border-right-color: #636b78;
+    &::before {
+      border: 1px solid #636b78;
     }
   }
   &--sale {
@@ -301,8 +305,8 @@
     border-top-color: #c82a2a;
     border-bottom-color: #c82a2a;
     border-left-color: #c82a2a;
-    &::after {
-      border-right-color: #c82a2a;
+    &::before {
+      border: 1px solid #c82a2a;
     }
   }
   &__text {
