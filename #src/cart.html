@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Cart" })
+  <body>
+    <div class="wrapper">
+      @@include('_header.html',{})
+      <main class="cart-page">
+        <section class="cart">
+          <div class="cart__inner">
+            <div class="cart__breadcrumbs breadcrumbs">
+              <div class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Главная</a>
+              </div>
+              <div class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Каталог</a>
+              </div>
+              <div class="breadcrumbs__item">Корзина</div>
+            </div>
+            <h1 class="cart__heading">Корзина</h1>
+            <div class="cart__list">
+              <div class="cart__list-item cart-item">
+                <div class="cart-item__info">
+                  <div class="cart-item__image">
+                    <picture>
+                      <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
+                      <img src="img/cart/good-1-sm.jpg" alt="good-n" />
+                    </picture>
+                  </div>
+                  <div class="cart-item__good-info">
+                    <div class="cart-item__title">Перчатки Перчатки Нитровиниловые</div>
+                    <div class="cart-item__price">Цена: 9 999 999 ₽</div>
+                  </div>
+                </div>
+
+                <div class="cart-item__counter counter-card">
+                  <button
+                    class="counter-card__button counter-card__button--transparent counter-card__button--decr"
+                  ></button>
+                  <div class="counter-card__content counter-card__content--with-border">
+                    <span class="counter-card__count">999</span>
+                  </div>
+                  <button
+                    class="counter-card__button counter-card__button--transparent counter-card__button--incr"
+                  ></button>
+                </div>
+                <div class="cart-item__total">Итого: 9 999 999 ₽</div>
+                <div class="cart-item__close-icon"></div>
+              </div>
+              <div class="cart__list-item cart-item">
+                <div class="cart-item__info">
+                  <div class="cart-item__image">
+                    <picture>
+                      <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
+                      <img src="img/cart/good-1-sm.jpg" alt="good-n" />
+                    </picture>
+                  </div>
+                  <div class="cart-item__good-info">
+                    <div class="cart-item__title">Перчатки Перчатки Нитровиниловые</div>
+                    <div class="cart-item__price">Цена: 20₽</div>
+                  </div>
+                </div>
+
+                <div class="cart-item__counter counter-card">
+                  <button
+                    class="counter-card__button counter-card__button--transparent counter-card__button--decr"
+                  ></button>
+                  <div class="counter-card__content counter-card__content--with-border">
+                    <span class="counter-card__count">999</span>
+                  </div>
+                  <button
+                    class="counter-card__button counter-card__button--transparent counter-card__button--incr"
+                  ></button>
+                </div>
+                <div class="cart-item__total">Итого: 9 999 999₽</div>
+                <div class="cart-item__close-icon"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('_footer.html',{})
+    </div>
+    @@include('_popup.html',{}) @@include('_js.html',{})
+  </body>
+</html>
+
+<!-- <div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+  </div>
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <div class="swiper-scrollbar"></div>
+</div> -->
