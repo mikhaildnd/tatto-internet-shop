@@ -7,7 +7,7 @@
   line-height: 1.5;
   text-align: center;
   user-select: none;
-  transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.1s linear, color 0.1s linear;
   border: 2px solid $orange;
   &--sm {
     padding: 0.4em 0.9em;
@@ -75,6 +75,19 @@
           border-left: 20px solid $orange;
         }
       }
+    }
+  }
+  &--transparent {
+    border: none;
+    color: $orange;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+      color: darken($color: $orange, $amount: 15%);
+    }
+    &:active,
+    &:focus {
+      color: $orange-dark;
     }
   }
   &__corner {
