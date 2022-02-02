@@ -2,12 +2,12 @@
 
 //Pagination
 .slider-pagination {
-  display: flex;
-  gap: 15px; //todo переделать на марджины отриц. и перенсти модифик. по своим секциям
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 15px;
   &--hero {
     @media (min-width: $md2) {
-      flex-direction: column;
-      align-items: center;
+      grid-auto-flow: row;
     }
   }
   &--brands {
@@ -19,15 +19,6 @@
       bottom: -56px;
     }
   }
-  // &--feedback {
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  //   @media (min-width: $md1) {
-  //     bottom: -56px;
-  //   }
-  // }
 
   .swiper-pagination-bullet {
     position: relative;
@@ -69,9 +60,6 @@
   }
   &:active {
     border: 1px solid $orange-dark;
-    // &::before {
-    //   border-left: 10px solid $orange-dark;
-    // }
   }
   &:active.swiper-button-disabled {
     border: 1px solid $orange;
