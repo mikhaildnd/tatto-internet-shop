@@ -53,3 +53,8 @@ gulpfile.js
 
 # myFolders
 tattoo-shop/
+tattoo-shop/catalog.html
+tattoo-shop/index.html
+tattoo-shop/css/style.css
+tattoo-shop/css/style.min.css
+tattoo-shop/js/app.min.js
