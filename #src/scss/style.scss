@@ -97,9 +97,10 @@ main {
 /* page-blocks */
 @import 'page-blocks/products-panel';
 
-/* page blocks */
+/* pages */
 @import 'header';
 @import 'footer';
 @import 'index';
 @import 'catalog';
 @import 'product';
+@import '404';
