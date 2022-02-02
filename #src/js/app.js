@@ -85,133 +85,115 @@ function initSwiperSliders(selector, options = {}) {
 }
 
 // //*Слайдер внутри карточки товара
-// initSwiperSliders('.gallery-card__slider', {
-//   modules: [Pagination, Lazy],
-//   slidesPerView: 1,
-//   preloadImages: false,
-//   lazy: true,
-//   pagination: {
-//     el: '.gallery-card__pagination',
-//     clickable: true,
-//   },
-//   // autoplay: {
-//   //   delay: 3000,
-//   // },
-// });
+initSwiperSliders('.gallery-card__slider', {
+  modules: [Pagination, Lazy],
+  slidesPerView: 1,
+  preloadImages: false,
+  lazy: true,
+  pagination: {
+    el: '.gallery-card__pagination',
+    clickable: true,
+  },
+});
 //========================================================================================================================================================
+const categoriesListSlider = new Swiper('.product-offers__categories', {
+  slidesPerView: 1.5,
+  freeMode: true,
+  watchSlidesProgress: true,
+  spaceBetween: 10,
+  breakpoints: {
+    480: {
+      slidesPerView: 2.3,
+    },
+    576: {
+      slidesPerView: 3.5,
+    },
+    768: {
+      slidesPerView: 4,
+    },
+  },
+});
 
-// const categoriesListSlider = new Swiper('.product-offers__categories', {
-//   slidesPerView: 1.5,
-//   freeMode: true,
-//   watchSlidesProgress: true,
-//   spaceBetween: 10,
-//   breakpoints: {
-//     480: {
-//       slidesPerView: 2.3,
-//     },
-//     576: {
-//       slidesPerView: 3.5,
-//     },
-//     768: {
-//       slidesPerView: 4,
-//     },
-//   },
-// });
+const productsListSlider = new Swiper('.main-page .product-offers__products', {
+  modules: [Thumbs],
+  slidesPerView: 1,
+  spaceBetween: 150,
+  autoHeight: true,
+  thumbs: {
+    swiper: categoriesListSlider,
+  },
+});
 
-// const productsListSlider = new Swiper('.main-page .product-offers__products', {
-//   modules: [Thumbs],
-//   slidesPerView: 1,
-//   spaceBetween: 150,
-//   autoHeight: true,
-//   thumbs: {
-//     swiper: categoriesListSlider,
-//   },
-// });
+const feedbackSlider = new Swiper('.feedback__slider', {
+  modules: [EffectCreative, Navigation, Pagination],
+  effect: 'creative',
+  creativeEffect: {
+    limitProgress: 5,
+    perspective: false,
+    prev: {
+      translate: ['-100%', 0, 0],
+      opacity: 0.7,
+      scale: 0.85,
+    },
+    next: {
+      opacity: 0.7,
+      scale: 0.85,
+      translate: ['100%', 0, 0],
+    },
+  },
+  slidesPerView: 1,
+  initialSlide: 1,
+  grabCursor: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.feedback__slider .slider-pagination',
+    clickable: true,
+  },
+});
 
-// const feedbackSlider = new Swiper('.feedback__slider', {
-//   modules: [EffectCreative, Navigation, Pagination],
-//   effect: 'creative',
-//   creativeEffect: {
-//     limitProgress: 5,
-//     // progressMultipler: 2,
-//     perspective: false,
-//     prev: {
-//       translate: ['-100%', 0, 0],
+const heroSlider = new Swiper('.hero__slider', {
+  modules: [Navigation, Pagination],
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.slider-pagination',
+    clickable: true,
+  },
+});
 
-//       // translate: (string | number)[];
-//       // Array with rotate X, Y and Z values (in deg)
-//       // rotate?: number[];
-//       opacity: 0.7,
-//       scale: 0.85,
-//       // shadow: true,
-//       // Transform origin, e.g. `left bottom`
-//       // origin?: string;
-//     },
-//     next: {
-//       opacity: 0.7,
-//       scale: 0.85,
-//       translate: ['100%', 0, 0],
-//     },
-//   },
-//   slidesPerView: 1,
-//   initialSlide: 1,
-//   grabCursor: true,
-//   // autoHeight: true,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   pagination: {
-//     el: '.feedback__slider .slider-pagination',
-//     clickable: true,
-//   },
-// });
-
-// const heroSlider = new Swiper('.hero__slider', {
-//   modules: [Navigation, Pagination],
-//   slidesPerView: 1,
-//   // autoplay: {
-//   //   delay: 2500,
-//   // },
-//   // direction: 'vertical',
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   pagination: {
-//     el: '.slider-pagination',
-//     clickable: true,
-//   },
-// });
-
-// const brandsSlider = new Swiper('.brands__slider .swiper', {
-//   modules: [Navigation, Pagination, Grid],
-//   slidesPerView: 3,
-//   spaceBetween: 15,
-//   grid: {
-//     rows: 2,
-//   },
-//   breakpoints: {
-//     768: {
-//       spaceBetween: 20,
-//     },
-//     980: {
-//       slidesPerView: 4,
-//     },
-//     1256: {
-//       slidesPerView: 5,
-//     },
-//   },
-//   navigation: {
-//     nextEl: '.brands__slider .swiper-button-next',
-//     prevEl: '.brands__slider .swiper-button-prev',
-//   },
-//   pagination: {
-//     // el: '.swiper-pagination',
-//     el: '.brands__slider .slider-pagination',
-//     clickable: true,
-//   },
-// });
+const brandsSlider = new Swiper('.brands__slider .swiper', {
+  modules: [Navigation, Pagination, Grid],
+  slidesPerView: 3,
+  spaceBetween: 15,
+  grid: {
+    rows: 2,
+  },
+  breakpoints: {
+    768: {
+      spaceBetween: 20,
+    },
+    980: {
+      slidesPerView: 4,
+    },
+    1256: {
+      slidesPerView: 5,
+    },
+  },
+  navigation: {
+    nextEl: '.brands__slider .swiper-button-next',
+    prevEl: '.brands__slider .swiper-button-prev',
+  },
+  pagination: {
+    el: '.brands__slider .slider-pagination',
+    clickable: true,
+  },
+});
 
 const catalogBtnMobile = document.querySelector('.header-nav__item--arrow button');
 const catalogListMobile = document.querySelector('.header-nav__sub-list');
@@ -288,21 +270,6 @@ if (filterClose) {
     catalogFilter.classList.remove('open');
   });
 }
-
-// function _setFinishHandler(el, fn, eventName) {
-//   let handler = function () {
-//     el.removeEventListener(eventName, handler);
-//     fn();
-//   };
-
-//   el.addEventListener(eventName, handler);
-// }
-
-// _setFinishHandler(filterTrigger, hey, 'click');
-
-// function hey() {
-//   console.log('hey');
-// }
 //========================================================================================================================================================
 //!!!реагируют на порядок
 const productThumbSlider = new Swiper('.product-page .product__thumbs-slider-inner', {
@@ -311,7 +278,6 @@ const productThumbSlider = new Swiper('.product-page .product__thumbs-slider-inn
   freeMode: true,
   watchSlidesProgress: true,
   spaceBetween: 10,
-  // direction: 'vertical',
   preloadImages: false,
   lazy: true,
   watchSlidesProgress: true,
@@ -338,3 +304,57 @@ const productImageSlider = new Swiper('.product-page .product__slider', {
     swiper: productThumbSlider,
   },
 });
+//========================================================================================================================================================
+const relatedProductsSlider = new Swiper(
+  '.related-products__slider--related .related-products__slider-inner',
+  {
+    modules: [Navigation, Pagination],
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    // slidesPerGroupAuto: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.related-products__slider--related .swiper-button-next',
+      prevEl: '.related-products__slider--related .swiper-button-prev',
+    },
+    pagination: {
+      el: '.related-products__slider--related .slider-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      1024: {
+        slidesPerGroup: 3,
+      },
+      1256: {
+        slidesPerGroup: 4,
+      },
+    },
+  }
+);
+
+const similarProductsSlider = new Swiper(
+  '.related-products__slider--similar .related-products__slider-inner',
+  {
+    modules: [Navigation, Pagination],
+    slidesPerView: 'auto',
+    slidesPerGroup: 1,
+    // slidesPerGroupAuto: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.related-products__slider--similar .swiper-button-next',
+      prevEl: '.related-products__slider--similar .swiper-button-prev',
+    },
+    pagination: {
+      el: '.related-products__slider--similar .slider-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      1024: {
+        slidesPerGroup: 3,
+      },
+      1256: {
+        slidesPerGroup: 4,
+      },
+    },
+  }
+);

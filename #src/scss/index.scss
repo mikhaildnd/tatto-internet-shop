@@ -361,7 +361,6 @@
   // .catalog-grid__list-item
   &__list-item {
     background-color: #f5f5f5;
-    overflow: hidden;
     transition: box-shadow 0.2s linear;
     &--sets {
       grid-area: sets;
@@ -415,6 +414,9 @@
     }
     &:focus-visible {
       color: lighten($color: $black, $amount: 25%);
+      &::after {
+        box-shadow: 0 0 15px 3px #ddd;
+      }
     }
   }
   // .item-catalog__heading
