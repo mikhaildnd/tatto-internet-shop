@@ -4,11 +4,30 @@
   }
   // .form__label
   &__label {
+    display: block;
     font-size: 17px;
     line-height: 1.4;
   }
   // .form__group-fields
   &__group-fields {
+    &--num-hide-arrows {
+      /* Chrome */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+      /* Firefox */
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+      input[type='number']:hover,
+      input[type='number']:focus {
+        -moz-appearance: number-input;
+      }
+    }
   }
 }
 .field {
