@@ -132,7 +132,7 @@ export const styles = () => {
       .pipe(
         autoprefixer({
           grid: true,
-          overrideBrowserslist: ['last 2 versions'],
+          overrideBrowserslist: ['last 2 versions', 'ie >= 11'],
           cascade: true,
         })
       )
