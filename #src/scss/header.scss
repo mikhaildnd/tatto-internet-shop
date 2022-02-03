@@ -205,8 +205,8 @@
     }
   }
 
-  // .header__cart
-  &__cart {
+  // .header__nav-bar
+  &__nav-bar {
     display: none;
     @media (min-width: $md4) {
       grid-area: cart;
