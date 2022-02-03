@@ -274,7 +274,7 @@ if (filterClose) {
 //!!!реагируют на порядок
 const productThumbSlider = new Swiper('.product-page .product__thumbs-slider-inner', {
   modules: [Lazy],
-  slidesPerView: 4,
+  slidesPerView: 'auto',
   freeMode: true,
   watchSlidesProgress: true,
   spaceBetween: 10,
@@ -284,6 +284,7 @@ const productThumbSlider = new Swiper('.product-page .product__thumbs-slider-inn
   // height: 410,
   breakpoints: {
     768: {
+      // slidesPerView: 'auto',
       direction: 'vertical',
     },
   },
