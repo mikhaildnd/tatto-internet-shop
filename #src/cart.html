@@ -22,59 +22,261 @@
                 <div class="cart-item__info">
                   <div class="cart-item__image">
                     <picture>
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/cart/good-1-md.webp"
+                        type="image/webp"
+                      />
+                      <source media="(min-width: 768px)" srcset="img/cart/good-1-md.jpg" />
                       <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
                       <img src="img/cart/good-1-sm.jpg" alt="good-n" />
                     </picture>
                   </div>
                   <div class="cart-item__good-info">
-                    <div class="cart-item__title">Перчатки Перчатки Нитровиниловые</div>
-                    <div class="cart-item__price">Цена: 9 999 999 ₽</div>
+                    <div class="cart-item__price">
+                      <div class="cart-item__price-item">15 344 ₽</div>
+                      <div class="cart-item__price-item cart-item__price-item--unit-price">
+                        2 x 7 672 ₽
+                      </div>
+                    </div>
+                    <p class="cart-item__name">Перчатки Перчатки Нитровиниловые</p>
                   </div>
                 </div>
-
-                <div class="cart-item__counter counter-card">
+                <div class="cart-item__counter counter">
                   <button
-                    class="counter-card__button counter-card__button--transparent counter-card__button--decr"
+                    class="counter__button counter__button--transparent counter__button--decr"
                   ></button>
-                  <div class="counter-card__content counter-card__content--with-border">
-                    <span class="counter-card__count">999</span>
-                  </div>
+                  <input
+                    class="counter__input counter__input--with-border"
+                    autocomplete="off"
+                    maxlength="2"
+                    value="1"
+                  />
                   <button
-                    class="counter-card__button counter-card__button--transparent counter-card__button--incr"
+                    class="counter__button counter__button--transparent counter__button--incr"
                   ></button>
                 </div>
-                <div class="cart-item__total">Итого: 9 999 999 ₽</div>
-                <div class="cart-item__close-icon"></div>
+                <div class="cart-item__bar">
+                  <button
+                    class="cart-item__bar-button cart-item__bar-button--favorite"
+                    aria-label="Удалить товар"
+                  >
+                    <span></span>
+                  </button>
+                  <button
+                    class="cart-item__bar-button cart-item__bar-button--trash"
+                    aria-label="Добавить в избранное"
+                  >
+                    <span></span>
+                  </button>
+                </div>
               </div>
               <div class="cart__list-item cart-item">
                 <div class="cart-item__info">
                   <div class="cart-item__image">
                     <picture>
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/cart/good-1-md.webp"
+                        type="image/webp"
+                      />
+                      <source media="(min-width: 768px)" srcset="img/cart/good-1-md.jpg" />
                       <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
                       <img src="img/cart/good-1-sm.jpg" alt="good-n" />
                     </picture>
                   </div>
                   <div class="cart-item__good-info">
-                    <div class="cart-item__title">Перчатки Перчатки Нитровиниловые</div>
-                    <div class="cart-item__price">Цена: 20₽</div>
+                    <div class="cart-item__price">
+                      <div class="cart-item__price-item">15 344 ₽</div>
+                      <div class="cart-item__price-item cart-item__price-item--unit-price">
+                        2 x 7 672 ₽
+                      </div>
+                    </div>
+                    <p class="cart-item__name">Перчатки Перчатки Нитровиниловые</p>
                   </div>
                 </div>
-
-                <div class="cart-item__counter counter-card">
+                <div class="cart-item__counter counter">
                   <button
-                    class="counter-card__button counter-card__button--transparent counter-card__button--decr"
+                    class="counter__button counter__button--transparent counter__button--decr"
                   ></button>
-                  <div class="counter-card__content counter-card__content--with-border">
-                    <span class="counter-card__count">999</span>
-                  </div>
+                  <input
+                    class="counter__input counter__input--with-border"
+                    autocomplete="off"
+                    maxlength="2"
+                    value="1"
+                  />
                   <button
-                    class="counter-card__button counter-card__button--transparent counter-card__button--incr"
+                    class="counter__button counter__button--transparent counter__button--incr"
                   ></button>
                 </div>
-                <div class="cart-item__total">Итого: 9 999 999₽</div>
-                <div class="cart-item__close-icon"></div>
+                <div class="cart-item__bar">
+                  <button
+                    class="cart-item__bar-button cart-item__bar-button--favorite"
+                    aria-label="Удалить товар"
+                  >
+                    <span></span>
+                  </button>
+                  <button
+                    class="cart-item__bar-button cart-item__bar-button--trash"
+                    aria-label="Добавить в избранное"
+                  >
+                    <span></span>
+                  </button>
+                </div>
               </div>
             </div>
+            <form id="checkout-form" class="cart__form form-cart form">
+              <h2 class="form-cart__heading">Ваши данные</h2>
+              <div class="form-cart__block form-cart__block--grid form-cart__block--recipient">
+                <div class="form__group">
+                  <label class="form__label" for="surname">Фамилия</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="text"
+                      name="surname"
+                      value=""
+                      id="surname"
+                      required=""
+                      placeholder="Печальный"
+                    />
+                  </div>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="name">Имя</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="text"
+                      name="name"
+                      value=""
+                      id="name"
+                      required=""
+                      placeholder="Михаил"
+                    />
+                  </div>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="phone">Телефон</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="tel"
+                      name="phone"
+                      value=""
+                      id="phone"
+                      required=""
+                      placeholder="+7 953 340 51-65"
+                      pattern="[0-9]*"
+                    />
+                  </div>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="email">Эл. почта</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="email"
+                      name="email"
+                      value=""
+                      id="email"
+                      required=""
+                      placeholder="tatoo@gmail.ru"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-cart__block form-cart__block--grid form-cart__block--address">
+                <div class="form-cart__group form-cart__group--city form__group">
+                  <label class="form__label" for="city">Город</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="text"
+                      name="city"
+                      value=""
+                      id="city"
+                      required=""
+                      placeholder="Санкт-Петербург"
+                    />
+                  </div>
+                </div>
+                <div class="form-cart__group form-cart__group--street form__group">
+                  <label class="form__label" for="street">Улица, дом</label>
+                  <div class="form__group-fields">
+                    <input
+                      class="field field--full-width"
+                      type="text"
+                      name="street"
+                      value=""
+                      id="street"
+                      required=""
+                      placeholder="ул. Парашютная, д. 33"
+                    />
+                  </div>
+                </div>
+                <div class="form-cart__group form-cart__group--apartment form__group">
+                  <label class="form__label" for="apartment">Квартира/Офис</label>
+                  <div class="form__group-fields form__group-fields--num-hide-arrows">
+                    <input
+                      class="field field--full-width"
+                      type="number"
+                      name="apartment"
+                      value=""
+                      id="apartment"
+                      required=""
+                      placeholder="63"
+                      min="1"
+                    />
+                  </div>
+                </div>
+                <div class="form-cart__group form-cart__group--entrance form__group">
+                  <label class="form__label" for="entrance">Подъезд</label>
+                  <div class="form__group-fields form__group-fields--num-hide-arrows">
+                    <input
+                      class="field field--full-width"
+                      type="number"
+                      name="entrance"
+                      value=""
+                      id="entrance"
+                      required=""
+                      placeholder="1"
+                      min="1"
+                    />
+                  </div>
+                </div>
+                <div class="form-cart__group form-cart__group--floor form__group">
+                  <label class="form__label" for="floor">Этаж</label>
+                  <div class="form__group-fields form__group-fields--num-hide-arrows">
+                    <input
+                      class="field field--full-width"
+                      type="number"
+                      name="floor"
+                      value=""
+                      id="floor"
+                      required=""
+                      placeholder="5"
+                      min="1"
+                    />
+                  </div>
+                </div>
+                <div class="form-cart__group form-cart__group--intercom form__group">
+                  <label class="form__label" for="intercom">Домофон</label>
+                  <div class="form__group-fields form__group-fields--num-hide-arrows">
+                    <input
+                      class="field field--full-width"
+                      type="number"
+                      name="intercom"
+                      value=""
+                      id="intercom"
+                      required=""
+                      placeholder="63"
+                      min="1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </section>
       </main>
