@@ -9,6 +9,9 @@
   user-select: none;
   transition: background-color 0.1s linear, color 0.1s linear;
   border: 2px solid $orange;
+  @media (min-width: $md2) {
+    cursor: pointer;
+  }
   &--sm {
     padding: 0.4em 0.9em;
   }
@@ -102,7 +105,7 @@
       content: '';
       position: absolute;
       top: 50%;
-      transition: border-color 0.2s linear;
+      transition: border-color 0.1s linear;
     }
     &::before {
       z-index: 2;
