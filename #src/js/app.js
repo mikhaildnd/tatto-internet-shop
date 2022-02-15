@@ -359,3 +359,46 @@ const similarProductsSlider = new Swiper(
     },
   }
 );
+//?====Для карточек товара. Накидывает/удаляет класс при mouseover/mouseout через делегирование
+// const container = document.querySelector('.catalog__products-container');
+// let currentElem = null;
+
+// container.addEventListener('mouseover', addHover);
+
+// function addHover(e) {
+//   if (currentElem) return;
+//   // console.log(this);
+//   // console.log('enter');
+//   let target = e.target.closest('.product-card');
+
+//   if (!target) return;
+
+//   if (!this.contains(target)) return;
+
+//   currentElem = target;
+//   // console.log(currentElem);
+
+//   target.classList.add('hover');
+
+//   target.addEventListener('mouseout', removeHover);
+// }
+
+// function removeHover(e) {
+//   // console.log('leave');
+//   if (!currentElem) return;
+
+//   let relatedTarget = e.relatedTarget;
+
+//   while (relatedTarget) {
+//     // поднимаемся по дереву элементов и проверяем – внутри ли мы currentElem или нет
+//     // если да, то это переход внутри элемента – игнорируем
+//     if (relatedTarget == currentElem) return;
+
+//     relatedTarget = relatedTarget.parentNode;
+//   }
+
+//   // мы действительно покинули элемент
+//   this.removeEventListener('mouseout', removeHover);
+//   this.classList.remove('hover');
+//   currentElem = null;
+// }
