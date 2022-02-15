@@ -1,5 +1,15 @@
 .footer {
   background-color: $bg-black;
+  // .footer__content
+  &__content {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @media (min-width: $md2) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
   // .footer__content-inner
   &__content-inner {
     @include padding-container($maxWidthContainer, $pl, $pr);
@@ -12,36 +22,18 @@
         'contacts nav';
     }
   }
-  // .footer__bottom-inner
-  &__bottom-inner {
-    @include padding-container($maxWidthContainer, $pl, $pr);
-  }
-  // .footer__content
-  &__content {
-    position: relative;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    @media (min-width: $md4) {
-      padding-top: 70px;
-      padding-bottom: 70px;
-    }
-    // @media (min-width: $md2) {
-    //   padding-top: 120px;
-    //   padding-bottom: 120px;
-    // }
-  }
   // .footer__logo
   &__logo {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     @media (min-width: $md4) {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     @media (min-width: $md2) {
       grid-area: logo;
       justify-content: flex-start;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
     .logo__img {
       width: 186px;
@@ -54,8 +46,13 @@
   }
   // .footer__nav
   &__nav {
+    margin-bottom: 40px;
+    @media (min-width: $md4) {
+      margin-bottom: 60px;
+    }
     @media (min-width: $md2) {
       grid-area: nav;
+      margin-bottom: 0;
     }
   }
   // .footer__contacts
@@ -65,14 +62,8 @@
     }
     .contacts__item {
       margin-bottom: 20px;
-      &--work-schedule {
-        margin-bottom: 30px;
-        .contacts__text {
-          font-size: 16px;
-          @media (min-width: $md7) {
-            font-size: 17px;
-          }
-        }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
     .socials__icon {
@@ -88,6 +79,7 @@
   }
   // .footer__bottom-inner
   &__bottom-inner {
+    @include padding-container($maxWidthContainer, $pl, $pr);
     display: grid;
     row-gap: 15px;
     @media (min-width: $md3) {
@@ -111,12 +103,10 @@
       &:active {
         color: darken($color: $white, $amount: 25%);
       }
-      @media (min-width: $md4) {
-        &:hover,
-        &:focus {
-          color: $white;
-          text-decoration: underline;
-        }
+      &:hover,
+      &:focus {
+        color: $white;
+        text-decoration: underline;
       }
     }
   }
@@ -169,7 +159,7 @@
     font-family: $montserrat;
     font-weight: normal;
     line-height: 1.3;
-    font-size: 15px;
+    font-size: 14px;
     color: $text-white;
   }
   // .footer-nav__sublist-item
@@ -182,7 +172,7 @@
       color: inherit;
       &:hover,
       &:focus {
-        color: darken($color: $text-white, $amount: 15%);
+        color: darken($color: $white, $amount: 15%);
         text-decoration: underline;
       }
     }
