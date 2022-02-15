@@ -30,6 +30,9 @@
       column-gap: 20px;
       align-items: start;
     }
+    @media (min-width: $md1) {
+      column-gap: 40px;
+    }
   }
   // .cart__main-content
   &__main-content {
