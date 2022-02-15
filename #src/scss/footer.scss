@@ -1,19 +1,23 @@
 .footer {
   background-color: $bg-black;
-  // .footer__inner
-  &__inner {
+  // .footer__content-inner
+  &__content-inner {
     @include padding-container($maxWidthContainer, $pl, $pr);
     @media (min-width: $md2) {
       display: grid;
-      grid-template-columns: 7fr 5fr;
+      grid-template-columns: 4fr 8fr;
+      grid-template-rows: min-content 1fr;
       grid-template-areas:
-        'main info'
-        'bottom bottom';
-      row-gap: 20px;
+        'logo nav'
+        'contacts nav';
     }
   }
-  // .footer__group
-  &__group {
+  // .footer__bottom-inner
+  &__bottom-inner {
+    @include padding-container($maxWidthContainer, $pl, $pr);
+  }
+  // .footer__content
+  &__content {
     position: relative;
     padding-top: 60px;
     padding-bottom: 60px;
@@ -25,131 +29,39 @@
     //   padding-top: 120px;
     //   padding-bottom: 120px;
     // }
-    &--main {
-      display: grid;
-      grid-template-columns: min-content;
-      justify-content: center;
-      row-gap: 40px;
-      @media (min-width: 640px) {
-        grid-template-columns: min-content 1fr;
-        justify-content: start;
-        column-gap: 40px;
-      }
-      @media (min-width: $md4) {
-        column-gap: 80px;
-      }
-      @media (min-width: $md2) {
-        grid-area: main;
-        //   width: calc(100% / 12 * 7);
-      }
-    }
-    &--info {
-      @media (min-width: $md2) {
-        grid-area: info;
-        // width: calc(100% / 12 * 5);
-      }
-    }
-    &--separator {
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background-color: $orange-dark;
-        margin-left: -$pl;
-        margin-right: -$pr;
-      }
-      @media (min-width: $md2) {
-        &::after {
-          left: unset;
-          width: 1px;
-          height: 100%;
-          margin-left: 0;
-          margin-right: 0;
-        }
-      }
-    }
-  }
-  // .footer__bottom
-  &__bottom {
-    display: grid;
-    row-gap: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    @media (min-width: $md2) {
-      grid-area: bottom;
-      justify-self: center;
-    }
-  }
-  // .footer__bottom-links
-  &__bottom-links {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 15px 30px;
-    a {
-      font-size: 14px;
-      line-height: 1.3;
-      color: darken($color: $white, $amount: 40%);
-      &:hover,
-      &:focus {
-        color: $white;
-        text-decoration: underline;
-      }
-    }
-  }
-  // .footer__copyright
-  &__copyright {
-    justify-self: center;
-    color: darken($color: $white, $amount: 40%);
   }
   // .footer__logo
   &__logo {
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
+    @media (min-width: $md4) {
+      margin-bottom: 40px;
+    }
+    @media (min-width: $md2) {
+      grid-area: logo;
+      justify-content: flex-start;
+      margin-bottom: 60px;
+    }
     .logo__img {
       width: 186px;
       height: 67px;
-      // width: 266px;
-      // height: 96px;
-      // @media (min-width: $md2) {
-      //   width: 186px;
-      //   height: 67px;
-      // }
+      @media (min-width: $md2) {
+        width: 226px;
+        height: 75px;
+      }
     }
   }
   // .footer__nav
   &__nav {
-    justify-self: center;
     @media (min-width: $md2) {
-      justify-self: start;
-    }
-    .page-nav__list {
-      display: grid;
-      grid-template-columns: repeat(2, min-content);
-      row-gap: 28px;
-      column-gap: 60px;
-      @media (min-width: $md4) {
-        grid-auto-columns: min-content;
-        grid-template-rows: repeat(3, 1fr);
-        grid-auto-flow: column;
-      }
-    }
-    .page-nav__link {
-      font-family: $montserrat;
-      font-size: 17px;
-      font-weight: 500;
-      line-height: 1.35;
+      grid-area: nav;
     }
   }
   // .footer__contacts
   &__contacts {
     @media (min-width: $md2) {
-      margin-left: 50px;
-    }
-    @media (min-width: $md1) {
-      margin-left: 106px;
+      grid-area: contacts;
     }
     .contacts__item {
       margin-bottom: 20px;
@@ -161,6 +73,117 @@
             font-size: 17px;
           }
         }
+      }
+    }
+    .socials__icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  // .footer__bottom
+  &__bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #151515;
+  }
+  // .footer__bottom-inner
+  &__bottom-inner {
+    display: grid;
+    row-gap: 15px;
+    @media (min-width: $md3) {
+      grid-auto-flow: column;
+      justify-content: space-between;
+    }
+  }
+  // .footer__bottom-links
+  &__bottom-links {
+    display: grid;
+    @media (min-width: $md4) {
+      grid-auto-flow: column;
+      gap: 15px 30px;
+      justify-content: center;
+    }
+    a {
+      position: relative;
+      font-size: 14px;
+      line-height: 1.3;
+      color: darken($color: $white, $amount: 40%);
+      &:active {
+        color: darken($color: $white, $amount: 25%);
+      }
+      @media (min-width: $md4) {
+        &:hover,
+        &:focus {
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  // .footer__copyright
+  &__copyright {
+    color: darken($color: $white, $amount: 40%);
+    @media (min-width: $md4) {
+      justify-self: center;
+    }
+  }
+}
+
+.footer-nav {
+  // .footer-nav__list
+  &__list {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    @media (min-width: $md5) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $md4) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 30px;
+    }
+  }
+  // .footer-nav__item
+  &__item {
+  }
+  // .footer-nav__heading
+  &__heading {
+    font-family: $montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: $white;
+    margin-bottom: 10px;
+  }
+  // .footer-nav__link
+  &__link {
+    color: inherit;
+    &:hover,
+    &:focus {
+      color: darken($color: $white, $amount: 15%);
+      text-decoration: underline;
+    }
+  }
+  // .footer-nav__sublist
+  &__sublist {
+    font-family: $montserrat;
+    font-weight: normal;
+    line-height: 1.3;
+    font-size: 15px;
+    color: $text-white;
+  }
+  // .footer-nav__sublist-item
+  &__sublist-item {
+    margin-bottom: 7px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      color: inherit;
+      &:hover,
+      &:focus {
+        color: darken($color: $text-white, $amount: 15%);
+        text-decoration: underline;
       }
     }
   }
