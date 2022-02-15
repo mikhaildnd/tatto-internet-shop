@@ -1,11 +1,11 @@
 //*.socials
 .socials {
+  display: inline-grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 10px;
   // .socials__item
   &__item {
-    margin-right: 10px;
-    &:last-child {
-      margin-right: 0;
-    }
   }
   // .socials__link
   &__link {
