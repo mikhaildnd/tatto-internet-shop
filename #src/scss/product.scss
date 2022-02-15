@@ -111,7 +111,9 @@
   }
   // .product__thumbs-slide
   &__thumbs-slide {
+    background-color: $bg-card;
     &.swiper-slide {
+      height: auto;
       width: 83px;
       @media (min-width: $md4) {
         height: 83px;
