@@ -17,8 +17,282 @@
     @media (min-width: $md4) {
       font-size: 50px;
     }
-    // @media (min-width: $md2) {
-    //   font-size: 60px;
-    // }
+    @media (min-width: $md2) {
+      font-size: 60px;
+    }
+  }
+  // .contacts__main
+  &__main {
+    // display: grid;
+    // row-gap: 60px;
+  }
+  // .contacts__item
+  &__item {
+  }
+  // .contacts__item-heading
+  &__item-heading {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    @media (min-width: $md4) {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.company-info {
+  background-color: $bg-card;
+  margin-left: -20px;
+  margin-right: -20px;
+  @media (min-width: $maxWidthContainer) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  // .company-info__inner
+  &__inner {
+    display: grid;
+    grid-template-areas:
+      'phone'
+      'schedule'
+      'socials'
+      'contacts'
+      'note'
+      'delivery'
+      'req';
+    row-gap: 20px;
+    padding: 20px;
+    @media (min-width: $md4) {
+      grid-template-columns: 1fr min-content;
+      grid-template-areas:
+        'phone socials'
+        'schedule socials'
+        'contacts contacts'
+        'note note'
+        'delivery delivery'
+        'req req';
+    }
+  }
+  // .company-info__phone
+  &__phone {
+    align-items: phone;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.5;
+    // margin-bottom: 10px;
+    @media (min-width: $md4) {
+      font-size: 60px;
+    }
+  }
+  // .company-info__schedule
+  &__schedule {
+    grid-area: schedule;
+    font-size: 15px;
+    line-height: 1.4;
+    @media (min-width: $md4) {
+      font-size: 20px;
+    }
+  }
+  // .company-info__contacts
+  &__contacts {
+    grid-area: contacts;
+    display: grid;
+    row-gap: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+    span {
+      color: $grey-light;
+    }
+    @media (min-width: $md4) {
+      font-size: 25px;
+    }
+  }
+  // .company-info__socials
+  &__socials {
+    align-self: start;
+    grid-area: socials;
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 10px;
+    a {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+  }
+  // .company-info__note
+  &__note {
+    grid-area: note;
+    color: $grey;
+    font-size: 15px;
+    line-height: 1.5;
+    @media (min-width: $md4) {
+      font-size: 17px;
+    }
+  }
+  // .company-info__delivery
+  &__delivery {
+    grid-area: delivery;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.5;
+    @media (min-width: $md4) {
+      font-size: 17px;
+    }
+  }
+  // .company-info__requisites
+  &__requisites {
+    grid-area: req;
+    display: grid;
+    row-gap: 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    @media (min-width: $md4) {
+      font-size: 17px;
+    }
+  }
+}
+
+.contacts {
+  // .contacts__workers-grid
+  &__workers-grid {
+    display: grid;
+    gap: 20px;
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $md2) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+.worker-card {
+  margin-left: -$pl;
+  margin-right: -$pr;
+  min-height: 156px;
+  background-color: $bg-card;
+  @media (min-width: 500px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  // .worker-card__inner
+  &__inner {
+    display: grid;
+    grid-template-areas:
+      'photo name'
+      'photo contacts'
+      'photo status';
+    grid-template-columns: minmax(80px, 120px) 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: 12px;
+    padding: 20px;
+    @media (min-width: 500px) {
+      grid-template-areas:
+        'photo photo'
+        'name name'
+        'contacts contacts';
+      justify-items: center;
+    }
+    @media (min-width: $md4) {
+      grid-template-areas:
+        'photo name'
+        'photo contacts'
+        'photo status';
+      justify-items: start;
+    }
+  }
+  // .worker-card__photo
+  &__photo {
+    position: relative;
+    grid-area: photo;
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 120px;
+    max-height: 120px;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  // .worker-card__name
+  &__name {
+    grid-area: name;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    @media (min-width: $md5) {
+      font-size: 16px;
+    }
+  }
+  // .worker-card__position
+  &__position {
+  }
+  // .worker-card__status
+  &__status {
+    grid-area: status;
+    justify-self: end;
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: $text-dark;
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    &--online {
+      &::before {
+        background-color: #1bc956;
+      }
+    }
+    &--offline {
+      &::before {
+        background-color: #c9301b;
+      }
+    }
+  }
+  // .worker-card__contacts
+  &__contacts {
+    grid-area: contacts;
+    display: grid;
+    align-content: start;
+    // justify-self: center;
+    .contacts-info__link--phone {
+      font-size: 14px;
+      font-weight: 700;
+      @media (min-width: $md5) {
+        font-size: 16px;
+      }
+    }
+    .contacts-info__link--mail {
+      font-size: 12px;
+      @media (min-width: $md5) {
+        font-size: 14px;
+      }
+    }
+    .socials__link {
+      font-size: 12px;
+      @media (min-width: $md5) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+.contacts-info {
+  // .contacts-info__item
+  &__item {
+  }
+  // .contacts-info__link
+  &__link {
+  }
+  // .contacts-info__link--phone
+  &__link--phone {
+  }
+  // .contacts-info__item--socials
+  &__item--socials {
   }
 }

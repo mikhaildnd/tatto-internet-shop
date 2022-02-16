@@ -4,19 +4,243 @@
   <body>
     <div class="wrapper">
       @@include('_header.html',{})
-      <main class="contacts-page">
-        <section class="contacts">
-          <div class="contacts__inner">
-            <div class="contacts__breadcrumbs breadcrumbs">
-              <div class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link">Главная</a>
-              </div>
-              <div class="breadcrumbs__item">Контакты</div>
+      <div class="contacts">
+        <div class="contacts__inner">
+          <div class="contacts__breadcrumbs breadcrumbs">
+            <div class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Главная</a>
             </div>
-            <h1 class="contacts__heading">Контакты</h1>
+            <div class="breadcrumbs__item">Контакты</div>
           </div>
-        </section>
-      </main>
+          <h1 class="contacts__heading">Контакты</h1>
+          <main class="contacts__main">
+            <section class="contacts__item">
+              <h2 class="contacts__item-heading">Офис компании</h2>
+              <div class="company-info">
+                <div class="company-info__inner">
+                  <span class="company-info__phone">8(800)200-06-00</span>
+                  <ul class="company-info__schedule">
+                    <li>Понедельник – пятница: с 07:00 до 15:00</li>
+                    <li>Звонок бесплатный!</li>
+                  </ul>
+                  <ul class="company-info__contacts">
+                    <li>
+                      <span>Telegram:</span>
+                      dskl_bot
+                    </li>
+                    <li>
+                      <span>Skype:</span>
+                      dskl_skype
+                    </li>
+                  </ul>
+                  <div class="company-info__socials socials socials--dark">
+                    <a href="#" class="socials__link">Одноклассники</a>
+                    <a href="#" class="socials__link">Viber</a>
+                    <a href="#" class="socials__link">Whats App</a>
+                    <a href="#" class="socials__link">Telegramm</a>
+                  </div>
+                  <p class="company-info__note">
+                    Ваши заказы, звонки и обращения обрабатываются в рабочее время. Если Вы
+                    обратитесь к нам в иное время - мы свяжемся с Вами на следующий день. Мы
+                    обращаем внимание, в каком часовом поясе Вы находитесь, и не звоним в неудобное
+                    для Вас время.
+                  </p>
+                  <p class="company-info__delivery">
+                    Пункт выдачи в г. Пушкин, ул. Пушкина 107-202, стоимость доставки 300 руб., при
+                    оформлении заказа до 15.00 доставка в день заказа.
+                  </p>
+                  <ul class="company-info__requisites">
+                    <li>ООО «Тату-на-ту»</li>
+                    <li>ОГРН: 1192036006645</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+            <section class="contacts__item">
+              <h2 class="contacts__item-heading">Менеджеры</h2>
+              <div class="contacts__workers-grid">
+                <div class="worker-card">
+                  <div class="worker-card__inner">
+                    <div class="worker-card__photo">
+                      <picture>
+                        <source srcset="img/workers/sova1.webp" type="image/webp" />
+                        <img
+                          src="img/workers/sova1.jpg"
+                          alt="Наш работник"
+                          width="80"
+                          height="80"
+                        />
+                      </picture>
+                    </div>
+                    <div class="worker-card__name">Валерия Михайловна</div>
+                    <!-- <div class="worker-card__position"></div>-->
+                    <span class="worker-card__status worker-card__status--online">В сети</span>
+                    <div class="worker-card__contacts contacts-info contacts-info--dark">
+                      <div class="contacts-info__item">
+                        <a
+                          href="tel:+79525525252"
+                          class="contacts-info__link contacts-info__link--phone"
+                        >
+                          +7 952 552-52-52
+                        </a>
+                      </div>
+                      <div
+                        class="contacts-info__item contacts-info__item--socials socials socials--dark"
+                      >
+                        <a href="#" class="socials__link socials__link--viber">Viber</a>
+                        <a href="#" class="socials__link socials__link--whatsapp">Whatsapp</a>
+                        <a href="#" class="socials__link socials__link--telegram">Telegram</a>
+                      </div>
+                      <div class="contacts-info__item">
+                        <a
+                          href="mailto:mr.driskell@mail.ru?subject=вопрос"
+                          class="contacts-info__link contacts-info__link--mail"
+                        >
+                          Mr.Driskell@mail.ru
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="worker-card">
+                  <div class="worker-card__inner">
+                    <div class="worker-card__photo">
+                      <picture>
+                        <source srcset="img/workers/sova2.webp" type="image/webp" />
+                        <img
+                          src="img/workers/sova2.jpg"
+                          alt="Наш работник"
+                          width="80"
+                          height="80"
+                        />
+                      </picture>
+                    </div>
+                    <div class="worker-card__name">Агриппина Дормидонтовна Третья</div>
+                    <!-- <div class="worker-card__position"></div> -->
+                    <span class="worker-card__status worker-card__status--offline">Не в сети</span>
+                    <div class="worker-card__contacts contacts-info contacts-info--dark">
+                      <div class="contacts-info__item">
+                        <a
+                          href="tel:+79525525252"
+                          class="contacts-info__link contacts-info__link--phone"
+                        >
+                          +7 952 552-52-52
+                        </a>
+                      </div>
+                      <div
+                        class="contacts-info__item contacts-info__item--socials socials socials--dark"
+                      >
+                        <a href="#" class="socials__link socials__link--viber">Viber</a>
+                        <a href="#" class="socials__link socials__link--whatsapp">Whatsapp</a>
+                        <a href="#" class="socials__link socials__link--telegram">Telegram</a>
+                      </div>
+                      <div class="contacts-info__item">
+                        <a
+                          href="mailto:mr.driskell@mail.ru?subject=вопрос"
+                          class="contacts-info__link contacts-info__link--mail"
+                        >
+                          Mr.Driskell@mail.ru
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="worker-card">
+                  <div class="worker-card__inner">
+                    <div class="worker-card__photo">
+                      <picture>
+                        <source srcset="img/workers/sova3.webp" type="image/webp" />
+                        <img
+                          src="img/workers/sova3.jpg"
+                          alt="Наш работник"
+                          width="80"
+                          height="80"
+                        />
+                      </picture>
+                    </div>
+                    <div class="worker-card__name">Валерия Михайловна</div>
+                    <!-- <div class="worker-card__position"></div>-->
+                    <span class="worker-card__status worker-card__status--online">В сети</span>
+                    <div class="worker-card__contacts contacts-info contacts-info--dark">
+                      <div class="contacts-info__item">
+                        <a
+                          href="tel:+79525525252"
+                          class="contacts-info__link contacts-info__link--phone"
+                        >
+                          +7 952 552-52-52
+                        </a>
+                      </div>
+                      <div
+                        class="contacts-info__item contacts-info__item--socials socials socials--dark"
+                      >
+                        <a href="#" class="socials__link socials__link--viber">Viber</a>
+                        <a href="#" class="socials__link socials__link--whatsapp">Whatsapp</a>
+                        <a href="#" class="socials__link socials__link--telegram">Telegram</a>
+                      </div>
+                      <div class="contacts-info__item">
+                        <a
+                          href="mailto:mr.driskell@mail.ru?subject=вопрос"
+                          class="contacts-info__link contacts-info__link--mail"
+                        >
+                          Mr.Driskell@mail.ru
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="worker-card">
+                  <div class="worker-card__inner">
+                    <div class="worker-card__photo">
+                      <picture>
+                        <source srcset="img/workers/sova4.webp" type="image/webp" />
+                        <img
+                          src="img/workers/sova4.jpg"
+                          alt="Наш работник"
+                          width="80"
+                          height="80"
+                        />
+                      </picture>
+                    </div>
+                    <div class="worker-card__name">Валерия Михайловна</div>
+                    <!-- <div class="worker-card__position"></div> -->
+                    <span class="worker-card__status worker-card__status--offline">Не в сети</span>
+                    <div class="worker-card__contacts contacts-info contacts-info--dark">
+                      <div class="contacts-info__item">
+                        <a
+                          href="tel:+79525525252"
+                          class="contacts-info__link contacts-info__link--phone"
+                        >
+                          +7 952 552-52-52
+                        </a>
+                      </div>
+                      <div
+                        class="contacts-info__item contacts-info__item--socials socials socials--dark"
+                      >
+                        <a href="#" class="socials__link socials__link--viber">Viber</a>
+                        <a href="#" class="socials__link socials__link--whatsapp">Whatsapp</a>
+                        <a href="#" class="socials__link socials__link--telegram">Telegram</a>
+                      </div>
+                      <div class="contacts-info__item">
+                        <a
+                          href="mailto:mr.driskell@mail.ru?subject=вопрос"
+                          class="contacts-info__link contacts-info__link--mail"
+                        >
+                          Mr.Driskell@mail.ru
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="contacts__item">
+              <h2 class="contacts__item-heading">Схема проезда</h2>
+              <div class="contacts__map">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A79a35f50364891812c7513be8c45f175ccbc185a94e36f7a85fad16925c736e5&amp;source=constructor" width="100%" height="400" frameborder="0" title="Наш магазин на карте" allowfullscreen="true"></iframe>
+              </div>
+          </main>
+        </div>
+      </div>
       @@include('_footer.html',{})
     </div>
     @@include('_popup.html',{}) @@include('_js.html',{})
