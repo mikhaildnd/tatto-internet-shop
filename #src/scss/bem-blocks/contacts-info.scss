@@ -1,0 +1,64 @@
+//*.contacts-info
+.contacts-info {
+  &--dark {
+    .contacts-info__link {
+      color: $text-dark;
+      &--phone {
+        &::before {
+          background-image: url(../img/icons/phone-dark.svg);
+        }
+      }
+      &--mail {
+        &::before {
+          background-image: url(../img/icons/mail-dark.svg);
+        }
+      }
+    }
+  }
+  // .contacts-info__item
+  &__item {
+    display: flex;
+    align-items: center;
+    &--socials {
+      font-size: 12px;
+    }
+    &--work-schedule {
+      font-size: 17px;
+      line-height: 1.5;
+      color: $grey;
+      white-space: normal;
+    }
+  }
+  // .contacts-info__link
+  &__link {
+    display: flex;
+    align-items: center;
+    // height: 100%;
+    color: $white;
+    line-height: 1.5;
+    white-space: nowrap;
+    &:hover {
+      color: $orange;
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+    &--phone {
+      &::before {
+        background-image: url(../img/icons/phone.svg);
+      }
+    }
+    &--mail {
+      &::before {
+        background-image: url(../img/icons/mail.svg);
+      }
+    }
+  }
+}
