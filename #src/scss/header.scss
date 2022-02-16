@@ -88,13 +88,13 @@
     @media (min-width: $md2) {
       display: flex;
       flex-wrap: wrap;
-      & .contacts__item {
+      & .contacts-info__item {
         flex-basis: 50%;
         &--socials {
           margin-top: 5px;
         }
       }
-      & .contacts__text {
+      & .contacts-info__text {
         font-size: 15px;
       }
     }
@@ -193,7 +193,7 @@
       margin-bottom: 40px;
       border-bottom: 1px solid $orange-dark;
     }
-    & .contacts__item {
+    & .contacts-info__item {
       font-size: 20px;
       margin-bottom: 20px;
       &:last-child {
