@@ -11,46 +11,80 @@
     font-size: 17px;
     line-height: 1.4;
     color: $orange-dark;
+    transition: all 0.1s ease-out;
+    &:hover {
+      &:not(.pagination__item--active, .pagination__item--disabled) {
+        background-color: $orange;
+        color: $white;
+      }
+    }
     &--prev,
     &--next {
-      &::before {
-        position: absolute;
-        content: '';
-        display: block;
-        width: 8px;
-        height: 8px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-left: 2px solid $orange-dark;
-        border-top: 2px solid $orange-dark;
+      .pagination__link {
+        &::before {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 8px;
+          height: 8px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border-left: 2px solid $orange-dark;
+          border-top: 2px solid $orange-dark;
+        }
+        &:hover {
+          &::before {
+            border-color: $white;
+          }
+        }
       }
     }
     // .pagination__item--prev
     &--prev {
-      &::before {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        margin-left: 2px;
+      .pagination__link {
+        &::before {
+          transform: translate(-50%, -50%) rotate(-45deg);
+          margin-left: 2px;
+        }
       }
     }
     // .pagination__item--next
     &--next {
-      &::before {
-        transform: translate(-50%, -50%) rotate(135deg);
-        margin-left: -2px;
+      .pagination__link {
+        &::before {
+          transform: translate(-50%, -50%) rotate(135deg);
+          margin-left: -2px;
+        }
       }
     }
     // .pagination__item--active
     &--active {
       background-color: $orange;
       color: $white;
+      pointer-events: none;
     }
     // .pagination__item--disabled
     &--disabled {
+      background-color: #e7e7e7;
+      border: none;
+      pointer-events: none;
+      .pagination__link {
+        color: $grey-light;
+        &::before {
+          border-color: $grey-light;
+        }
+      }
     }
   }
   // .pagination__link
   &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     color: inherit;
+    user-select: none;
   }
 }
