@@ -2,13 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 20px;
+  padding-top: 16px;
+  padding-bottom: 12px;
   font-size: 15px;
   @media (min-width: $md4) {
+    padding-top: 26px;
+    padding-bottom: 22px;
     font-size: 17px;
-  }
-  @media (min-width: $md2) {
-    margin-bottom: 30px;
   }
   // .breadcrumbs__item
   &__item {
