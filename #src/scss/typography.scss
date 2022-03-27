@@ -1,0 +1,24 @@
+//fonts
+$forum: 'Forum', cursive;
+$jost: 'Jost', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+
+.page-heading {
+  font-family: $forum;
+  line-height: 1;
+  font-size: 32px;
+  margin-bottom: 20px;
+  @media (min-width: $md5) {
+    font-size: 36px;
+  }
+  @media (min-width: $md4) {
+    // font-size: 50px;
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+  @media (min-width: $md2) {
+    // font-size: 60px;
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+}
