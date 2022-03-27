@@ -4,1084 +4,428 @@
   <body>
     <div class="wrapper">
       @@include('_header.html',{})
-      <main class="catalog-page">
-        <section class="catalog">
-          <div class="catalog__inner">
-            <div class="catalog__breadcrumbs breadcrumbs">
-              <div class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link">Главная</a>
-              </div>
-              <div class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link">Каталог</a>
-              </div>
-              <div class="breadcrumbs__item">Тату-машинки</div>
+      <main>
+        <div class="container">
+          <div class="breadcrumbs">
+            <div class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Главная</a>
             </div>
-            <h1 class="catalog__heading">Тату-машинки</h1>
-            <div class="catalog__filter filter">
-              <div class="filter__group filter__group--mobile">
-                <h3 class="filter__heading">Фильтр</h3>
-                <button class="filter__close-icon"></button>
-              </div>
-              <div class="filter__wrapper-for-scroll">
-                <div class="filter__group group-filter">
-                  <div class="group-filter__top">
-                    <h5 class="group-filter__heading">Цена</h5>
-                  </div>
-                  <div class="group-filter__bottom">
-                    <div class="group-filter__bottom-inner">
-                      <div class="group-filter__range-slider">
-                        <div class="group-filter__track"></div>
+            <div class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Каталог</a>
+            </div>
+            <div class="breadcrumbs__item">Тату-машинки</div>
+          </div>
+          <div class="catalog">
+            <div class="catalog__inner">
+              <h1 class="page-heading catalog__heading">Тату-машинки</h1>
+              <section class="catalog__filter filter">
+                <div class="filter__group filter__group--mobile">
+                  <h3 class="filter__heading">Фильтр</h3>
+                  <button class="filter__close-icon">
+                    <span class="vis-hid">Закрыть фильтр</span>
+                  </button>
+                </div>
+                <div class="filter__wrapper-for-scroll">
+                  <div class="filter__group group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Цена</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div class="group-filter__range-slider">
+                          <div class="group-filter__track"></div>
+                        </div>
+                        <div class="group-filter__content group-filter__content--range">
+                          <input class="js-input-left field field--full-width" type="text" />
+                          <input class="js-input-right field field--full-width" type="text" />
+                        </div>
                       </div>
-                      <div class="group-filter__content group-filter__content--range">
-                        <input class="js-input-left field field--full-width" type="text" />
-                        <input class="js-input-right field field--full-width" type="text" />
+                    </div>
+                  </div>
+                  <div class="filter__group filter__group--delivery group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Способ доставки</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div
+                          class="group-filter__content group-filter__content--column group-filter__content--label-gutters-bottom"
+                        >
+                          <label class="group-filter__label radio">
+                            <input class="radio__input" name="delivery" type="radio" checked />
+                            <span class="group-filter__input radio__box"></span>
+                            <span class="group-filter__label-text">Доставка курьером</span>
+                          </label>
+                          <label class="group-filter__label radio">
+                            <input class="radio__input" name="delivery" type="radio" />
+                            <span class="group-filter__input radio__box"></span>
+                            <span class="group-filter__label-text">Самовывоз</span>
+                          </label>
+                          <label class="group-filter__label radio">
+                            <input class="radio__input" name="delivery" type="radio" />
+                            <span class="group-filter__input radio__box"></span>
+                            <span class="group-filter__label-text">Любой</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter__group filter__group--brand group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Брэнд</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div
+                          class="group-filter__content group-filter__content--column group-filter__content--label-gutters-bottom group-filter__content--input-gutter-right"
+                        >
+                          <label class="group-filter__label checkbox">
+                            <input
+                              class="checkbox__input"
+                              name="brand"
+                              type="checkbox"
+                              value="1"
+                              required=""
+                            />
+                            <span class="group-filter__input checkbox__box"></span>
+                            <span class="group-filter__label-text checkbox__text">
+                              Mustang Tattoo
+                            </span>
+                          </label>
+                          <label class="group-filter__label checkbox">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="brand"
+                              type="checkbox"
+                              value="2"
+                              required=""
+                            />
+                            <span class="group-filter__input checkbox__box"></span>
+                            <span class="group-filter__label-text checkbox__text">Ez tattoo</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="filter__group group-filter group-filter--without-arrow group-filter--switcher"
+                  >
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Гарантия</h5>
+                      <label class="group-filter__label switch">
+                        <input class="switch__input" type="checkbox" required="" />
+                        <span class="switch__slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter__group group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Цвет</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div
+                          class="group-filter__content group-filter__content--row group-filter__content--colors-list"
+                        >
+                          <label class="group-filter__label checkbox checkbox--pink">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="1"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--grey-dark">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="2"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--red">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="3"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--yellow">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="4"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--blue">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="5"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--green">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="6"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="filter__group filter__group--delivery group-filter">
-                  <div class="group-filter__top">
-                    <h5 class="group-filter__heading">Способ доставки</h5>
-                  </div>
-                  <div class="group-filter__bottom">
-                    <div class="group-filter__bottom-inner">
-                      <div
-                        class="group-filter__content group-filter__content--column group-filter__content--label-gutters-bottom"
-                      >
-                        <label class="group-filter__label radio">
-                          <input class="radio__input" name="delivery" type="radio" checked />
-                          <span class="group-filter__input radio__box"></span>
-                          <span class="group-filter__label-text">Доставка курьером</span>
-                        </label>
-                        <label class="group-filter__label radio">
-                          <input class="radio__input" name="delivery" type="radio" />
-                          <span class="group-filter__input radio__box"></span>
-                          <span class="group-filter__label-text">Самовывоз</span>
-                        </label>
-                        <label class="group-filter__label radio">
-                          <input class="radio__input" name="delivery" type="radio" />
-                          <span class="group-filter__input radio__box"></span>
-                          <span class="group-filter__label-text">Любой</span>
-                        </label>
-                      </div>
+              </section>
+              <div class="catalog__products">
+                <div class="catalog__products-panel products-panel">
+                  <button class="products-panel__filter-trigger filter-trigger">
+                    <span class="filter-trigger__icon"></span>
+                    <span class="filter-trigger__text">Фильтр</span>
+                  </button>
+                  <div class="products-panel__sort">
+                    <div class="products-panel__select">
+                      <label class="products-panel__label" for="sortby">Сортировка</label>
+                      <select id="sortby" class="products-panel__select-list">
+                        <option class="products-panel__option" value="1" selected>
+                          Сначала дешевые
+                        </option>
+                        <option class="products-panel__option" value="2">Сначала дорогие</option>
+                        <option class="products-panel__option" value="3">Сначала популярные</option>
+                        <option class="products-panel__option" value="4">Сначала по акции</option>
+                      </select>
                     </div>
                   </div>
-                </div>
-                <div class="filter__group filter__group--brand group-filter">
-                  <div class="group-filter__top">
-                    <h5 class="group-filter__heading">Брэнд</h5>
-                  </div>
-                  <div class="group-filter__bottom">
-                    <div class="group-filter__bottom-inner">
-                      <div
-                        class="group-filter__content group-filter__content--column group-filter__content--label-gutters-bottom group-filter__content--input-gutter-right"
-                      >
-                        <label class="group-filter__label checkbox">
-                          <input
-                            class="checkbox__input"
-                            name="brand"
-                            type="checkbox"
-                            value="1"
-                            required=""
-                          />
-                          <span class="group-filter__input checkbox__box"></span>
-                          <span class="group-filter__label-text checkbox__text">
-                            Mustang Tattoo
-                          </span>
-                        </label>
-                        <label class="group-filter__label checkbox">
-                          <input
-                            class="group-filter__input checkbox__input"
-                            name="brand"
-                            type="checkbox"
-                            value="2"
-                            required=""
-                          />
-                          <span class="group-filter__input checkbox__box"></span>
-                          <span class="group-filter__label-text checkbox__text">Ez tattoo</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="filter__group group-filter group-filter--without-arrow group-filter--switcher"
-                >
-                  <div class="group-filter__top">
-                    <h5 class="group-filter__heading">Гарантия</h5>
-                    <label class="group-filter__label switch">
-                      <input class="switch__input" type="checkbox" required="" />
-                      <span class="switch__slider"></span>
+                  <div class="products-panel__change-view view-change">
+                    <label class="view-change__label">
+                      <input class="view-change__input" name="view-change" type="radio" checked />
+                      <div class="view-change__icon view-change__icon--grid"></div>
+                    </label>
+                    <label class="view-change__label">
+                      <input class="view-change__input" name="view-change" type="radio" />
+                      <div class="view-change__icon view-change__icon--list"></div>
                     </label>
                   </div>
                 </div>
-                <div class="filter__group group-filter">
-                  <div class="group-filter__top">
-                    <h5 class="group-filter__heading">Цвет</h5>
+                <div class="catalog__products-container">
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                                loading="lazy"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--sale">Распродажа</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="group-filter__bottom">
-                    <div class="group-filter__bottom-inner">
-                      <div
-                        class="group-filter__content group-filter__content--row group-filter__content--colors-list"
-                      >
-                        <label class="group-filter__label checkbox checkbox--pink">
-                          <input
-                            class="group-filter__input checkbox__input"
-                            name="colors"
-                            type="checkbox"
-                            value="1"
-                            required=""
-                          />
-                          <span class="checkbox__box"></span>
-                        </label>
-                        <label class="group-filter__label checkbox checkbox--grey-dark">
-                          <input
-                            class="group-filter__input checkbox__input"
-                            name="colors"
-                            type="checkbox"
-                            value="2"
-                            required=""
-                          />
-                          <span class="checkbox__box"></span>
-                        </label>
-                        <label class="group-filter__label checkbox checkbox--red">
-                          <input
-                            class="group-filter__input checkbox__input"
-                            name="colors"
-                            type="checkbox"
-                            value="3"
-                            required=""
-                          />
-                          <span class="checkbox__box"></span>
-                        </label>
-                        <label class="group-filter__label checkbox checkbox--yellow">
-                          <input
-                            class="group-filter__input checkbox__input"
-                            name="colors"
-                            type="checkbox"
-                            value="4"
-                            required=""
-                          />
-                          <span class="checkbox__box"></span>
-                        </label>
-                        <label class="group-filter__label checkbox checkbox--blue">
-                          <input
-                            class="group-filter__input checkbox__input"
-                            name="colors"
-                            type="checkbox"
-                            value="5"
-                            required=""
-                          />
-                          <span class="checkbox__box"></span>
-                        </label>
-                        <label class="group-filter__label checkbox checkbox--green">
-                          <input
-                            class="group-filter__input checkbox__input"
-                            name="colors"
-                            type="checkbox"
-                            value="6"
-                            required=""
-                          />
-                          <span class="checkbox__box"></span>
-                        </label>
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">Foxxx Kitsune Mini Black</p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--action">Акция</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">Foxxx Kitsune Mini Black Foxxx</p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--action">Акция</div>
+                            </div>
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--sale">Распродажа</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">Foxxx Kitsune Mini Black Foxxx</p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--action">Акция</div>
+                            </div>
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--sale">Распродажа</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="catalog__products">
-              <div class="catalog__products-panel products-panel">
-                <button class="products-panel__filter-trigger filter-trigger">
-                  <span class="filter-trigger__icon"></span>
-                  <span class="filter-trigger__text">Фильтр</span>
+                <button class="catalog__button button button--light">
+                  Показать еще
+                  <span class="button__corner button__corner--left"></span>
+                  <span class="button__corner button__corner--right"></span>
                 </button>
-                <div class="products-panel__sort">
-                  <div class="products-panel__select">
-                    <label class="products-panel__label" for="sortby">Сортировка</label>
-                    <select id="sortby" class="products-panel__select-list">
-                      <option class="products-panel__option" value="1" selected>
-                        Сначала дешевые
-                      </option>
-                      <option class="products-panel__option" value="2">Сначала дорогие</option>
-                      <option class="products-panel__option" value="3">Сначала популярные</option>
-                      <option class="products-panel__option" value="4">Сначала по акции</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="products-panel__change-view view-change">
-                  <label class="view-change__label">
-                    <input class="view-change__input" name="view-change" type="radio" checked />
-                    <div class="view-change__icon view-change__icon--grid"></div>
-                  </label>
-                  <label class="view-change__label">
-                    <input class="view-change__input" name="view-change" type="radio" />
-                    <div class="view-change__icon view-change__icon--list"></div>
-                  </label>
-                </div>
+                <ul class="catalog__pagination pagination">
+                  <li class="pagination__item pagination__item--prev pagination__item--disabled">
+                    <a href="" class="pagination__link"></a>
+                  </li>
+                  <li class="pagination__item pagination__item--active">
+                    <span class="pagination__link">1</span>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">2</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">3</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">4</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">5</a>
+                  </li>
+                  <li class="pagination__item pagination__item--next">
+                    <a href="#" class="pagination__link"></a>
+                  </li>
+                </ul>
               </div>
-              <div class="catalog__products-container">
-                <!-- Эту карточку исполюзовать -->
-                <div class="catalog__product-card product-card">
-                  <div class="product-card__wrapper">
-                    <div class="product-card__top">
-                      <a href="##" class="product-card__link">
-                        <div class="product-card__gallery gallery-card">
-                          <div class="gallery-card__slider swiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-1.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-1.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-2.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-2.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-3.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-3.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-4.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-4.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gallery-card__pagination"></div>
-                          </div>
-                        </div>
-                        <div class="product-card__product-info">
-                          <p class="product-card__product-name">
-                            Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini
-                            Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black
-                          </p>
-                          <span class="product-card__price">6 000 ₽</span>
-                          <span class="product-card__old-price">8 000</span>
-                        </div>
-                        <div class="product-card__tips">
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--action">
-                              <span class="tip__text">Акция</span>
-                            </div>
-                          </div>
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--sale">
-                              <span class="tip__text">Распродажа</span>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="product-card__favorites"></button>
-                      </a>
-                    </div>
-                    <div class="product-card__bottom">
-                      <div class="product-card__bottom-inner">
-                        <button class="product-card__button button button--light button--sm">
-                          В корзину
-                          <span class="button__corner button__corner--left"></span>
-                          <span class="button__corner button__corner--right"></span>
-                        </button>
-                        <div class="product-card__counter counter-card">
-                          <button class="counter-card__button counter-card__button--decr"></button>
-                          <div class="counter-card__content">
-                            <span class="counter-card__count">
-                              15
-                              <span>шт</span>
-                            </span>
-                            <span class="counter-card__text">В корзине</span>
-                          </div>
-                          <button
-                            tabindex="0"
-                            class="counter-card__button counter-card__button--incr"
-                          ></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="catalog__product-card product-card">
-                  <div class="product-card__wrapper">
-                    <div class="product-card__top">
-                      <a href="##" class="product-card__link">
-                        <div class="product-card__gallery gallery-card">
-                          <div class="gallery-card__slider swiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-1.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-1.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-2.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-2.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-3.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-3.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-4.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-4.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gallery-card__pagination"></div>
-                          </div>
-                        </div>
-                        <div class="product-card__product-info">
-                          <p class="product-card__product-name">Foxxx Kitsune Mini Black</p>
-                          <span class="product-card__price">6 000 ₽</span>
-                          <span class="product-card__old-price">8 000</span>
-                        </div>
-                        <div class="product-card__tips">
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--action">
-                              <span class="tip__text">Акция</span>
-                            </div>
-                          </div>
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--sale">
-                              <span class="tip__text">Распродажа</span>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="product-card__favorites"></button>
-                      </a>
-                    </div>
-                    <div class="product-card__bottom">
-                      <div class="product-card__bottom-inner">
-                        <button class="product-card__button button button--light button--sm">
-                          В корзину
-                          <span class="button__corner button__corner--left"></span>
-                          <span class="button__corner button__corner--right"></span>
-                        </button>
-                        <div class="product-card__counter counter-card">
-                          <button class="counter-card__button counter-card__button--decr"></button>
-                          <div class="counter-card__content">
-                            <span class="counter-card__count">
-                              15
-                              <span>шт</span>
-                            </span>
-                            <span class="counter-card__text">В корзине</span>
-                          </div>
-                          <button
-                            tabindex="0"
-                            class="counter-card__button counter-card__button--incr"
-                          ></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="catalog__product-card product-card">
-                  <div class="product-card__wrapper">
-                    <div class="product-card__top">
-                      <a href="##" class="product-card__link">
-                        <div class="product-card__gallery gallery-card">
-                          <div class="gallery-card__slider swiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-1.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-1.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-2.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-2.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-3.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-3.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-4.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-4.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gallery-card__pagination"></div>
-                          </div>
-                        </div>
-                        <div class="product-card__product-info">
-                          <p class="product-card__product-name">
-                            Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini
-                            Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black
-                          </p>
-                          <span class="product-card__price">6 000 ₽</span>
-                          <span class="product-card__old-price">8 000</span>
-                        </div>
-                        <div class="product-card__tips">
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--action">
-                              <span class="tip__text">Акция</span>
-                            </div>
-                          </div>
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--sale">
-                              <span class="tip__text">Распродажа</span>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="product-card__favorites"></button>
-                      </a>
-                    </div>
-                    <div class="product-card__bottom">
-                      <div class="product-card__bottom-inner">
-                        <button class="product-card__button button button--light button--sm">
-                          В корзину
-                          <span class="button__corner button__corner--left"></span>
-                          <span class="button__corner button__corner--right"></span>
-                        </button>
-                        <div class="product-card__counter counter-card">
-                          <button class="counter-card__button counter-card__button--decr"></button>
-                          <div class="counter-card__content">
-                            <span class="counter-card__count">
-                              15
-                              <span>шт</span>
-                            </span>
-                            <span class="counter-card__text">В корзине</span>
-                          </div>
-                          <button
-                            tabindex="0"
-                            class="counter-card__button counter-card__button--incr"
-                          ></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="catalog__product-card product-card">
-                  <div class="product-card__wrapper">
-                    <div class="product-card__top">
-                      <a href="##" class="product-card__link">
-                        <div class="product-card__gallery gallery-card">
-                          <div class="gallery-card__slider swiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-1.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-1.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-2.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-2.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-3.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-3.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-4.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-4.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gallery-card__pagination"></div>
-                          </div>
-                        </div>
-                        <div class="product-card__product-info">
-                          <p class="product-card__product-name">Foxxx Kitsune Mini Black</p>
-                          <span class="product-card__price">6 000 ₽</span>
-                          <span class="product-card__old-price">8 000</span>
-                        </div>
-                        <div class="product-card__tips">
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--action">
-                              <span class="tip__text">Акция</span>
-                            </div>
-                          </div>
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--sale">
-                              <span class="tip__text">Распродажа</span>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="product-card__favorites"></button>
-                      </a>
-                    </div>
-                    <div class="product-card__bottom">
-                      <div class="product-card__bottom-inner">
-                        <button class="product-card__button button button--light button--sm">
-                          В корзину
-                          <span class="button__corner button__corner--left"></span>
-                          <span class="button__corner button__corner--right"></span>
-                        </button>
-                        <div class="product-card__counter counter-card">
-                          <button class="counter-card__button counter-card__button--decr"></button>
-                          <div class="counter-card__content">
-                            <span class="counter-card__count">
-                              15
-                              <span>шт</span>
-                            </span>
-                            <span class="counter-card__text">В корзине</span>
-                          </div>
-                          <button
-                            tabindex="0"
-                            class="counter-card__button counter-card__button--incr"
-                          ></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="catalog__product-card product-card">
-                  <div class="product-card__wrapper">
-                    <div class="product-card__top">
-                      <a href="##" class="product-card__link">
-                        <div class="product-card__gallery gallery-card">
-                          <div class="gallery-card__slider swiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-1.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-1.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-2.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-2.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-3.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-3.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-4.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-4.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gallery-card__pagination"></div>
-                          </div>
-                        </div>
-                        <div class="product-card__product-info">
-                          <p class="product-card__product-name">
-                            Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini
-                            Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black
-                          </p>
-                          <span class="product-card__price">6 000 ₽</span>
-                          <span class="product-card__old-price">8 000</span>
-                        </div>
-                        <div class="product-card__tips">
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--action">
-                              <span class="tip__text">Акция</span>
-                            </div>
-                          </div>
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--sale">
-                              <span class="tip__text">Распродажа</span>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="product-card__favorites"></button>
-                      </a>
-                    </div>
-                    <div class="product-card__bottom">
-                      <div class="product-card__bottom-inner">
-                        <button class="product-card__button button button--light button--sm">
-                          В корзину
-                          <span class="button__corner button__corner--left"></span>
-                          <span class="button__corner button__corner--right"></span>
-                        </button>
-                        <div class="product-card__counter counter-card">
-                          <button class="counter-card__button counter-card__button--decr"></button>
-                          <div class="counter-card__content">
-                            <span class="counter-card__count">
-                              15
-                              <span>шт</span>
-                            </span>
-                            <span class="counter-card__text">В корзине</span>
-                          </div>
-                          <button
-                            tabindex="0"
-                            class="counter-card__button counter-card__button--incr"
-                          ></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="catalog__product-card product-card">
-                  <div class="product-card__wrapper">
-                    <div class="product-card__top">
-                      <a href="##" class="product-card__link">
-                        <div class="product-card__gallery gallery-card">
-                          <div class="gallery-card__slider swiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-1.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-1.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-2.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-2.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-3.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-3.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <div class="gallery-card__slide">
-                                  <picture>
-                                    <source
-                                      data-srcset="img/products/pr-2/skind-4.webp"
-                                      type="image/webp"
-                                    />
-                                    <img
-                                      class="swiper-lazy"
-                                      alt="Тату-машинка. Артикул: 1"
-                                      data-src="img/products/pr-2/skind-4.jpg"
-                                      height="228px"
-                                      width="100%"
-                                    />
-                                  </picture>
-                                  <div
-                                    class="swiper-lazy-preloader swiper-lazy-preloader-black"
-                                  ></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gallery-card__pagination"></div>
-                          </div>
-                        </div>
-                        <div class="product-card__product-info">
-                          <p class="product-card__product-name">Foxxx Kitsune Mini Black</p>
-                          <span class="product-card__price">6 000 ₽</span>
-                          <span class="product-card__old-price">8 000</span>
-                        </div>
-                        <div class="product-card__tips">
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--action">
-                              <span class="tip__text">Акция</span>
-                            </div>
-                          </div>
-                          <div class="product-card__tips-row">
-                            <div class="product-card__tips-item tip tip--sale">
-                              <span class="tip__text">Распродажа</span>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="product-card__favorites"></button>
-                      </a>
-                    </div>
-                    <div class="product-card__bottom">
-                      <div class="product-card__bottom-inner">
-                        <button class="product-card__button button button--light button--sm">
-                          В корзину
-                          <span class="button__corner button__corner--left"></span>
-                          <span class="button__corner button__corner--right"></span>
-                        </button>
-                        <div class="product-card__counter counter-card">
-                          <button class="counter-card__button counter-card__button--decr"></button>
-                          <div class="counter-card__content">
-                            <span class="counter-card__count">
-                              15
-                              <span>шт</span>
-                            </span>
-                            <span class="counter-card__text">В корзине</span>
-                          </div>
-                          <button
-                            tabindex="0"
-                            class="counter-card__button counter-card__button--incr"
-                          ></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button class="catalog__button button button--light">
-                Показать еще
-                <span class="button__corner button__corner--left"></span>
-                <span class="button__corner button__corner--right"></span>
-              </button>
-              <ul class="catalog__pagination pagination">
-                <li class="pagination__item pagination__item--prev">
-                  <a href="" class="pagination__link"></a>
-                </li>
-                <li class="pagination__item pagination__item--active">
-                  <a href="" class="pagination__link">1</a>
-                </li>
-                <li class="pagination__item">
-                  <a href="" class="pagination__link">2</a>
-                </li>
-                <li class="pagination__item">
-                  <a href="" class="pagination__link">3</a>
-                </li>
-                <li class="pagination__item">
-                  <a href="" class="pagination__link">4</a>
-                </li>
-                <li class="pagination__item">
-                  <a href="" class="pagination__link">5</a>
-                </li>
-                <li class="pagination__item pagination__item--next">
-                  <a href="" class="pagination__link"></a>
-                </li>
-              </ul>
             </div>
           </div>
-        </section>
+        </div>
       </main>
       @@include('_footer.html',{})
     </div>
     @@include('_popup.html',{}) @@include('_js.html',{})
+    <script src="js/catalog-page.min.js"></script>
   </body>
 </html>
