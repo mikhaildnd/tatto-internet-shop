@@ -1,6 +1,7 @@
 //*search-form
 .search {
-  // .search__input
+  position: relative;
+  // .search__control
   &__control {
     position: relative;
   }
@@ -9,7 +10,7 @@
     width: 100%;
     font-size: 15px;
     line-height: 1.5;
-    padding: 10px 10px 10px 54px;
+    padding: 10px 10px 10px 46px;
     border: 1px solid $orange-dark;
     background-color: transparent;
     color: $grey;
@@ -23,12 +24,13 @@
   &__button {
     position: absolute;
     top: 8px;
-    left: 16px;
+    left: 8px;
   }
 }
 
 // *.search-button
 .search-button {
+  display: block;
   width: 28px;
   height: 28px;
   background-image: url(../img/icons/search.svg);
