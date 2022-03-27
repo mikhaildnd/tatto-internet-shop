@@ -14,7 +14,13 @@
           <a href="#" class="socials__link">Telegramm</a>
         </div>
       </div>
-      <button class="header__dropdown-button">
+      <button id="menu" class="header__dropdown-button">
+        <span class="header__dropdown-button-text dropdown-button-text--open vis-hid">
+          Открыть основное меню
+        </span>
+        <span class="header__dropdown-button-text dropdown-button-text--close vis-hid">
+          Закрыть основное меню
+        </span>
         <span class="burger-icon">
           <span></span>
         </span>
@@ -24,13 +30,15 @@
           <img src="img/icons/logo.svg" alt="Логотип" />
         </div>
       </a>
-      <div class="header__search-trigger">
-        <button class="search-button"></button>
-      </div>
-      <form class="header__search search" name="search-form" action="#">
+      <button class="header__search-trigger search-button">
+        <span class="vis-hid">Открыть строку поиска</span>
+      </button>
+      <form class="search header__search" name="search-form" action="#">
         <div class="search__control">
           <input class="search__input" placeholder="Поиск" autocomplete="off" />
-          <button class="search-button search__button"></button>
+          <button class="search-button search__button">
+            <span class="vis-hid">Поиск</span>
+          </button>
         </div>
         <div style="display: none" class="search__suggestion">
           <div class="search__suggestion-content">
@@ -68,31 +76,19 @@
       </div>
     </div>
     <div class="header__bottom">
-      <button class="header__dropdown-button">
+      <button id="catalog" class="header__dropdown-button">
         <span>Каталог</span>
         <span class="burger-icon">
           <span></span>
         </span>
       </button>
-      <div class="header__catalog catalog-dropdown">
+      <div class="header__catalog catalog-dropdown" data-tabs="menu-tab">
         <div class="catalog-dropdown__content">
-          <div class="catalog-dropdown__show-model">
-            <div class="catalog-dropdown__button-group">
-              <input
-                class="catalog-dropdown__input"
-                id="category"
-                name="sort-object"
-                type="radio"
-                checked
-              />
-              <label for="category" class="catalog-dropdown__label">По категории</label>
-            </div>
-            <div class="catalog-dropdown__button-group">
-              <input class="catalog-dropdown__input" id="brand" name="sort-object" type="radio" />
-              <label for="brand" class="catalog-dropdown__label">По брендам</label>
-            </div>
+          <div class="catalog-dropdown__tabs">
+            <button class="catalog-dropdown__button">По категории</button>
+            <button class="catalog-dropdown__button">По брендам</button>
           </div>
-          <div style="display: none" class="catalog-dropdown__item">
+          <div class="catalog-dropdown__item">
             <ul class="catalog-dropdown__list">
               <li class="catalog-dropdown__list-item">
                 <a href="#" class="catalog-dropdown__link">Новинки</a>
@@ -316,7 +312,9 @@
       <form class="header__search search" name="search-form" action="#">
         <div class="search__control">
           <input class="search__input" placeholder="Поиск" autocomplete="off" />
-          <button class="search-button search__button"></button>
+          <button class="search-button search__button">
+            <span class="vis-hid">Поиск</span>
+          </button>
         </div>
         <div style="display: none" class="search__suggestion">
           <div class="search__suggestion-content">
@@ -378,10 +376,13 @@
             </li>
           </ul>
         </nav>
-        <form class="dropdown-menu__search search" name="search-form" action="#">
+        <!-- <form class="dropdown-menu__search search" name="search-form" action="#">
           <div class="search__control">
             <input class="search__input" placeholder="Поиск" autocomplete="off" />
-            <button class="search-button search__button"></button>
+            <button class="search-button search__button">
+              \
+              <span class="vis-hid">Поиск</span>
+            </button>
           </div>
           <div style="display: none" class="search__suggestion">
             <div class="search__suggestion-content">
@@ -393,7 +394,7 @@
             </div>
             <a class="search__extended-search-link"></a>
           </div>
-        </form>
+        </form> -->
         <div class="dropdown-menu__contacts contacts-info">
           <div class="contacts-info__item">
             <a href="tel:+79525525252" class="contacts-info__link contacts-info__link--phone">
