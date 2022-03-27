@@ -9,6 +9,7 @@
   user-select: none;
   transition: background-color 0.1s linear, color 0.1s linear;
   border: 2px solid $orange;
+  outline: none;
   @media (min-width: $md2) {
     cursor: pointer;
   }
@@ -93,6 +94,23 @@
       color: $orange-dark;
     }
   }
+  &--white-transparent {
+    color: $orange;
+    background-color: rgba(255, 255, 255, 0.565);
+    border: none;
+    text-decoration: underline;
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      color: darken($color: $orange, $amount: 15%);
+      background-color: rgba(255, 255, 255, 0.665);
+    }
+    &:active {
+      color: $orange-dark;
+      background-color: rgba(255, 255, 255, 0.765);
+    }
+  }
+
   &__corner {
     z-index: -1;
     position: absolute;
