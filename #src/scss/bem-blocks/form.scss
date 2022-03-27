@@ -1,7 +1,4 @@
 .form {
-  // .form__group
-  &__group {
-  }
   // .form__label
   &__label {
     display: block;
@@ -43,11 +40,6 @@
     border-color: $orange;
     box-shadow: 0 0 2px $orange;
   }
-  // &::placeholder {
-  //   color: $grey-light;
-  //   font-size: 17px;
-  //   line-height: 1.4;
-  // }
   &--full-width {
     width: 100%;
   }
@@ -55,7 +47,6 @@
 .checkbox {
   position: relative;
   cursor: pointer;
-  // padding-left: 20px;
   &--red {
     .checkbox__box {
       background-color: $red;
@@ -171,16 +162,11 @@
   }
   // .checkbox__box
   &__box {
-    // position: absolute;
     display: inline-block;
     width: 20px;
     height: 20px;
-    // margin-left: -20px;
     background-color: $white;
     box-shadow: 0 0 0 1px $orange;
-  }
-  // .checkbox__text
-  &__text {
   }
 }
 .radio {
@@ -251,14 +237,11 @@
   // .radio__box
   &__box {
     position: relative;
-    // position: absolute;
     display: inline-block;
     width: 20px;
     height: 20px;
-    // margin-left: -20px;
     background-color: $white;
     border: 2px solid $orange;
-    // box-shadow: 0 0 0 2px $orange;
     border-radius: 50%;
     color-adjust: exact;
     transition: box-shadow 0.1s linear;
@@ -276,12 +259,6 @@
       height: 100%;
     }
   }
-  /* Checked */
-  // &:checked::before {
-  //   background-color: $orange;
-  //   width: 10px;
-  //   height: 10px;
-  // }
   /* Active */
   &:active::before {
     background-color: $orange;
@@ -298,34 +275,12 @@
     }
   }
   &:checked:disabled {
-    // border: 2px solid #bdbdbd;
-    // background-color: #bdbdbd;
-    // box-shadow: none;
     &::before {
       background-color: #bdbdbd;
       width: 10px;
       height: 10px;
     }
   }
-  // &.error {
-  //   border: 2px solid #bdbdbd;
-  //   background-color: $white;
-  //   box-shadow: none;
-  //   &::before {
-  //     background-color: $white;
-  //   }
-  // }
-  // &.inactive {
-  //   border: 2px solid #bdbdbd;
-  //   background-color: #bdbdbd;
-  //   box-shadow: none;
-  //   &::before {
-  //     background-color: #bdbdbd;
-  //   }
-  // }
-  // &--offset-right {
-  //   margin-right: 10px;
-  // }
 }
 .switch {
   position: relative;
