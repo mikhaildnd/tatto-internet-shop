@@ -10,7 +10,7 @@
 //@import "icons";
 
 /* Font default */
-$fontFamily: 'Jost', sans-serif;
+$fontFamily: 'Jost', 'Arial', sans-serif;
 $fontSize: 16;
 
 /* Container params */
@@ -34,13 +34,6 @@ $mainColor: #000;
 body {
   background-color: #eeeeee;
   color: $mainColor;
-  &.js-lock {
-    overflow: hidden;
-  }
-}
-
-main {
-  flex: 1 1 auto;
 }
 
 /* Wrapper */
@@ -76,6 +69,9 @@ main {
   clip: rect(0, 0, 0, 0);
 }
 
+/* Typography */
+@import 'typography';
+
 /* bem-blocks */
 @import 'bem-blocks/buttons';
 @import 'bem-blocks/forms';
@@ -107,3 +103,8 @@ main {
 @import '404';
 @import 'cart';
 @import 'contacts';
+
+:root {
+  --thumbs-width: 83px;
+  --thumbs-gutter: 10px;
+}
