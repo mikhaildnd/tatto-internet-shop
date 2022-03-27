@@ -6,13 +6,27 @@
   gap: 10px;
   /* Добавлять мод-р, если будут ссылки с иконками */
   &--has-icon {
-    .socials__link::after {
-      content: '';
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      background-repeat: no-repeat;
-      background-size: contain;
+    .socials__link {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      &:hover,
+      &:focus-visible {
+        &::before {
+          filter: brightness(0.86);
+        }
+      }
+    }
+  }
+  &--icon-20px {
+    .socials__link::before {
+      width: 30px;
+      height: 30px;
     }
   }
   &--dark {
@@ -22,25 +36,29 @@
   }
   // .socials__link
   &__link {
-    // display: flex;
-    // align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    column-gap: 8px;
     color: $white;
     white-space: nowrap;
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: $orange;
     }
     &--viber {
-      &::after {
+      &::before {
         background-image: url(../img/icons/viber.svg);
       }
     }
     &--whatsapp {
-      &::after {
+      &::before {
         background-image: url(../img/icons/whatsapp.svg);
       }
     }
     &--telegram {
-      &::after {
+      &::before {
         background-image: url(../img/icons/telegram.svg);
       }
     }
