@@ -1,37 +1,17 @@
-.contacts {
-  // .contacts__inner
-  &__inner {
-    @include padding-container($maxWidthContainer, $pl, $pr);
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  // .contacts__breadcrumbs
-  &__breadcrumbs {
-    margin-bottom: 20px;
-  }
-  // .contacts__heading
-  &__heading {
-    font-family: $forum;
-    font-size: 25px;
-    margin-bottom: 20px;
-    @media (min-width: $md4) {
-      font-size: 50px;
-    }
-    @media (min-width: $md2) {
-      font-size: 60px;
-    }
-  }
-  // .contacts__main
-  &__main {
-    // display: grid;
-    // row-gap: 60px;
-  }
+.contacts-page {
   // .contacts__item
   &__item {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (min-width: $md2) {
+      margin-bottom: 40px;
+    }
   }
   // .contacts__item-heading
   &__item-heading {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 20px;
@@ -42,16 +22,17 @@
   }
 }
 
-.company-info {
-  background-color: $bg-card;
-  margin-left: -20px;
-  margin-right: -20px;
-  @media (min-width: $maxWidthContainer) {
-    margin-left: 0;
-    margin-right: 0;
+.map-section {
+  //.map-section__map
+  &__map {
+    width: 100%;
+    height: 500px;
   }
-  // .company-info__inner
-  &__inner {
+}
+
+.info-board {
+  // .company-info__content
+  &__content {
     display: grid;
     grid-template-areas:
       'phone'
@@ -61,9 +42,12 @@
       'note'
       'delivery'
       'req';
-    row-gap: 20px;
+    row-gap: 12px;
     padding: 20px;
-    @media (min-width: $md4) {
+    margin-left: -20px;
+    margin-right: -20px;
+    background-color: $bg-card;
+    @media (min-width: $md6) {
       grid-template-columns: 1fr min-content;
       grid-template-areas:
         'phone socials'
@@ -72,17 +56,32 @@
         'note note'
         'delivery delivery'
         'req req';
+      row-gap: 12px;
+      column-gap: 12px;
+    }
+    @media (min-width: $md4) {
+      grid-template-columns: 1fr 1fr min-content;
+      grid-template-areas:
+        'phone contacts socials'
+        'schedule schedule socials'
+        'note note note'
+        'delivery delivery delivery'
+        'req req req';
+      row-gap: 16px;
+    }
+    @media (min-width: $maxWidthContainer) {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
   // .company-info__phone
   &__phone {
-    align-items: phone;
-    font-size: 30px;
+    grid-area: phone;
+    font-size: 25px;
     font-weight: 700;
     line-height: 1.5;
-    // margin-bottom: 10px;
     @media (min-width: $md4) {
-      font-size: 60px;
+      font-size: 40px;
     }
   }
   // .company-info__schedule
@@ -94,8 +93,8 @@
       font-size: 20px;
     }
   }
-  // .company-info__contacts
-  &__contacts {
+  // .company-info__receiving-request
+  &__receiving-request {
     grid-area: contacts;
     display: grid;
     row-gap: 10px;
@@ -105,7 +104,16 @@
       color: $grey-light;
     }
     @media (min-width: $md4) {
+      justify-self: center;
       font-size: 25px;
+    }
+  }
+  // .company-info__link
+  &__link {
+    color: $black;
+    &:hover,
+    &:focus-visible {
+      color: $orange;
     }
   }
   // .company-info__socials
@@ -152,10 +160,9 @@
     }
   }
 }
-
-.contacts {
-  // .contacts__workers-grid
-  &__workers-grid {
+.our-managers {
+  // .our-managers__list
+  &__list {
     display: grid;
     gap: 20px;
     @media (min-width: 500px) {
@@ -169,7 +176,7 @@
 .worker-card {
   margin-left: -$pl;
   margin-right: -$pr;
-  min-height: 156px;
+  min-height: 120px;
   background-color: $bg-card;
   @media (min-width: 500px) {
     margin-left: 0;
@@ -177,27 +184,27 @@
   }
   // .worker-card__inner
   &__inner {
+    width: 100%;
     display: grid;
     grid-template-areas:
-      'photo name'
-      'photo contacts'
-      'photo status';
-    grid-template-columns: minmax(80px, 120px) 1fr;
+      'photo main-info'
+      'photo contacts';
+    grid-template-columns: 120px 1fr;
     grid-template-rows: min-content 1fr;
-    gap: 12px;
-    padding: 20px;
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 12px;
     @media (min-width: 500px) {
+      grid-template-columns: 80px 1fr;
       grid-template-areas:
-        'photo photo'
-        'name name'
+        'photo main-info'
         'contacts contacts';
-      justify-items: center;
     }
     @media (min-width: $md4) {
+      grid-template-columns: minmax(80px, 120px) 1fr;
       grid-template-areas:
-        'photo name'
-        'photo contacts'
-        'photo status';
+        'photo main-info'
+        'photo contacts';
       justify-items: start;
     }
   }
@@ -205,18 +212,27 @@
   &__photo {
     position: relative;
     grid-area: photo;
-    min-width: 80px;
-    min-height: 80px;
-    max-width: 120px;
-    max-height: 120px;
     img {
       width: 100%;
+      height: auto;
       object-fit: contain;
+    }
+  }
+  // .worker-card__main-info
+  &__main-info {
+    grid-area: main-info;
+    display: inline-grid;
+    align-content: start;
+    column-gap: 12px;
+    @media (min-width: 500px) {
+      align-content: center;
+    }
+    @media (min-width: $md4) {
+      align-content: start;
     }
   }
   // .worker-card__name
   &__name {
-    grid-area: name;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.5;
@@ -224,18 +240,14 @@
       font-size: 16px;
     }
   }
-  // .worker-card__position
-  &__position {
-  }
   // .worker-card__status
   &__status {
-    grid-area: status;
-    justify-self: end;
+    justify-self: start;
     display: inline-grid;
     grid-auto-flow: column;
     align-items: center;
-    column-gap: 10px;
-    font-size: 17px;
+    column-gap: 5px;
+    font-size: 12px;
     line-height: 1.5;
     color: $text-dark;
     &::before {
@@ -260,13 +272,10 @@
     grid-area: contacts;
     display: grid;
     align-content: start;
-    // justify-self: center;
+    row-gap: 6px;
     .contacts-info__link--phone {
       font-size: 14px;
       font-weight: 700;
-      @media (min-width: $md5) {
-        font-size: 16px;
-      }
     }
     .contacts-info__link--mail {
       font-size: 12px;
@@ -280,19 +289,5 @@
         font-size: 14px;
       }
     }
-  }
-}
-.contacts-info {
-  // .contacts-info__item
-  &__item {
-  }
-  // .contacts-info__link
-  &__link {
-  }
-  // .contacts-info__link--phone
-  &__link--phone {
-  }
-  // .contacts-info__item--socials
-  &__item--socials {
   }
 }
