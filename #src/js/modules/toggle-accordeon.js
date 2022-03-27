@@ -32,7 +32,7 @@ export class Accordeon {
 
     if (!triggers) {
       //нужно прокинуть ошибку
-      console.log('triggers: error');
+      console.error('triggers: error');
       return;
     }
     triggers.forEach((trigger) => {
@@ -45,22 +45,14 @@ export class Accordeon {
 
     if (!el) {
       //нужно прокинуть ошибку
-      console.log('setInlineHeight: error');
+      console.error('setInlineHeight: error');
       return;
     }
 
     el.style.height = el.scrollHeight + 'px';
-
-    //*Либо проставляет высоту всем сразу
-    // const elements = document.querySelectorAll(`.${el.className}`);
-
-    // elements.forEach((element) => {
-    //   element.style.height = element.scrollHeight + 'px';
-    // });
   }
 
   getStyles(el, prop) {
-    // if (!el || !prop) return;
     return getComputedStyle(el).getPropertyValue(prop);
   }
 
@@ -97,9 +89,12 @@ export class Accordeon {
 
     if (!this.accordeon.contains(openingPart)) return;
 
-    openingPart.classList.toggle(this.toggleClass);
-
+    //todo наверное, лучше передавать конретный элемент
     let panel = openingPart.nextElementSibling;
+
+    if (!panel) return;
+
+    openingPart.classList.toggle(this.toggleClass);
 
     if (toggleStyle === 'displayChange') {
       this.toggleDisplay(panel);
