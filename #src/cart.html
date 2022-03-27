@@ -4,403 +4,411 @@
   <body>
     <div class="wrapper">
       @@include('_header.html',{})
-      <main class="cart-page">
-        <section class="cart">
-          <div class="cart__inner">
-            <div class="cart__breadcrumbs breadcrumbs">
-              <div class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link">Главная</a>
-              </div>
-              <div class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link">Каталог</a>
-              </div>
-              <div class="breadcrumbs__item">Корзина</div>
+      <main>
+        <div class="container">
+          <div class="breadcrumbs">
+            <div class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Главная</a>
             </div>
-            <h1 class="cart__heading">Корзина</h1>
-            <form id="cart-form" class="cart__form form-cart form">
-              <div class="cart__main-content">
-                <div class="cart__list">
-                  <div class="cart__list-item cart-item">
-                    <div class="cart-item__info">
-                      <div class="cart-item__image">
-                        <picture>
-                          <source
-                            media="(min-width: 768px)"
-                            srcset="img/cart/good-1-md.webp"
-                            type="image/webp"
-                          />
-                          <source media="(min-width: 768px)" srcset="img/cart/good-1-md.jpg" />
-                          <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
-                          <img src="img/cart/good-1-sm.jpg" alt="good-n" />
-                        </picture>
-                      </div>
-                      <div class="cart-item__good-info">
-                        <div class="cart-item__price">
-                          <div class="cart-item__price-item">15 344 ₽</div>
-                          <div class="cart-item__price-item cart-item__price-item--unit-price">
-                            2 x 7 672 ₽
-                          </div>
-                        </div>
-                        <p class="cart-item__name">Перчатки Перчатки Нитровиниловые</p>
-                      </div>
-                    </div>
-                    <div class="cart-item__counter counter">
-                      <button
-                        class="counter__button counter__button--transparent counter__button--decr"
-                      ></button>
-                      <input
-                        class="counter__input counter__input--with-border"
-                        autocomplete="off"
-                        maxlength="2"
-                        value="1"
-                      />
-                      <button
-                        class="counter__button counter__button--transparent counter__button--incr"
-                      ></button>
-                    </div>
-                    <div class="cart-item__bar">
-                      <button
-                        class="cart-item__bar-button cart-item__bar-button--favorite"
-                        aria-label="Удалить товар"
-                      >
-                        <span></span>
-                      </button>
-                      <button
-                        class="cart-item__bar-button cart-item__bar-button--trash"
-                        aria-label="Добавить в избранное"
-                      >
-                        <span></span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="cart__list-item cart-item">
-                    <div class="cart-item__info">
-                      <div class="cart-item__image">
-                        <picture>
-                          <source
-                            media="(min-width: 768px)"
-                            srcset="img/cart/good-1-md.webp"
-                            type="image/webp"
-                          />
-                          <source media="(min-width: 768px)" srcset="img/cart/good-1-md.jpg" />
-                          <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
-                          <img src="img/cart/good-1-sm.jpg" alt="good-n" />
-                        </picture>
-                      </div>
-                      <div class="cart-item__good-info">
-                        <div class="cart-item__price">
-                          <div class="cart-item__price-item">15 344 ₽</div>
-                          <div class="cart-item__price-item cart-item__price-item--unit-price">
-                            2 x 7 672 ₽
-                          </div>
-                        </div>
-                        <p class="cart-item__name">Перчатки Перчатки Нитровиниловые</p>
-                      </div>
-                    </div>
-                    <div class="cart-item__counter counter">
-                      <button
-                        class="counter__button counter__button--transparent counter__button--decr"
-                      ></button>
-                      <input
-                        class="counter__input counter__input--with-border"
-                        autocomplete="off"
-                        maxlength="2"
-                        value="1"
-                      />
-                      <button
-                        class="counter__button counter__button--transparent counter__button--incr"
-                      ></button>
-                    </div>
-                    <div class="cart-item__bar">
-                      <button
-                        class="cart-item__bar-button cart-item__bar-button--favorite"
-                        aria-label="Удалить товар"
-                      >
-                        <span></span>
-                      </button>
-                      <button
-                        class="cart-item__bar-button cart-item__bar-button--trash"
-                        aria-label="Добавить в избранное"
-                      >
-                        <span></span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="cart__user-data user-data-cart">
-                  <h2 class="user-data-cart__heading">Ваши данные</h2>
-                  <div
-                    class="user-data-cart__block user-data-cart__block--grid user-data-cart__block--recipient"
-                  >
-                    <!-- <h3 class="form-cart__block-heading">Информация о получателе</h3> -->
-                    <div class="form__group">
-                      <label class="form__label" for="surname">Фамилия</label>
-                      <div class="form__group-fields">
-                        <input
-                          class="field field--full-width"
-                          type="text"
-                          name="surname"
-                          value=""
-                          id="surname"
-                          required=""
-                          placeholder="Печальный"
-                        />
-                      </div>
-                    </div>
-                    <div class="form__group">
-                      <label class="form__label" for="name">Имя</label>
-                      <div class="form__group-fields">
-                        <input
-                          class="field field--full-width"
-                          type="text"
-                          name="name"
-                          value=""
-                          id="name"
-                          required=""
-                          placeholder="Михаил"
-                        />
-                      </div>
-                    </div>
-                    <div class="form__group">
-                      <label class="form__label" for="phone">Телефон</label>
-                      <div class="form__group-fields">
-                        <input
-                          class="field field--full-width"
-                          type="tel"
-                          name="phone"
-                          value=""
-                          id="phone"
-                          required=""
-                          placeholder="+7 953 340 51-65"
-                          pattern="[0-9]*"
-                        />
-                      </div>
-                    </div>
-                    <div class="form__group">
-                      <label class="form__label" for="email">Эл. почта</label>
-                      <div class="form__group-fields">
-                        <input
-                          class="field field--full-width"
-                          type="email"
-                          name="email"
-                          value=""
-                          id="email"
-                          required=""
-                          placeholder="tatoo@gmail.ru"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="user-data-cart__block user-data-cart__block--grid user-data-cart__block--address"
-                  >
-                    <div class="user-data-cart__group user-data-cart__group--city form__group">
-                      <label class="form__label" for="city">Город</label>
-                      <div class="form__group-fields">
-                        <input
-                          class="field field--full-width"
-                          type="text"
-                          name="city"
-                          value=""
-                          id="city"
-                          required=""
-                          placeholder="Санкт-Петербург"
-                        />
-                      </div>
-                    </div>
-                    <div class="user-data-cart__group user-data-cart__group--street form__group">
-                      <label class="form__label" for="street">Улица, дом</label>
-                      <div class="form__group-fields">
-                        <input
-                          class="field field--full-width"
-                          type="text"
-                          name="street"
-                          value=""
-                          id="street"
-                          required=""
-                          placeholder="ул. Парашютная, д. 33"
-                        />
-                      </div>
-                    </div>
-                    <div class="user-data-cart__group user-data-cart__group--apartment form__group">
-                      <label class="form__label" for="apartment">Квартира/Офис</label>
-                      <div class="form__group-fields form__group-fields--num-hide-arrows">
-                        <input
-                          class="field field--full-width"
-                          type="number"
-                          name="apartment"
-                          value=""
-                          id="apartment"
-                          required=""
-                          placeholder="63"
-                          min="1"
-                        />
-                      </div>
-                    </div>
-                    <div class="user-data-cart__group user-data-cart__group--entrance form__group">
-                      <label class="form__label" for="entrance">Подъезд</label>
-                      <div class="form__group-fields form__group-fields--num-hide-arrows">
-                        <input
-                          class="field field--full-width"
-                          type="number"
-                          name="entrance"
-                          value=""
-                          id="entrance"
-                          required=""
-                          placeholder="1"
-                          min="1"
-                        />
-                      </div>
-                    </div>
-                    <div class="user-data-cart__group user-data-cart__group--floor form__group">
-                      <label class="form__label" for="floor">Этаж</label>
-                      <div class="form__group-fields form__group-fields--num-hide-arrows">
-                        <input
-                          class="field field--full-width"
-                          type="number"
-                          name="floor"
-                          value=""
-                          id="floor"
-                          required=""
-                          placeholder="5"
-                          min="1"
-                        />
-                      </div>
-                    </div>
-                    <div class="user-data-cart__group user-data-cart__group--intercom form__group">
-                      <label class="form__label" for="intercom">Домофон</label>
-                      <div class="form__group-fields form__group-fields--num-hide-arrows">
-                        <input
-                          class="field field--full-width"
-                          type="number"
-                          name="intercom"
-                          value=""
-                          id="intercom"
-                          required=""
-                          placeholder="63"
-                          min="1"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="cart__sidebar sidebar-cart">
-                <div class="sidebar-cart__inner">
-                  <div class="sidebar-cart__group options-cart">
-                    <div class="options-cart__group">
-                      <h4 class="options-cart__group-heading">Оплата</h4>
-                      <div class="options-cart__group-content">
-                        <label class="radio">
-                          <input class="radio__input" name="payment" type="radio" />
-                          <span class="radio__box"></span>
-                          <span class="radio__text">Онлайн на сайте</span>
-                        </label>
-                        <label class="radio">
-                          <input class="radio__input" name="payment" type="radio" checked="" />
-                          <span class="radio__box"></span>
-                          <span class="radio__text">Наложенным платежом</span>
-                        </label>
-                        <label class="radio">
-                          <input class="radio__input" name="payment" type="radio" />
-                          <span class="radio__box"></span>
-                          <span class="radio__text">Безналичный расчет</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="options-cart__group">
-                      <h4 class="options-cart__group-heading">Доставка</h4>
-                      <div class="options-cart__group-content">
-                        <label class="radio">
-                          <input class="radio__input" name="delivery" type="radio" />
-                          <span class="radio__box"></span>
-                          <span class="radio__text">Курьерская служба</span>
-                        </label>
-                        <label class="radio">
-                          <input class="radio__input" name="delivery" type="radio" checked="" />
-                          <span class="radio__box"></span>
-                          <span class="radio__text">Почта России</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="sidebar-cart__group total-cart">
-                    <div class="total-cart__group">
-                      <div class="total-cart__item">
-                        <div class="total-cart__item-title">Всего единиц товара:</div>
-                        <div class="total-cart__item-content">17</div>
-                      </div>
-                      <div class="total-cart__item">
-                        <div class="total-cart__item-title">Общая скидка:</div>
-                        <div class="total-cart__item-content">1080₽</div>
-                      </div>
-                      <div class="total-cart__item">
-                        <div class="total-cart__item-title">Доп. услуги:</div>
-                        <div class="total-cart__item-content">0₽</div>
-                      </div>
-                      <div class="total-cart__item total-cart__item--total">
-                        <div class="total-cart__item-title">Итого:</div>
-                        <div class="total-cart__item-content">37 820₽</div>
-                      </div>
-                    </div>
-                    <div class="total-cart__group">
-                      <div class="total-cart__form">
-                        <div class="form__group">
-                          <label class="form__label" for="entrance">Промокод</label>
-                          <div class="form__group-fields">
-                            <input
-                              class="field field--full-width"
-                              type="text"
-                              name="promo"
-                              value=""
-                              id="promo"
-                              required=""
-                              placeholder="onThisNThat"
-                              spellcheck="false"
+            <div class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Каталог</a>
+            </div>
+            <div class="breadcrumbs__item">Корзина</div>
+          </div>
+          <h1 class="page-heading">Корзина</h1>
+          <div class="cart">
+            <div class="cart__inner">
+              <form id="cart-form" class="cart__form form-cart form">
+                <div class="cart__main-content">
+                  <div class="cart__list">
+                    <div class="cart__list-item cart-item">
+                      <div class="cart-item__info">
+                        <div class="cart-item__image">
+                          <picture>
+                            <source
+                              media="(min-width: 768px)"
+                              srcset="img/cart/good-1-md.webp"
+                              type="image/webp"
                             />
-                          </div>
+                            <source media="(min-width: 768px)" srcset="img/cart/good-1-md.jpg" />
+                            <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
+                            <img src="img/cart/good-1-sm.jpg" alt="good-n" />
+                          </picture>
                         </div>
-                        <button class="total-cart__form-button button button--transparent">
-                          Активировать промокод
+                        <div class="cart-item__good-info">
+                          <div class="cart-item__price-wrapper">
+                            <span class="cart-item__price-item">15 344 ₽</span>
+                            <span class="cart-item__price-item cart-item__price-item--unit-price">
+                              2 x 7 672 ₽
+                            </span>
+                          </div>
+                          <p class="cart-item__name">Перчатки Перчатки Нитровиниловые</p>
+                        </div>
+                      </div>
+                      <div class="cart-item__counter counter">
+                        <button
+                          class="counter__button counter__button--transparent counter__button--decr"
+                        ></button>
+                        <input
+                          class="counter__input counter__input--with-border"
+                          autocomplete="off"
+                          maxlength="2"
+                          value="1"
+                        />
+                        <button
+                          class="counter__button counter__button--transparent counter__button--incr"
+                        ></button>
+                      </div>
+                      <div class="cart-item__bar">
+                        <button
+                          class="cart-item__bar-button cart-item__bar-button--favorite"
+                          aria-label="Удалить товар"
+                        >
+                          <span></span>
+                        </button>
+                        <button
+                          class="cart-item__bar-button cart-item__bar-button--trash"
+                          aria-label="Добавить в избранное"
+                        >
+                          <span></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="cart__list-item cart-item">
+                      <div class="cart-item__info">
+                        <div class="cart-item__image">
+                          <picture>
+                            <source
+                              media="(min-width: 768px)"
+                              srcset="img/cart/good-1-md.webp"
+                              type="image/webp"
+                            />
+                            <source media="(min-width: 768px)" srcset="img/cart/good-1-md.jpg" />
+                            <source srcset="img/cart/good-1-sm.webp" type="image/webp" />
+                            <img src="img/cart/good-1-sm.jpg" alt="good-n" />
+                          </picture>
+                        </div>
+                        <div class="cart-item__good-info">
+                          <div class="cart-item__price">
+                            <div class="cart-item__price-item">15 344 ₽</div>
+                            <div class="cart-item__price-item cart-item__price-item--unit-price">
+                              2 x 7 672 ₽
+                            </div>
+                          </div>
+                          <p class="cart-item__name">Перчатки Перчатки Нитровиниловые</p>
+                        </div>
+                      </div>
+                      <div class="cart-item__counter counter">
+                        <button
+                          class="counter__button counter__button--transparent counter__button--decr"
+                        ></button>
+                        <input
+                          class="counter__input counter__input--with-border"
+                          autocomplete="off"
+                          maxlength="2"
+                          value="1"
+                        />
+                        <button
+                          class="counter__button counter__button--transparent counter__button--incr"
+                        ></button>
+                      </div>
+                      <div class="cart-item__bar">
+                        <button
+                          class="cart-item__bar-button cart-item__bar-button--favorite"
+                          aria-label="Удалить товар"
+                        >
+                          <span></span>
+                        </button>
+                        <button
+                          class="cart-item__bar-button cart-item__bar-button--trash"
+                          aria-label="Добавить в избранное"
+                        >
+                          <span></span>
                         </button>
                       </div>
                     </div>
                   </div>
-                  <div class="sidebar-cart__group order-cart">
-                    <div class="order-cart__button-wrapper">
-                      <button class="order-cart__button button button--orange">
-                        Оформить заказ
-                        <span class="button__corner button__corner--left"></span>
-                        <span class="button__corner button__corner--right"></span>
-                      </button>
-                      <button class="order-cart__button button button--light">
-                        Купить в 1 клик
-                        <span class="button__corner button__corner--left"></span>
-                        <span class="button__corner button__corner--right"></span>
-                      </button>
+                  <div class="cart__user-data user-data-cart">
+                    <h2 class="user-data-cart__heading">Ваши данные</h2>
+                    <div
+                      class="user-data-cart__block user-data-cart__block--grid user-data-cart__block--recipient"
+                    >
+                      <!-- <h3 class="form-cart__block-heading">Информация о получателе</h3> -->
+                      <div class="form__group">
+                        <label class="form__label" for="surname">Фамилия</label>
+                        <div class="form__group-fields">
+                          <input
+                            class="field field--full-width"
+                            type="text"
+                            name="surname"
+                            value=""
+                            id="surname"
+                            required=""
+                            placeholder="Печальный"
+                          />
+                        </div>
+                      </div>
+                      <div class="form__group">
+                        <label class="form__label" for="name">Имя</label>
+                        <div class="form__group-fields">
+                          <input
+                            class="field field--full-width"
+                            type="text"
+                            name="name"
+                            value=""
+                            id="name"
+                            required=""
+                            placeholder="Михаил"
+                          />
+                        </div>
+                      </div>
+                      <div class="form__group">
+                        <label class="form__label" for="phone">Телефон</label>
+                        <div class="form__group-fields">
+                          <input
+                            class="field field--full-width"
+                            type="tel"
+                            name="phone"
+                            value=""
+                            id="phone"
+                            required=""
+                            placeholder="+7 953 340 51-65"
+                            pattern="[0-9]*"
+                          />
+                        </div>
+                      </div>
+                      <div class="form__group">
+                        <label class="form__label" for="email">Эл. почта</label>
+                        <div class="form__group-fields">
+                          <input
+                            class="field field--full-width"
+                            type="email"
+                            name="email"
+                            value=""
+                            id="email"
+                            required=""
+                            placeholder="tatoo@gmail.ru"
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <label class="order-cart__checkbox checkbox">
-                      <input
-                        class="checkbox__input"
-                        type="checkbox"
-                        name="agreement"
-                        value="1"
-                        required=""
-                      />
-                      <span class="checkbox__box"></span>
-                      <span class="checkbox__text">
-                        Согласен с
-                        <a href="#">публичной офертой</a>
-                        и
-                        <a href="#">обработкой персональных данных</a>
-                      </span>
-                    </label>
+                    <div
+                      class="user-data-cart__block user-data-cart__block--grid user-data-cart__block--address"
+                    >
+                      <div class="user-data-cart__group user-data-cart__group--city form__group">
+                        <label class="form__label" for="city">Город</label>
+                        <div class="form__group-fields">
+                          <input
+                            class="field field--full-width"
+                            type="text"
+                            name="city"
+                            value=""
+                            id="city"
+                            required=""
+                            placeholder="Санкт-Петербург"
+                          />
+                        </div>
+                      </div>
+                      <div class="user-data-cart__group user-data-cart__group--street form__group">
+                        <label class="form__label" for="street">Улица, дом</label>
+                        <div class="form__group-fields">
+                          <input
+                            class="field field--full-width"
+                            type="text"
+                            name="street"
+                            value=""
+                            id="street"
+                            required=""
+                            placeholder="ул. Парашютная, д. 33"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="user-data-cart__group user-data-cart__group--apartment form__group"
+                      >
+                        <label class="form__label" for="apartment">Квартира/Офис</label>
+                        <div class="form__group-fields form__group-fields--num-hide-arrows">
+                          <input
+                            class="field field--full-width"
+                            type="number"
+                            name="apartment"
+                            value=""
+                            id="apartment"
+                            required=""
+                            placeholder="63"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="user-data-cart__group user-data-cart__group--entrance form__group"
+                      >
+                        <label class="form__label" for="entrance">Подъезд</label>
+                        <div class="form__group-fields form__group-fields--num-hide-arrows">
+                          <input
+                            class="field field--full-width"
+                            type="number"
+                            name="entrance"
+                            value=""
+                            id="entrance"
+                            required=""
+                            placeholder="1"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                      <div class="user-data-cart__group user-data-cart__group--floor form__group">
+                        <label class="form__label" for="floor">Этаж</label>
+                        <div class="form__group-fields form__group-fields--num-hide-arrows">
+                          <input
+                            class="field field--full-width"
+                            type="number"
+                            name="floor"
+                            value=""
+                            id="floor"
+                            required=""
+                            placeholder="5"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="user-data-cart__group user-data-cart__group--intercom form__group"
+                      >
+                        <label class="form__label" for="intercom">Домофон</label>
+                        <div class="form__group-fields form__group-fields--num-hide-arrows">
+                          <input
+                            class="field field--full-width"
+                            type="number"
+                            name="intercom"
+                            value=""
+                            id="intercom"
+                            required=""
+                            placeholder="63"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
+                <div class="cart__sidebar sidebar-cart">
+                  <div class="sidebar-cart__inner">
+                    <div class="sidebar-cart__group options-cart">
+                      <div class="options-cart__group">
+                        <h4 class="options-cart__group-heading">Оплата</h4>
+                        <div class="options-cart__group-content">
+                          <label class="radio">
+                            <input class="radio__input" name="payment" type="radio" />
+                            <span class="radio__box"></span>
+                            <span class="radio__text">Онлайн на сайте</span>
+                          </label>
+                          <label class="radio">
+                            <input class="radio__input" name="payment" type="radio" checked="" />
+                            <span class="radio__box"></span>
+                            <span class="radio__text">Наложенным платежом</span>
+                          </label>
+                          <label class="radio">
+                            <input class="radio__input" name="payment" type="radio" />
+                            <span class="radio__box"></span>
+                            <span class="radio__text">Безналичный расчет</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="options-cart__group">
+                        <h4 class="options-cart__group-heading">Доставка</h4>
+                        <div class="options-cart__group-content">
+                          <label class="radio">
+                            <input class="radio__input" name="delivery" type="radio" />
+                            <span class="radio__box"></span>
+                            <span class="radio__text">Курьерская служба</span>
+                          </label>
+                          <label class="radio">
+                            <input class="radio__input" name="delivery" type="radio" checked="" />
+                            <span class="radio__box"></span>
+                            <span class="radio__text">Почта России</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sidebar-cart__group total-cart">
+                      <div class="total-cart__group">
+                        <div class="total-cart__item">
+                          <div class="total-cart__item-title">Всего единиц товара:</div>
+                          <div class="total-cart__item-content">17</div>
+                        </div>
+                        <div class="total-cart__item">
+                          <div class="total-cart__item-title">Общая скидка:</div>
+                          <div class="total-cart__item-content">1080₽</div>
+                        </div>
+                        <div class="total-cart__item">
+                          <div class="total-cart__item-title">Доп. услуги:</div>
+                          <div class="total-cart__item-content">0₽</div>
+                        </div>
+                        <div class="total-cart__item total-cart__item--total">
+                          <div class="total-cart__item-title">Итого:</div>
+                          <div class="total-cart__item-content">37 820₽</div>
+                        </div>
+                      </div>
+                      <div class="total-cart__group">
+                        <div class="total-cart__form">
+                          <div class="form__group">
+                            <label class="form__label" for="entrance">Промокод</label>
+                            <div class="form__group-fields">
+                              <input
+                                class="field field--full-width"
+                                type="text"
+                                name="promo"
+                                value=""
+                                id="promo"
+                                required=""
+                                placeholder="onThisNThat"
+                                spellcheck="false"
+                              />
+                            </div>
+                          </div>
+                          <button class="total-cart__form-button button button--transparent">
+                            Активировать промокод
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sidebar-cart__group order-cart">
+                      <div class="order-cart__button-wrapper">
+                        <button class="order-cart__button button button--orange">
+                          Оформить заказ
+                          <span class="button__corner button__corner--left"></span>
+                          <span class="button__corner button__corner--right"></span>
+                        </button>
+                        <button class="order-cart__button button button--light">
+                          Купить в 1 клик
+                          <span class="button__corner button__corner--left"></span>
+                          <span class="button__corner button__corner--right"></span>
+                        </button>
+                      </div>
+                      <label class="order-cart__checkbox checkbox">
+                        <input
+                          class="checkbox__input"
+                          type="checkbox"
+                          name="agreement"
+                          value="1"
+                          required=""
+                        />
+                        <span class="checkbox__box"></span>
+                        <span class="checkbox__text">
+                          Согласен с
+                          <a href="#">публичной офертой</a>
+                          и
+                          <a href="#">обработкой персональных данных</a>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-        </section>
+        </div>
       </main>
       @@include('_footer.html',{})
     </div>

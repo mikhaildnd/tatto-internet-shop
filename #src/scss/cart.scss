@@ -1,25 +1,7 @@
 .cart {
   // .cart__inner
   &__inner {
-    @include padding-container($maxWidthContainer, $pl, $pr);
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  // .cart__breadcrumbs
-  &__breadcrumbs {
-    margin-bottom: 20px;
-  }
-  // .cart__heading
-  &__heading {
-    font-family: $forum;
-    font-size: 25px;
-    margin-bottom: 20px;
-    @media (min-width: $md4) {
-      font-size: 50px;
-    }
-    // @media (min-width: $md2) {
-    //   font-size: 60px;
-    // }
+    padding-bottom: 60px;
   }
   // .cart__form
   &__form {
@@ -102,9 +84,6 @@
   }
   // .cart__user-data
   &__user-data {
-    // !.form__group {
-    //   margin-bottom: 20px;
-    // }
     .form__label {
       color: $grey;
       margin-bottom: 10px;
@@ -125,12 +104,9 @@
 .cart-item {
   position: relative;
   width: 100%;
-  // display: flex;
-  // flex-wrap: wrap;
   // .cart-item__info
   &__info {
     display: flex;
-    // margin-bottom: 20px;
   }
   // .cart-item__image
   &__image {
@@ -154,6 +130,9 @@
   }
   // .cart-item__good-info
   &__good-info {
+    display: grid;
+    align-content: center;
+    row-gap: 6px;
   }
   // .cart-item__name
   &__name {
@@ -161,9 +140,10 @@
     line-height: 1.1;
     color: $grey;
   }
-  // .cart-item__price
-  &__price {
-    margin-bottom: 6px;
+  // .cart-item__price-wrapper
+  &__price-wrapper {
+    display: grid;
+    row-gap: 2px;
   }
   // .cart-item__price-item
   &__price-item {
@@ -240,7 +220,6 @@
       gap: 20px;
       @media (min-width: $md4) {
         grid-template-columns: repeat(2, 1fr);
-        // grid-template-areas: 'name name name phone phone mail mail mail';
       }
     }
     &--address {
