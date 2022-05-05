@@ -1,4 +1,4 @@
-//*.socials
+/* Socials */
 .socials {
   display: inline-grid;
   grid-auto-flow: column;
@@ -34,6 +34,7 @@
       color: $text-dark;
     }
   }
+
   // .socials__link
   &__link {
     display: grid;

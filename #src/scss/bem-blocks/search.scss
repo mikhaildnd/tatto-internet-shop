@@ -1,10 +1,12 @@
-//*search-form
+/* Search */
 .search {
   position: relative;
+
   // .search__control
   &__control {
     position: relative;
   }
+
   // .search__input
   &__input {
     width: 100%;
@@ -20,6 +22,7 @@
       border: 1px solid $orange;
     }
   }
+
   // .search__button
   &__button {
     position: absolute;
@@ -28,7 +31,7 @@
   }
 }
 
-// *.search-button
+/* Search-button */
 .search-button {
   display: block;
   width: 28px;

@@ -1,3 +1,4 @@
+/* Main-page */
 .main-page {
   &__item {
     &:nth-child(2) {
@@ -20,11 +21,13 @@
     }
   }
 }
-//========================================================================================================================================================
+
+/* Hero */
 .hero {
   z-index: 0;
   position: relative;
   background-color: #0a0807;
+
   // .hero__slider-nav
   &__slider-nav {
     position: absolute;
@@ -33,12 +36,14 @@
     width: 100%;
     height: 100%;
   }
+
   // .hero__slider-nav-inner
   &__slider-nav-inner {
     @include container($maxWidthContainer);
     position: relative;
     height: 100%;
   }
+
   // .hero__slider-control
   &__slider-control {
     z-index: 2;
@@ -127,6 +132,7 @@
       }
     }
   }
+
   // .hero__slide
   &__slide {
     background-repeat: no-repeat;
@@ -139,6 +145,7 @@
       background-image: url(../img/bg/main-bg.jpg);
     }
   }
+
   // .hero__inner
   &__inner {
     @include padding-container($maxWidthContainer, $pl, $pr);
@@ -157,6 +164,7 @@
       padding-bottom: 210px;
     }
   }
+
   // .hero__text-block
   &__text-block {
     margin-bottom: 40px;
@@ -167,6 +175,7 @@
       margin-bottom: 60px;
     }
   }
+
   // .hero__heading
   &__heading {
     margin-bottom: 20px;
@@ -188,6 +197,7 @@
       font-size: 75px;
     }
   }
+
   // .hero__text
   &__text {
     max-width: 430px;
@@ -201,6 +211,7 @@
       font-size: 25px;
     }
   }
+
   // .hero__button
   &__button {
     width: 100%;
@@ -210,7 +221,8 @@
     }
   }
 }
-//========================================================================================================================================================
+
+/* Product-offers */
 .product-offers {
   // .product-offers__nav
   &__nav {
@@ -293,7 +305,8 @@
     min-width: 275px;
   }
 }
-//========================================================================================================================================================
+
+/* Catalog-grid */
 .catalog-grid {
   // .catalog-grid__list
   &__list {
@@ -339,6 +352,7 @@
         'consumables consumables consumables consumables accessories accessories accessories';
     }
   }
+
   // .catalog-grid__list-item
   &__list-item {
     background-color: #f5f5f5;
@@ -382,6 +396,7 @@
   &:hover {
     box-shadow: 0px 0px 15px 3px #ddd;
   }
+
   // .item-catalog__link
   &__link {
     color: $black;
@@ -400,6 +415,7 @@
       }
     }
   }
+
   // .item-catalog__heading
   &__heading {
     padding: 40px 30px 30px 50px;
@@ -407,6 +423,7 @@
     line-height: 1.3;
     font-weight: 700;
   }
+
   // .item-catalog__image
   &__image {
     max-height: 300px;
@@ -419,11 +436,15 @@
     }
   }
 }
-//========================================================================================================================================================
+
+/* Banners */
 .banners {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 20px;
+  @media (min-width: $md4) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   // .banners__item
   &__item {
     flex-basis: 100%;
@@ -456,6 +477,7 @@
       background-image: url(../img/banners/banner-2-lg.jpg);
     }
   }
+
   // .item-banner__inner
   &__inner {
     min-height: 300px;
@@ -467,6 +489,7 @@
       padding: 40px 50px 30px 50px;
     }
   }
+
   // .item-banner__text
   &__text {
     flex-basis: 100%;
@@ -481,11 +504,13 @@
       font-size: 40px;
     }
   }
+
   // .item-banner__link-wrapper
   &__link-wrapper {
     flex-basis: 100%;
     align-self: flex-end;
   }
+
   // .item-banner__link
   &__link {
     font-size: 20px;
@@ -516,12 +541,14 @@
     }
   }
 }
-//========================================================================================================================================================
+
+/* Brands */
 .brands {
   padding-bottom: 48px;
   @media (min-width: $md1) {
     padding-bottom: 56px;
   }
+
   // .brands__slider
   &__slider {
     position: relative;
@@ -561,6 +588,7 @@
       }
     }
   }
+
   // .brands__slider-inner
   &__slider-inner {
     height: 90px;
@@ -583,10 +611,10 @@
       }
     }
   }
+
   // .brands__link
   &__link {
     position: absolute;
-    // top: -36px;
     top: -23px;
     right: 0;
     font-size: 15px;
@@ -610,12 +638,15 @@
     }
   }
 }
+
+/* Brands-item */
 .brands-item {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
   user-select: none;
+
   // .brands-item__image
   &__image {
     display: flex;
@@ -645,7 +676,8 @@
     }
   }
 }
-//========================================================================================================================================================
+
+/* Info-block */
 .info-block {
   display: grid;
   row-gap: 14px;
@@ -682,6 +714,7 @@
       height: 635px;
     }
   }
+
   // .info-block__content
   &__content {
     display: grid;
@@ -695,6 +728,7 @@
       padding-left: $pl * 2;
     }
   }
+
   // .info-block__heading
   &__heading {
     margin-bottom: 8px;
@@ -710,6 +744,7 @@
       font-size: 50px;
     }
   }
+
   // .info-block__text
   &__text {
     margin-bottom: 20px;
@@ -731,6 +766,7 @@
       font-size: 17px;
     }
   }
+
   // .info-block__button
   &__button {
     width: 100%;
@@ -743,7 +779,8 @@
     }
   }
 }
-//========================================================================================================================================================
+
+/* Feedback */
 .feedback {
   // .feedback__slider
   &__slider {
@@ -785,6 +822,7 @@
       transform: translateX(-50%);
     }
   }
+
   // .feedback__card
   &__card {
     height: auto;
@@ -795,6 +833,8 @@
     }
   }
 }
+
+/* Card-feedback */
 .card-feedback {
   padding: 50px 20px 52px;
   background-color: $bg-black;
@@ -804,6 +844,7 @@
     padding-left: 50px;
     padding-right: 50px;
   }
+
   // .card-feedback__photo
   &__photo {
     position: absolute;
@@ -820,6 +861,7 @@
       object-fit: cover;
     }
   }
+
   // .card-feedback__text
   &__text {
     p {
@@ -832,7 +874,8 @@
     }
   }
 }
-//========================================================================================================================================================
+
+/* Mailing */
 .mailing {
   @media (min-width: $md2) {
     display: grid;
@@ -849,6 +892,7 @@
   @media (min-width: $md1) {
     column-gap: 70px;
   }
+
   // .mailing__content
   &__content {
     padding-left: $pl;
@@ -863,6 +907,7 @@
       width: 524px;
     }
   }
+
   // .mailing__desc
   &__desc {
     font-size: 17px;
@@ -873,6 +918,7 @@
       font-size: 25px;
     }
   }
+
   // .mailing__form
   &__form {
     @media (min-width: $md5) {

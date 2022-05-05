@@ -3,19 +3,20 @@
   &__filter-trigger {
     grid-area: trigger;
   }
+
   // .products-panel__sort
   &__sort {
     display: flex;
     align-items: center;
     grid-area: sort;
   }
+
   // .products-panel__select
   &__select {
     position: relative;
     display: grid;
     grid-auto-flow: column;
     gap: 20px;
-    // align-items: center;
     &::after {
       content: '';
       position: absolute;
@@ -35,12 +36,14 @@
       align-self: center;
     }
   }
+
   // .products-panel__label
   &__label {
     font-size: 17px;
     line-height: 1.5;
     color: $grey;
   }
+
   // .products-panel__select-list
   &__select-list {
     appearance: none;
@@ -51,6 +54,7 @@
     font-size: 17px;
     font-weight: 500;
   }
+
   // .products-panel__change-view
   &__change-view {
     grid-area: view;

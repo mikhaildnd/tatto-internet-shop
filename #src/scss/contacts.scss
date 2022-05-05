@@ -1,3 +1,4 @@
+/* Contacts-page */
 .contacts-page {
   // .contacts__item
   &__item {
@@ -9,6 +10,7 @@
       margin-bottom: 40px;
     }
   }
+
   // .contacts__item-heading
   &__item-heading {
     font-size: 20px;
@@ -22,6 +24,7 @@
   }
 }
 
+/* Map-section */
 .map-section {
   //.map-section__map
   &__map {
@@ -30,8 +33,9 @@
   }
 }
 
+/* Info-board */
 .info-board {
-  // .company-info__content
+  // .info-board__content
   &__content {
     display: grid;
     grid-template-areas:
@@ -74,7 +78,8 @@
       margin-right: 0;
     }
   }
-  // .company-info__phone
+
+  // .info-board__phone
   &__phone {
     grid-area: phone;
     font-size: 25px;
@@ -84,7 +89,8 @@
       font-size: 40px;
     }
   }
-  // .company-info__schedule
+
+  // .info-board__schedule
   &__schedule {
     grid-area: schedule;
     font-size: 15px;
@@ -93,7 +99,8 @@
       font-size: 20px;
     }
   }
-  // .company-info__receiving-request
+
+  // .info-board__receiving-request
   &__receiving-request {
     grid-area: contacts;
     display: grid;
@@ -108,7 +115,8 @@
       font-size: 25px;
     }
   }
-  // .company-info__link
+
+  // .info-board__link
   &__link {
     color: $black;
     &:hover,
@@ -116,7 +124,8 @@
       color: $orange;
     }
   }
-  // .company-info__socials
+
+  // .info-board__socials
   &__socials {
     align-self: start;
     grid-area: socials;
@@ -128,7 +137,8 @@
       line-height: 1.5;
     }
   }
-  // .company-info__note
+
+  // .info-board__note
   &__note {
     grid-area: note;
     color: $grey;
@@ -138,7 +148,8 @@
       font-size: 17px;
     }
   }
-  // .company-info__delivery
+
+  // .info-board__delivery
   &__delivery {
     grid-area: delivery;
     font-weight: 700;
@@ -148,7 +159,8 @@
       font-size: 17px;
     }
   }
-  // .company-info__requisites
+
+  // .info-board__requisites
   &__requisites {
     grid-area: req;
     display: grid;
@@ -160,6 +172,8 @@
     }
   }
 }
+
+/* Our-managers */
 .our-managers {
   // .our-managers__list
   &__list {
@@ -173,6 +187,8 @@
     }
   }
 }
+
+/* Worker-card */
 .worker-card {
   margin-left: -$pl;
   margin-right: -$pr;
@@ -182,6 +198,7 @@
     margin-left: 0;
     margin-right: 0;
   }
+
   // .worker-card__inner
   &__inner {
     width: 100%;
@@ -208,6 +225,7 @@
       justify-items: start;
     }
   }
+
   // .worker-card__photo
   &__photo {
     position: relative;
@@ -218,6 +236,7 @@
       object-fit: contain;
     }
   }
+
   // .worker-card__main-info
   &__main-info {
     grid-area: main-info;
@@ -231,6 +250,7 @@
       align-content: start;
     }
   }
+
   // .worker-card__name
   &__name {
     font-size: 14px;
@@ -240,6 +260,7 @@
       font-size: 16px;
     }
   }
+
   // .worker-card__status
   &__status {
     justify-self: start;
@@ -267,6 +288,7 @@
       }
     }
   }
+
   // .worker-card__contacts
   &__contacts {
     grid-area: contacts;

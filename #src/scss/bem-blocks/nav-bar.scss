@@ -1,5 +1,7 @@
+/* Nav-bar */
 .nav-bar {
   display: flex;
+
   // .nav-bar__item
   &__item {
     display: none;
@@ -22,6 +24,7 @@
       }
     }
   }
+
   // .nav-bar__link
   &__link {
     display: flex;
@@ -52,6 +55,7 @@
       background-image: url(../img/icons/nav-bar/login.svg);
     }
   }
+
   // .nav-bar__notify
   &__notify {
     display: flex;
@@ -67,6 +71,7 @@
     font-size: 14px;
     line-height: 1.5;
   }
+
   // .nav-bar__price
   &__price {
     margin-right: 6px;

@@ -1,14 +1,23 @@
+/* Catalog */
 .catalog {
   // .catalog__products
   &__inner {
-    @include gutters-bottom;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 20px;
+    @media (min-width: $md2) {
+      padding-bottom: 40px;
+    }
+    @media (min-width: $md1) {
+      padding-bottom: 60px;
+    }
   }
+
   // .catalog__heading
   &__heading {
     width: 100%;
   }
+
   // .catalog__filter
   &__filter {
     display: none;
@@ -31,6 +40,7 @@
       padding-right: 20px;
     }
   }
+
   // .catalog__products
   &__products {
     width: 100%;
@@ -39,6 +49,7 @@
       padding-left: 20px;
     }
   }
+
   // .catalog__products-panel
   &__products-panel {
     display: grid;
@@ -97,6 +108,7 @@
       justify-self: end;
     }
   }
+
   // .catalog__products-container
   &__products-container {
     display: grid;
@@ -120,6 +132,7 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
   // .catalog__product-card
   &__product-card {
     /* чтобы элемент не выпирал, это происходит из-за ширины 'auto', 
@@ -131,6 +144,7 @@
     или overflow: hidden, но овф обрежет элем*/
     min-width: 0;
   }
+
   // .catalog__button
   &__button {
     display: block;
@@ -139,6 +153,7 @@
     margin-bottom: 50px;
     width: 275px;
   }
+
   // .catalog__pagination
   &__pagination {
     display: grid;

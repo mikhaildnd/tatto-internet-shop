@@ -1,3 +1,4 @@
+/* Pagination */
 .pagination {
   // .pagination__item
   &__item {
@@ -64,6 +65,7 @@
       color: $white;
       pointer-events: none;
     }
+
     // .pagination__item--disabled
     &--disabled {
       background-color: #e7e7e7;
@@ -77,6 +79,7 @@
       }
     }
   }
+
   // .pagination__link
   &__link {
     display: flex;

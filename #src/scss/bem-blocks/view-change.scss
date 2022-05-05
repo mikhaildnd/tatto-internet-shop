@@ -1,4 +1,6 @@
 /* change view type icons */
+
+/* View-change */
 .view-change {
   display: inline-grid;
   grid-auto-flow: column;
@@ -6,6 +8,7 @@
   & > * {
     align-self: center;
   }
+
   // .view-change__input
   &__input {
     position: absolute;
@@ -28,6 +31,7 @@
       box-shadow: 0 0 7px 0 $orange;
     }
   }
+
   // .view-change__icon
   &__icon {
     cursor: pointer;

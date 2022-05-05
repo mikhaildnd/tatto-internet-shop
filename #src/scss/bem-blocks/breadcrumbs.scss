@@ -1,3 +1,4 @@
+/* Breadcrumbs */
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -10,6 +11,7 @@
     padding-bottom: 22px;
     font-size: 17px;
   }
+
   // .breadcrumbs__item
   &__item {
     display: inline-grid;
@@ -30,6 +32,7 @@
       }
     }
   }
+
   // .breadcrumbs__link
   &__link {
     color: $grey-light;

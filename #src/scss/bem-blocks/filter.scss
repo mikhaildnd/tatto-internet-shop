@@ -1,8 +1,10 @@
+/* Filter */
 .filter {
   // .filter__wrapper-for-scroll
   &__wrapper-for-scroll {
     overflow: auto;
   }
+
   // .filter__group
   &__group {
     border-bottom: 1px solid $grey-light;
@@ -24,11 +26,13 @@
       }
     }
   }
+
   // .filter__heading
   &__heading {
     font-size: 22px;
     font-weight: 500;
   }
+
   // .filter__close-icon
   &__close-icon {
     position: absolute;
@@ -59,6 +63,8 @@
     }
   }
 }
+
+/* Group-filter */
 .group-filter {
   &--switcher {
     .group-filter__top {
@@ -74,6 +80,7 @@
       }
     }
   }
+
   // .group-filter__top
   &__top {
     position: relative;
@@ -98,23 +105,27 @@
       }
     }
   }
+
   // .group-filter__bottom
   &__bottom {
     overflow: hidden;
     transition: height 0.2s ease-out;
   }
+
   /* Без иннера скрытие скриптом не будет отрабатывать правильно */
   // .group-filter__bottom-inner
   &__bottom-inner {
     margin-bottom: 20px;
     padding: 10px 30px;
   }
+
   // .group-filter__heading
   &__heading {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.5;
   }
+
   // .group-filter__range-slider
   &__range-slider {
     padding: 10px 0;
@@ -166,11 +177,13 @@
       border: 1px dashed $orange;
     }
   }
+
   // .group-filter__track
   &__track {
     padding-left: 9px;
     padding-right: 9px;
   }
+
   // .group-filter__content
   &__content {
     &--range {
@@ -216,6 +229,7 @@
       }
     }
   }
+
   // .group-filter__label
   &__label {
     /* Флекс, чтобы убрать пробелы между инлайн-блоками */
@@ -223,6 +237,7 @@
     align-items: center;
     cursor: pointer;
   }
+
   // .group-filter__label-text
   &__label-text {
     display: inline-block;

@@ -10,53 +10,14 @@
   }
 }
 
-//todo спользую ли где? проверить
-//img
-@mixin image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
 //container
-//limit on breakpoints
-@mixin max-width-limiter {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 320px;
-  @media (min-width: $md7) {
-    max-width: $md7;
-  }
-  @media (min-width: $md6) {
-    max-width: $md6;
-  }
-  @media (min-width: $md5) {
-    max-width: $md5;
-  }
-  @media (min-width: $md4) {
-    max-width: $md4;
-  }
-  @media (min-width: $md3) {
-    max-width: $md3;
-  }
-  @media (min-width: $md2) {
-    max-width: $md2;
-  }
-  @media (min-width: $md1) {
-    max-width: $maxWidthContainer;
-  }
-}
 @mixin container($max-width, $width: 100%) {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
   width: $width;
 }
-@mixin container-paddings($left, $right) {
-  padding-left: $left;
-  padding-right: $right;
-}
+
 @mixin padding-container($max-width, $left, $right, $width: 100%) {
   max-width: $max-width;
   margin-left: auto;
@@ -64,45 +25,4 @@
   padding-left: $left;
   padding-right: $right;
   width: $width;
-}
-//icon-pseudo
-@mixin icon-before($size, $display) {
-  content: '';
-  display: $display;
-  width: $size;
-  height: $size;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-//!need del
-@mixin gutters {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  @media (min-width: $md2) {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  @media (min-width: $md1) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
-@mixin gutters-top {
-  padding-top: 20px;
-  @media (min-width: $md2) {
-    padding-top: 40px;
-  }
-  @media (min-width: $md1) {
-    padding-top: 60px;
-  }
-}
-@mixin gutters-bottom {
-  padding-bottom: 20px;
-  @media (min-width: $md2) {
-    padding-bottom: 40px;
-  }
-  @media (min-width: $md1) {
-    padding-bottom: 60px;
-  }
 }

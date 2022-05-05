@@ -1,4 +1,4 @@
-//*.contacts-info
+/* Contacts-info */
 .contacts-info {
   &--dark {
     .contacts-info__link {
@@ -15,6 +15,7 @@
       }
     }
   }
+
   // .contacts-info__item
   &__item {
     display: flex;
@@ -29,11 +30,11 @@
       white-space: normal;
     }
   }
+
   // .contacts-info__link
   &__link {
     display: flex;
     align-items: center;
-    // height: 100%;
     color: $white;
     line-height: 1.5;
     white-space: nowrap;
