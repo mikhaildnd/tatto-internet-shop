@@ -1,9 +1,4 @@
 import gulp from 'gulp';
-// import logger from 'gulplog';
-// import webpCss from 'gulp-webpcss';
-// import webpHtml from 'gulp-webp-html';
-// import sourcemap from 'gulp-sourcemaps'; //не установлен
-// import debug from 'gulp-debug';
 import plumber from 'gulp-plumber';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -27,14 +22,12 @@ import named from 'vinyl-named';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// import fs from 'fs';
-
 const scss = gulpSass(dartSass);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const project_name = path.basename(__dirname);
 const src_folder = '#src';
 
-let isDev = true; //false чтобы минифицировал js
+let isDev = false; //false чтобы минифицировал js
 let isProd = !isDev;
 
 // Path
@@ -70,10 +63,6 @@ export const scripts = () => {
   //Webpack configuration
   const webPackConfig = {
     watch: false,
-    // entry: {
-    //   app: './#src/js/app.js',
-    //   // vendors: './#src/js/vendors.js',
-    // },
     output: {
       filename: '[name].min.js',
       publicPath: '/js/',
@@ -84,19 +73,16 @@ export const scripts = () => {
           test: /\.js$/,
           loader: 'babel-loader',
           include: path.join(__dirname, '#src/js'),
-          // include: path.join(__dirname, '#src'),
-          // exclude: '/node_modules/',
         },
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
-          // use: 'style!css',
         },
       ],
     },
     mode: isDev ? 'development' : 'production',
     //https://webpack.js.org/configuration/devtool/
-    devtool: isDev ? 'eval-source-map' : false, //мб false в 5 вебпаке //upd: да
+    devtool: isDev ? 'eval-source-map' : false,
   };
   return gulp
     .src(_path.src.js)
@@ -109,58 +95,40 @@ export const scripts = () => {
 
 // html
 export const html = () => {
-  return (
-    gulp
-      .src(_path.src.html, {})
-      // .pipe(debug({ title: '1:' }))
-      .pipe(plumber())
-      .pipe(fileinclude())
-      // .pipe(webpHtml())
-      .pipe(gulp.dest(_path.build.html))
-      .pipe(sync.stream())
-  );
+  return gulp
+    .src(_path.src.html, {})
+    .pipe(plumber())
+    .pipe(fileinclude())
+    .pipe(gulp.dest(_path.build.html))
+    .pipe(sync.stream());
 };
 
 // styles
 export const styles = () => {
-  return (
-    gulp
-      .src(_path.src.css)
-      .pipe(plumber())
-      .pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
-      .pipe(groupMedia())
-      .pipe(
-        autoprefixer({
-          grid: true,
-          cascade: true,
-        })
-      )
-      // .pipe(
-      //   gulpIf(
-      //     isProd,
-      //     autoprefixer({
-      //       grid: true,
-      //       overrideBrowserslist: ['last 2 versions'],
-      //       cascade: true,
-      //     })
-      //   )
-      // )
-      // .pipe(
-      //   webpCss({
-      //     webpClass: '._webp',
-      //     noWebpClass: '._no-webp',
-      //   })
-      // )
-      .pipe(gulp.dest(_path.build.css))
-      .pipe(cleanCss())
-      .pipe(
-        rename({
-          extname: '.min.css',
-        })
-      )
-      .pipe(gulp.dest(_path.build.css))
-      .pipe(sync.stream())
-  );
+  return gulp
+    .src(_path.src.css)
+    .pipe(plumber())
+    .pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
+    .pipe(groupMedia())
+    .pipe(
+      gulpIf(
+        isProd(
+          autoprefixer({
+            grid: true,
+            cascade: true,
+          }),
+        ),
+      ),
+    )
+    .pipe(gulp.dest(_path.build.css))
+    .pipe(cleanCss())
+    .pipe(
+      rename({
+        extname: '.min.css',
+      }),
+    )
+    .pipe(gulp.dest(_path.build.css))
+    .pipe(sync.stream());
 };
 
 // images
@@ -174,12 +142,12 @@ export const images = () => {
         webp({
           quality: 75,
         }),
-      ])
+      ]),
     )
     .pipe(
       rename({
         extname: '.webp',
-      })
+      }),
     )
     .pipe(gulp.dest(_path.build.images))
     .pipe(gulp.src(_path.src.images))
@@ -190,7 +158,7 @@ export const images = () => {
         svgoPlugins: [{ removeViewBox: false }],
         interlaced: true,
         optimizationLevel: 3, //0 to 7
-      })
+      }),
     )
     .pipe(gulp.dest(_path.build.images));
 };
@@ -208,7 +176,7 @@ export const fontsOtf2ttf = () => {
     .pipe(
       fonter({
         formats: ['ttf'],
-      })
+      }),
     )
     .pipe(gulp.dest('./' + src_folder + '/fonts/'));
 };
@@ -277,7 +245,7 @@ export const build = gulp.series(
   clean,
   gulp.parallel(html, styles, scripts, images),
   fontsOtf2ttf,
-  fonts
+  fonts,
   // fontsInclude
 );
 

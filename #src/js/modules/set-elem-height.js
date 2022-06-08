@@ -134,6 +134,7 @@ export class setHeight {
   }
 }
 
+//todo переделать описание
 /* Как работает: */
 // const setLastElemHeight = new setHeight({
 //?селектор контейнера

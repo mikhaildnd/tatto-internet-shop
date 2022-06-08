@@ -1,7 +1,7 @@
 {
-  "name": "start-gulp-with-webpack-js-processing",
+  "name": "tatto-shop",
   "version": "1.0.0",
-  "description": "Start template with Gulp",
+  "description": "Tatto shop",
   "author": "MXM",
   "private": true,
   "devDependencies": {
