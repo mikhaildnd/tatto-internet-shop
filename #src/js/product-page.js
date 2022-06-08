@@ -9,7 +9,6 @@ import 'swiper/css/lazy';
 import { debounce } from './modules/debounce.js';
 import { getMediaQuery } from './modules/get-media-query.js';
 
-//!!!реагируют на порядок
 const productThumbSlider = new Swiper('.product__thumbs-slider-inner', {
   modules: [Lazy],
   slidesPerView: 'auto',
@@ -42,7 +41,7 @@ const productImageSlider = new Swiper('.product__slider', {
     swiper: productThumbSlider,
   },
 });
-//========================================================================================================================================================
+
 /* Product page sliders */
 const relatedProductsSlider = new Swiper(
   '.related-products__slider--related .related-products__slider-inner',
@@ -82,7 +81,7 @@ const relatedProductsSlider = new Swiper(
         });
       },
     },
-  }
+  },
 );
 
 const similarProductsSlider = new Swiper(
@@ -123,5 +122,5 @@ const similarProductsSlider = new Swiper(
         });
       },
     },
-  }
+  },
 );

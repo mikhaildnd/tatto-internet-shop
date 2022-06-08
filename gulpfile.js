@@ -112,12 +112,11 @@ export const styles = () => {
     .pipe(groupMedia())
     .pipe(
       gulpIf(
-        isProd(
-          autoprefixer({
-            grid: true,
-            cascade: true,
-          }),
-        ),
+        isProd,
+        autoprefixer({
+          grid: true,
+          cascade: true,
+        }),
       ),
     )
     .pipe(gulp.dest(_path.build.css))
