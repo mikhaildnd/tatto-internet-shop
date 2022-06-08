@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <title>Catalog</title>
+  <meta charset="UTF-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+  <div class="header__inner">
+    <div class="header__top">
+      <div class="header__contacts contacts-info">
+        <div class="contacts-info__item">
+          <a href="#" class="contacts-info__link contacts-info__link--phone">+7 952 552-52-52</a>
+        </div>
+        <div class="contacts-info__item">
+          <a href="#" class="contacts-info__link contacts-info__link--mail">Mr.Driskell@mail.ru</a>
+        </div>
+        <div class="contacts-info__item contacts-info__item--socials socials">
+          <a href="#" class="socials__link">Viber</a>
+          <a href="#" class="socials__link">Whats App</a>
+          <a href="#" class="socials__link">Telegramm</a>
+        </div>
+      </div>
+      <button id="menu" class="header__dropdown-button">
+        <span class="header__dropdown-button-text dropdown-button-text--open vis-hid">
+          Открыть основное меню
+        </span>
+        <span class="header__dropdown-button-text dropdown-button-text--close vis-hid">
+          Закрыть основное меню
+        </span>
+        <span class="burger-icon">
+          <span></span>
+        </span>
+      </button>
+      <a class="header__logo logo" href="/">
+        <div class="logo__img">
+          <img src="img/icons/logo.svg" alt="Логотип" />
+        </div>
+      </a>
+      <button class="header__search-trigger search-button">
+        <span class="vis-hid">Открыть строку поиска</span>
+      </button>
+      <form class="search header__search" name="search-form" action="#">
+        <div class="search__control">
+          <input class="search__input" placeholder="Поиск" autocomplete="off" />
+          <button class="search-button search__button">
+            <span class="vis-hid">Поиск</span>
+          </button>
+        </div>
+        <div style="display: none" class="search__suggestion">
+          <div class="search__suggestion-content">
+            <ul class="suggestion-list">
+              <li class="suggestion-list__item"></li>
+              <li class="suggestion-list__item"></li>
+              <li class="suggestion-list__item"></li>
+            </ul>
+          </div>
+          <a class="search__extended-search-link"></a>
+        </div>
+      </form>
+      <div class="header__nav-bar nav-bar">
+        <div class="nav-bar__item nav-bar__item--mobile">
+          <a href="#" class="nav-bar__link">
+            <span class="nav-bar__price">
+              37 280
+              <span>₽</span>
+            </span>
+            <div class="nav-bar__icon nav-bar__icon--basket nav-bar__icon--has-notify">
+              <span class="nav-bar__notify">17</span>
+            </div>
+          </a>
+        </div>
+        <div class="nav-bar__item">
+          <a href="#" class="nav-bar__link">
+            <div class="nav-bar__icon nav-bar__icon--favorite"></div>
+          </a>
+        </div>
+        <div class="nav-bar__item">
+          <a href="#" class="nav-bar__link">
+            <div class="nav-bar__icon nav-bar__icon--login"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="header__bottom">
+      <button id="catalog" class="header__dropdown-button">
+        <span>Каталог</span>
+        <span class="burger-icon">
+          <span></span>
+        </span>
+      </button>
+      <div class="header__catalog catalog-dropdown" data-tabs="menu-tab">
+        <div class="catalog-dropdown__content">
+          <div class="catalog-dropdown__tabs">
+            <button class="catalog-dropdown__button">По категории</button>
+            <button class="catalog-dropdown__button">По брендам</button>
+          </div>
+          <div class="catalog-dropdown__item">
+            <ul class="catalog-dropdown__list">
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Новинки</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Наборы для татуировок</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Тату машинки</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Тату краски</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Тату иглы</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Тату держатели</a>
+              </li>
+            </ul>
+            <ul class="catalog-dropdown__list">
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Тату наконечники</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Блоки питания</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Педали и провода</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Аксессуары</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Принтеры и планшеты</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Защита, ёмкости, расходные материалы</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog-dropdown__item">
+            <ul class="catalog-dropdown__list">
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Aliance</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Aloe Tattoo</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Anchored by Nikko Hurtado</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">BC Invention Comrany</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Beauty Bit</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Bishop Rotary</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Burlak Tattoo Machines</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Cheyenne HAWK</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Critical Tattoo</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Dermalize Protective</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Dynamic Colors</a>
+              </li>
+            </ul>
+            <ul class="catalog-dropdown__list">
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">EGO Bez's Rotary</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Eikon Device Inc.</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Electrum</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">EQUALISER by Kwadron</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Eternal</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Excalibur</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Fantasia Art Supply</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">FKirons</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Hanafy</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">HM Tattoo Machines</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Ink Machines</a>
+              </li>
+            </ul>
+            <ul class="catalog-dropdown__list">
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">InkJecta Tattoo Machine</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Intenze</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">JACK & ALEXX</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Kashalot Rotary</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Kuro Sumi</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">KWADRON™</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Lauro Paolini</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Lithuanian Irons</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Lucky Supply</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Mercator Medical</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Millenium Mom's Ink</a>
+              </li>
+            </ul>
+            <ul class="catalog-dropdown__list">
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">NEMESIS</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Nocturnal Tattoo Ink</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Panthera</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Perma Blend</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Precision Needles</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Precision Tattoo Supply</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Premier Products</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Radiant</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Reprofx® Spirit™</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Right Stuuf</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">S8TATTOO</a>
+              </li>
+            </ul>
+            <ul class="catalog-dropdown__list">
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Skinductor</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Starbrite</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Tattoorevive</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">TURANIUM Fabrika Rotary</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">UNI–CART</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">Vlad Blad</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">World Famous Bala</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">World Famous Tattoo Ink</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">2K2BT</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">БРОВИ</a>
+              </li>
+              <li class="catalog-dropdown__list-item">
+                <a href="#" class="catalog-dropdown__link">КРАСКА Tattoo Ink</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <form class="header__search search" name="search-form" action="#">
+        <div class="search__control">
+          <input class="search__input" placeholder="Поиск" autocomplete="off" />
+          <button class="search-button search__button">
+            <span class="vis-hid">Поиск</span>
+          </button>
+        </div>
+        <div style="display: none" class="search__suggestion">
+          <div class="search__suggestion-content">
+            <ul class="suggestion-list">
+              <li class="suggestion-list__item"></li>
+              <li class="suggestion-list__item"></li>
+              <li class="suggestion-list__item"></li>
+            </ul>
+          </div>
+          <a class="search__extended-search-link"></a>
+        </div>
+      </form>
+      <div class="header__nav page-nav">
+        <ul class="page-nav__list page-nav__list--decorate">
+          <li class="page-nav__item">
+            <a href="#" class="page-nav__link">Промокоды</a>
+          </li>
+          <li class="page-nav__item">
+            <a href="#" class="page-nav__link">Скидки</a>
+          </li>
+          <li class="page-nav__item">
+            <a href="#" class="page-nav__link">Помощь</a>
+          </li>
+          <li class="page-nav__item">
+            <a href="#" class="page-nav__link">О нас</a>
+          </li>
+          <li class="page-nav__item">
+            <a href="#" class="page-nav__link">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header__dropdown-menu dropdown-menu">
+      <div class="dropdown-menu__inner">
+        <nav class="dropdown-menu__nav header-nav">
+          <ul class="header-nav__list">
+            <li class="header-nav__item header-nav__item--arrow">
+              <button>Каталог</button>
+              <ul class="header-nav__sub-list">
+                <li class="header-nav__sub-item">
+                  <a href="#" class="header-nav__sub-link">Новинки</a>
+                </li>
+                <li class="header-nav__sub-item">
+                  <a href="#" class="header-nav__sub-link">Наборы для татуировок</a>
+                </li>
+                <li class="header-nav__sub-item">
+                  <a href="#" class="header-nav__sub-link">Тату машинки</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-nav__item">
+              <a href="#" class="header-nav__link">Контакты</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#" class="header-nav__link">Промокоды</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#" class="header-nav__link">Скидки</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- <form class="dropdown-menu__search search" name="search-form" action="#">
+          <div class="search__control">
+            <input class="search__input" placeholder="Поиск" autocomplete="off" />
+            <button class="search-button search__button">
+              \
+              <span class="vis-hid">Поиск</span>
+            </button>
+          </div>
+          <div style="display: none" class="search__suggestion">
+            <div class="search__suggestion-content">
+              <ul class="suggestion-list">
+                <li class="suggestion-list__item"></li>
+                <li class="suggestion-list__item"></li>
+                <li class="suggestion-list__item"></li>
+              </ul>
+            </div>
+            <a class="search__extended-search-link"></a>
+          </div>
+        </form> -->
+        <div class="dropdown-menu__contacts contacts-info">
+          <div class="contacts-info__item">
+            <a href="tel:+79525525252" class="contacts-info__link contacts-info__link--phone">
+              +7 952 552-52-52
+            </a>
+          </div>
+          <div class="contacts-info__item contacts-info__item--socials socials socials--has-icon">
+            <a href="#" class="socials__link socials__link--viber">
+              <span class="vis-hid">Viber</span>
+            </a>
+            <a href="#" class="socials__link socials__link--whatsapp">
+              <span class="vis-hid">Whatsapp</span>
+            </a>
+            <a href="#" class="socials__link socials__link--telegram">
+              <span class="vis-hid">Telegram</span>
+            </a>
+          </div>
+          <div class="contacts-info__item contacts-info__item--work-schedule">
+            Время работы: с 9:00 до 20:00 по мск
+          </div>
+          <div class="contacts-info__item">
+            <a
+              href="mailto:mr.driskell@mail.ru?subject=вопрос"
+              class="contacts-info__link contacts-info__link--mail"
+            >
+              Mr.Driskell@mail.ru
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <main>
+        <div class="container">
+          <div class="breadcrumbs">
+            <div class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Главная</a>
+            </div>
+            <div class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Каталог</a>
+            </div>
+            <div class="breadcrumbs__item">Тату-машинки</div>
+          </div>
+          <div class="catalog">
+            <div class="catalog__inner">
+              <h1 class="page-heading catalog__heading">Тату-машинки</h1>
+              <section class="catalog__filter filter">
+                <div class="filter__group filter__group--mobile">
+                  <h3 class="filter__heading">Фильтр</h3>
+                  <button class="filter__close-icon">
+                    <span class="vis-hid">Закрыть фильтр</span>
+                  </button>
+                </div>
+                <div class="filter__wrapper-for-scroll">
+                  <div class="filter__group group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Цена</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div class="group-filter__range-slider">
+                          <div class="group-filter__track"></div>
+                        </div>
+                        <div class="group-filter__content group-filter__content--range">
+                          <input class="js-input-left field field--full-width" type="text" />
+                          <input class="js-input-right field field--full-width" type="text" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter__group filter__group--delivery group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Способ доставки</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div
+                          class="group-filter__content group-filter__content--column group-filter__content--label-gutters-bottom"
+                        >
+                          <label class="group-filter__label radio">
+                            <input class="radio__input" name="delivery" type="radio" checked />
+                            <span class="group-filter__input radio__box"></span>
+                            <span class="group-filter__label-text">Доставка курьером</span>
+                          </label>
+                          <label class="group-filter__label radio">
+                            <input class="radio__input" name="delivery" type="radio" />
+                            <span class="group-filter__input radio__box"></span>
+                            <span class="group-filter__label-text">Самовывоз</span>
+                          </label>
+                          <label class="group-filter__label radio">
+                            <input class="radio__input" name="delivery" type="radio" />
+                            <span class="group-filter__input radio__box"></span>
+                            <span class="group-filter__label-text">Любой</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter__group filter__group--brand group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Брэнд</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div
+                          class="group-filter__content group-filter__content--column group-filter__content--label-gutters-bottom group-filter__content--input-gutter-right"
+                        >
+                          <label class="group-filter__label checkbox">
+                            <input
+                              class="checkbox__input"
+                              name="brand"
+                              type="checkbox"
+                              value="1"
+                              required=""
+                            />
+                            <span class="group-filter__input checkbox__box"></span>
+                            <span class="group-filter__label-text checkbox__text">
+                              Mustang Tattoo
+                            </span>
+                          </label>
+                          <label class="group-filter__label checkbox">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="brand"
+                              type="checkbox"
+                              value="2"
+                              required=""
+                            />
+                            <span class="group-filter__input checkbox__box"></span>
+                            <span class="group-filter__label-text checkbox__text">Ez tattoo</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="filter__group group-filter group-filter--without-arrow group-filter--switcher"
+                  >
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Гарантия</h5>
+                      <label class="group-filter__label switch">
+                        <input class="switch__input" type="checkbox" required="" />
+                        <span class="switch__slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter__group group-filter">
+                    <div class="group-filter__top">
+                      <h5 class="group-filter__heading">Цвет</h5>
+                    </div>
+                    <div class="group-filter__bottom">
+                      <div class="group-filter__bottom-inner">
+                        <div
+                          class="group-filter__content group-filter__content--row group-filter__content--colors-list"
+                        >
+                          <label class="group-filter__label checkbox checkbox--pink">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="1"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--grey-dark">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="2"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--red">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="3"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--yellow">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="4"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--blue">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="5"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                          <label class="group-filter__label checkbox checkbox--green">
+                            <input
+                              class="group-filter__input checkbox__input"
+                              name="colors"
+                              type="checkbox"
+                              value="6"
+                              required=""
+                            />
+                            <span class="checkbox__box"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <div class="catalog__products">
+                <div class="catalog__products-panel products-panel">
+                  <button class="products-panel__filter-trigger filter-trigger">
+                    <span class="filter-trigger__icon"></span>
+                    <span class="filter-trigger__text">Фильтр</span>
+                  </button>
+                  <div class="products-panel__sort">
+                    <div class="products-panel__select">
+                      <label class="products-panel__label" for="sortby">Сортировка</label>
+                      <select id="sortby" class="products-panel__select-list">
+                        <option class="products-panel__option" value="1" selected>
+                          Сначала дешевые
+                        </option>
+                        <option class="products-panel__option" value="2">Сначала дорогие</option>
+                        <option class="products-panel__option" value="3">Сначала популярные</option>
+                        <option class="products-panel__option" value="4">Сначала по акции</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="products-panel__change-view view-change">
+                    <label class="view-change__label">
+                      <input class="view-change__input" name="view-change" type="radio" checked />
+                      <div class="view-change__icon view-change__icon--grid"></div>
+                    </label>
+                    <label class="view-change__label">
+                      <input class="view-change__input" name="view-change" type="radio" />
+                      <div class="view-change__icon view-change__icon--list"></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="catalog__products-container">
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                                loading="lazy"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">
+                              Foxxx Kitsune Mini Black Foxxx Kitsune Mini Black Foxxx Kitsune Mini
+                            </p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--sale">Распродажа</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">Foxxx Kitsune Mini Black</p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--action">Акция</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">Foxxx Kitsune Mini Black Foxxx</p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--action">Акция</div>
+                            </div>
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--sale">Распродажа</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="catalog__product-card product-card">
+                    <div class="product-card__wrapper">
+                      <div class="product-card__top">
+                        <a href="##" class="product-card__link">
+                          <div class="product-card__image">
+                            <picture>
+                              <source srcset="img/products/pr-2/skind-2.webp" type="image/webp" />
+                              <img
+                                alt="Тату-машинка. Артикул: 1"
+                                src="img/products/pr-2/skind-2.jpg"
+                                height="228"
+                                width="auto"
+                              />
+                            </picture>
+                          </div>
+                          <div class="product-card__product-info">
+                            <p class="product-card__product-name">Foxxx Kitsune Mini Black Foxxx</p>
+                            <span class="product-card__price">6 000 ₽</span>
+                            <span class="product-card__old-price">8 000</span>
+                          </div>
+                          <div class="product-card__tips">
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--action">Акция</div>
+                            </div>
+                            <div class="product-card__tips-row">
+                              <div class="tip tip--sale">Распродажа</div>
+                            </div>
+                          </div>
+                          <button class="product-card__favorites"></button>
+                        </a>
+                      </div>
+                      <div class="product-card__bottom">
+                        <div class="product-card__bottom-inner">
+                          <button class="product-card__button button button--light">
+                            В корзину
+                            <span class="button__corner button__corner--left"></span>
+                            <span class="button__corner button__corner--right"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="catalog__button button button--light">
+                  Показать еще
+                  <span class="button__corner button__corner--left"></span>
+                  <span class="button__corner button__corner--right"></span>
+                </button>
+                <ul class="catalog__pagination pagination">
+                  <li class="pagination__item pagination__item--prev pagination__item--disabled">
+                    <a href="" class="pagination__link"></a>
+                  </li>
+                  <li class="pagination__item pagination__item--active">
+                    <span class="pagination__link">1</span>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">2</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">3</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">4</a>
+                  </li>
+                  <li class="pagination__item">
+                    <a href="#" class="pagination__link">5</a>
+                  </li>
+                  <li class="pagination__item pagination__item--next">
+                    <a href="#" class="pagination__link"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+  <div class="footer__content">
+    <div class="footer__content-inner">
+      <a class="footer__logo logo" href="/">
+        <div class="logo__img">
+          <img src="img/icons/logo.svg" alt="Логотип" />
+        </div>
+      </a>
+      <div class="footer__nav footer-nav">
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item">
+            <h3 class="footer-nav__heading">
+              <a href="#" class="footer-nav__link">О нас</a>
+            </h3>
+            <ul class="footer-nav__sublist">
+              <li class="footer-nav__sublist-item">
+                <a href="#">Корпоративная ответственность</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Вакансии</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Инвесторам</a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer-nav__item">
+            <h3 class="footer-nav__heading">
+              <a href="#" class="footer-nav__link">Помощь и информация</a>
+            </h3>
+            <ul class="footer-nav__sublist">
+              <li class="footer-nav__sublist-item">
+                <a href="#">Отследить заказ</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Доставка и возвраты</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">10% скидка для студентов</a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer-nav__item">
+            <h3 class="footer-nav__heading">
+              <a href="#" class="footer-nav__link">Покупателям</a>
+            </h3>
+            <ul class="footer-nav__sublist">
+              <li class="footer-nav__sublist-item">
+                <a href="#">Помощь</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Как сделать заказ</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Способы оплаты</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Доставка</a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer-nav__item">
+            <h3 class="footer-nav__heading">
+              <a href="#" class="footer-nav__link">Промокоды</a>
+            </h3>
+            <ul class="footer-nav__sublist">
+              <li class="footer-nav__sublist-item">
+                <a href="#">Возврат денежных средств</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Правила продажи</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Правила пользования торговой площадкой</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Вопросы и ответы</a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer-nav__item">
+            <h3 class="footer-nav__heading">
+              <a href="#" class="footer-nav__link">Скидки</a>
+            </h3>
+            <ul class="footer-nav__sublist">
+              <li class="footer-nav__sublist-item">
+                <a href="#">Помощь</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Как сделать заказ</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Способы оплаты</a>
+              </li>
+              <li class="footer-nav__sublist-item">
+                <a href="#">Доставка</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__contacts contacts-info">
+        <div class="contacts-info__item">
+          <a href="tel:+79525525252" class="contacts-info__link contacts-info__link--phone">
+            +7 952 552-52-52
+          </a>
+        </div>
+        <div class="contacts-info__item contacts-info__item--socials socials socials--has-icon">
+          <a href="#" class="socials__link socials__link--viber">
+            <span class="vis-hid">Viber</span>
+          </a>
+          <a href="#" class="socials__link socials__link--whatsapp">
+            <span class="vis-hid">Whatsapp</span>
+          </a>
+          <a href="#" class="socials__link socials__link--telegram">
+            <span class="vis-hid">Telegram</span>
+          </a>
+        </div>
+        <div class="contacts-info__item contacts-info__item--work-schedule">
+          Время работы: с 9:00 до 20:00
+        </div>
+        <div class="contacts-info__item">
+          <a
+            href="mailto:mr.driskell@mail.ru?subject=вопрос"
+            class="contacts-info__link contacts-info__link--mail"
+          >
+            Mr.Driskell@mail.ru
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__bottom-inner">
+      <span class="footer__copyright">© ООО «Mr.Driskell», 2013-2022</span>
+      <ul class="footer__bottom-links">
+        <li>
+          <a href="#">Политика конфиденциальности</a>
+        </li>
+        <li>
+          <a href="#">Правила и условия</a>
+        </li>
+        <li>
+          <a href="#">Лицензия</a>
+        </li>
+        <li>
+          <a href="#">Публичная оферта</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="popup popup_popup">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+<div class="popup popup_massagename-message">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+<div class="popup popup_video">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close popup__close_video"></div>
+			<div class="popup__video _video"></div>
+		</div>
+	</div>
+</div>
+ <script src="js/app.min.js"></script>
+
+    <script src="js/catalog-page.min.js"></script>
+  </body>
+</html>
