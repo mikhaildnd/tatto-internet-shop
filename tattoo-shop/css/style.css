@@ -988,18 +988,11 @@ body {
   line-height: 1.4;
 }
 
-.form__group-fields--num-hide-arrows {
-  /* Chrome */
-  /* Firefox */
-}
-
 .form__group-fields--num-hide-arrows input::-webkit-outer-spin-button,
 .form__group-fields--num-hide-arrows input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
   appearance: none;
   -webkit-appearance: none;
   margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 .form__group-fields--num-hide-arrows input[type=number] {
@@ -1248,7 +1241,6 @@ body {
   background-color: #ffffff;
   border: 2px solid #bb8c5f;
   border-radius: 50%;
-  color-adjust: exact;
   transition: box-shadow 0.1s linear;
 }
 
@@ -1407,10 +1399,6 @@ body {
 }
 
 /* Group-filter */
-
-.group-filter {
-  /* Без иннера скрытие скриптом не будет отрабатывать правильно */
-}
 
 .group-filter--switcher .group-filter__top {
   display: flex;
@@ -2762,7 +2750,6 @@ body {
 .catalog-grid__list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto-fill, min-content;
   grid-template-areas: "sets" "holders" "machines" "pedals" "paints" "power" "tips" "needles" "consumables" "accessories";
   gap: 20px;
 }
@@ -3815,10 +3802,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "city city" "street street" "apartment entrance" "floor intercom";
   gap: 20px;
-}
-
-.user-data-cart__group {
-  /* Address */
 }
 
 .user-data-cart__group--city {
