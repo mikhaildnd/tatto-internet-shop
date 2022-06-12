@@ -4,6 +4,10 @@
   "description": "Tatto shop",
   "author": "MXM",
   "private": true,
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build --build"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
@@ -16,6 +20,7 @@
     "gulp-file-include": "latest",
     "gulp-fonter": "latest",
     "gulp-group-css-media-queries": "latest",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "latest",
     "gulp-newer": "latest",

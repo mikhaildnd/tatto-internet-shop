@@ -2977,8 +2977,9 @@ body {
 }
 
 .brands__link {
+  display: none;
   position: absolute;
-  top: -23px;
+  top: -40px;
   right: 0;
   font-size: 15px;
   line-height: 1.4;
@@ -4424,6 +4425,10 @@ body {
     height: 160px;
   }
 
+  .brands__link {
+    display: block;
+  }
+
   .info-block::before {
     height: 340px;
   }
@@ -4706,6 +4711,7 @@ body {
 
   .brands__link {
     font-size: 17px;
+    top: -60px;
   }
 
   .brands-item__image {
