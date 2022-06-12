@@ -614,8 +614,9 @@
 
   // .brands__link
   &__link {
+    display: none;
     position: absolute;
-    top: -23px;
+    top: -40px;
     right: 0;
     font-size: 15px;
     line-height: 1.4;
@@ -630,8 +631,12 @@
     &:focus {
       text-decoration: underline;
     }
+    @media (min-width: $md5) {
+      display: block;
+    }
     @media (min-width: $md4) {
       font-size: 17px;
+      top: -60px;
     }
     @media (min-width: $md2) {
       font-size: 20px;
