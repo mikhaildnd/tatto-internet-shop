@@ -312,7 +312,6 @@
   &__list {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto-fill, min-content;
     grid-template-areas:
       'sets'
       'holders'
