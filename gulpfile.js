@@ -4,6 +4,7 @@ import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import groupMedia from 'gulp-group-css-media-queries';
+import htmlmin from 'gulp-htmlmin';
 import gulpIf from 'gulp-if';
 import del from 'del';
 import webpackStream from 'webpack-stream';
@@ -27,8 +28,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const project_name = path.basename(__dirname);
 const src_folder = '#src';
 
-let isDev = false; //false чтобы минифицировал js
-let isProd = !isDev;
+const isBuild = process.argv.includes('--build');
+const isDev = !process.argv.includes('--build');
 
 // Path
 const _path = {
@@ -39,6 +40,7 @@ const _path = {
     images: project_name + '/img/',
     fonts: project_name + '/fonts/',
     videos: project_name + '/videos/',
+    favicon: project_name + '/',
   },
   src: {
     favicon: src_folder + '/img/favicon.{jpg,png,svg,gif,ico,webp}',
@@ -48,6 +50,7 @@ const _path = {
     images: [src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}', '!**/favicon.*'],
     fonts: src_folder + '/fonts/*.ttf',
     videos: src_folder + '/videos/*.*',
+    favicon: [src_folder + '/favicon.ico', src_folder + '/manifest.json'],
   },
   watch: {
     html: src_folder + '/**/*.html',
@@ -56,6 +59,15 @@ const _path = {
     images: src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
   },
   clean: './' + project_name + '/',
+};
+
+//favicon
+export const favicon = () => {
+  return gulp
+    .src(_path.src.favicon)
+    .pipe(plumber())
+    .pipe(gulp.dest(_path.build.favicon))
+    .pipe(sync.stream());
 };
 
 // Scripts
@@ -99,6 +111,15 @@ export const html = () => {
     .src(_path.src.html, {})
     .pipe(plumber())
     .pipe(fileinclude())
+    .pipe(
+      gulpIf(
+        isBuild,
+        htmlmin({
+          removeComments: true,
+          collapseWhitespace: true,
+        }),
+      ),
+    )
     .pipe(gulp.dest(_path.build.html))
     .pipe(sync.stream());
 };
@@ -112,7 +133,7 @@ export const styles = () => {
     .pipe(groupMedia())
     .pipe(
       gulpIf(
-        isProd,
+        isBuild,
         autoprefixer({
           grid: true,
           cascade: true,
@@ -242,7 +263,7 @@ export const watch = () => {
 
 export const build = gulp.series(
   clean,
-  gulp.parallel(html, styles, scripts, images),
+  gulp.parallel(favicon, html, styles, scripts, images),
   fontsOtf2ttf,
   fonts,
   // fontsInclude
