@@ -3339,7 +3339,7 @@ body {
 }
 
 .product__thumbs-slide img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border: 1px solid transparent;
