@@ -1759,6 +1759,7 @@ body {
 }
 
 .view-change__icon {
+  display: block;
   cursor: pointer;
   width: 28px;
   height: 28px;
