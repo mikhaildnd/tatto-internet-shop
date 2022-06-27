@@ -25,8 +25,8 @@ import { fileURLToPath } from 'url';
 
 const scss = gulpSass(dartSass);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const project_name = path.basename(__dirname);
-const src_folder = '#src';
+const src_folder = 'src';
+const dist_folder = 'dist';
 
 const isBuild = process.argv.includes('--build');
 const isDev = !process.argv.includes('--build');
@@ -34,23 +34,26 @@ const isDev = !process.argv.includes('--build');
 // Path
 const _path = {
   build: {
-    html: project_name + '/',
-    js: project_name + '/js/',
-    css: project_name + '/css/',
-    images: project_name + '/img/',
-    fonts: project_name + '/fonts/',
-    videos: project_name + '/videos/',
-    favicon: project_name + '/',
+    html: dist_folder + '/',
+    js: dist_folder + '/js/',
+    css: dist_folder + '/css/',
+    images: dist_folder + '/img/',
+    fonts: dist_folder + '/fonts/',
+    videos: dist_folder + '/videos/',
+    favicon: dist_folder + '/',
   },
   src: {
-    favicon: src_folder + '/img/favicon.{jpg,png,svg,gif,ico,webp}',
     html: [src_folder + '/**/*.html', '!' + src_folder + '/_*.html'],
     js: src_folder + '/js/*.js',
     css: src_folder + '/scss/style.scss',
-    images: [src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}', '!**/favicon.*'],
+    images: [src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp,avif}', '!**/favicon.*'],
     fonts: src_folder + '/fonts/*.ttf',
     videos: src_folder + '/videos/*.*',
-    favicon: [src_folder + '/favicon.ico', src_folder + '/manifest.json'],
+    favicon: [
+      src_folder + '/img/favicon.{jpg,png,svg,gif,ico}',
+      src_folder + '/favicon.ico',
+      src_folder + '/manifest.json',
+    ],
   },
   watch: {
     html: src_folder + '/**/*.html',
@@ -58,7 +61,7 @@ const _path = {
     css: src_folder + '/scss/**/*.scss',
     images: src_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
   },
-  clean: './' + project_name + '/',
+  clean: './' + dist_folder + '/',
 };
 
 //favicon
@@ -214,40 +217,13 @@ export const fonts = () => {
     .pipe(gulpIf(isDev, sync.stream()));
 };
 
-// Fonts: insert fonts into styles file
-// export const fontsInclude = (cb) => {
-//   const fileContent = src_folder + '/scss/fonts.scss';
-
-//   if (fs.readFileSync(fileContent) !== '') {
-//     fs.writeFile(fileContent, '', cb);
-//   }
-
-//   fs.readdir(_path.build.fonts, (err, items) => {
-//     if (items) {
-//       let c_fontname;
-//       for (let i = 0; i < items.length; i++) {
-//         let fontname = items[i].split('.');
-//         fontname = fontname[0];
-//         if (c_fontname != fontname) {
-//           fs.appendFile(
-//             fileContent,
-//             '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n',
-//             cb
-//           );
-//         }
-//         c_fontname = fontname;
-//       }
-//     }
-//   });
-// };
-
 // Server
 export const server = () => {
   sync.init({
     ui: false,
     notify: false,
     server: {
-      baseDir: './' + project_name + '/',
+      baseDir: './' + dist_folder + '/',
       // port: 3000,
     },
   });
@@ -266,7 +242,6 @@ export const build = gulp.series(
   gulp.parallel(favicon, html, styles, scripts, images),
   fontsOtf2ttf,
   fonts,
-  // fontsInclude
 );
 
 export default gulp.series(build, gulp.parallel(server, watch));
