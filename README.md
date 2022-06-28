@@ -1,6 +1,6 @@
 # Интернет магазин товаров для татуировок
 
-![Скрин главной страницы](https://github.com/mikhaildnd/tatto-internet-shop-site/blob/master/git-screens/screen-1.jpg)
+![Изображение главной страницы](https://user-images.githubusercontent.com/58606474/176137809-3eb0edef-29f2-4816-8aac-b152d5690f44.jpg)
 
 ## Список доступных страниц
 * ![Главная страница](https://tatto-shop-site.netlify.app/)
