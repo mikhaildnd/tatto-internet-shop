@@ -140,9 +140,24 @@
     background-position: top right;
     &--bg-first-screen {
       background-image: url(../img/bg/main-bg-sm-alt.jpg);
+      background-image: image-set(
+        url('../img/bg/main-bg-sm-alt.webp') type('image/webp'),
+        url('../img/bg/main-bg-sm-alt.jpg') type('image/jpeg')
+      );
     }
     &--bg-second-screen {
-      background-image: url(../img/bg/main-bg.jpg);
+      background-image: url(../img/bg/bg-1.jpg);
+      background-image: image-set(
+        url('../img/bg/bg-1.webp') type('image/webp'),
+        url('../img/bg/bg-1.jpg') type('image/jpeg')
+      );
+    }
+    &--bg-third-screen {
+      background-image: url(../img/bg/bg-2.jpg);
+      background-image: image-set(
+        url('../img/bg/bg-2.webp') type('image/webp'),
+        url('../img/bg/bg-2.jpg') type('image/jpeg')
+      );
     }
   }
 
@@ -443,39 +458,11 @@
   @media (min-width: $md4) {
     grid-template-columns: 1fr 1fr;
   }
-
-  // .banners__item
-  &__item {
-    flex-basis: 100%;
-    @media (min-width: $md5) {
-      flex-basis: calc(50% - 10px);
-    }
-  }
 }
+
+/* Item-banner */
 .item-banner {
   position: relative;
-  &--bg {
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  &--bg-v1 {
-    background-image: url(../img/banners/banner-1-sm.jpg);
-    @media (min-width: $md7) {
-      background-image: url(../img/banners/banner-1-md.jpg);
-    }
-    @media (min-width: $md4) {
-      background-image: url(../img/banners/banner-1-lg.jpg);
-    }
-  }
-  &--bg-v2 {
-    background-image: url(../img/banners/banner-2-sm.jpg);
-    @media (min-width: $md7) {
-      background-image: url(../img/banners/banner-2-md.jpg);
-    }
-    @media (min-width: $md4) {
-      background-image: url(../img/banners/banner-2-lg.jpg);
-    }
-  }
 
   // .item-banner__inner
   &__inner {
@@ -512,12 +499,15 @@
 
   // .item-banner__link
   &__link {
+    padding: 0 6px;
     font-size: 20px;
     line-height: 1.5;
-    color: $orange;
+    color: $white;
+    transition: box-shadow 0.2s ease-in;
     @media (min-width: $md1) {
       font-size: 22px;
     }
+    &:before,
     &::after {
       display: block;
       content: '';
@@ -527,16 +517,44 @@
       bottom: 0;
       left: 0;
     }
+    &:hover,
     &:focus-visible {
-      outline: none;
-      color: $white;
-      &::after {
-        outline: 3px solid $orange;
-        outline-offset: -3px;
+      box-shadow: 0px 0px 3px 1px #ffffffa6;
+    }
+    &--bg {
+      &::before {
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        filter: grayscale(0);
+        transition: filter 0.2s ease-in;
+      }
+      &:hover,
+      &:focus-visible {
+        &::before {
+          filter: grayscale(1);
+        }
       }
     }
-    &:hover {
-      color: $white;
+    &--bg-v1 {
+      &::before {
+        background-image: url(../img/banners/banner-1-sm.jpg);
+        background-image: image-set(url(../img/banners/banner-1-sm.webp) type('image/webp'));
+        @media (min-width: $md7) {
+          background-image: url(../img/banners/banner-1-md.jpg);
+          background-image: image-set(url(../img/banners/banner-1-md.webp) type('image/webp'));
+        }
+        @media (min-width: $md4) {
+          background-image: url(../img/banners/banner-1-lg.jpg);
+          background-image: image-set(url(../img/banners/banner-1-lg.webp) type('image/webp'));
+        }
+      }
+    }
+    &--bg-v2 {
+      &::before {
+        background-image: url(../img/banners/banner-3.jpg);
+        background-image: image-set(url(../img/banners/banner-3.webp) type('image/webp'));
+      }
     }
   }
 }
@@ -799,6 +817,9 @@
         padding-bottom: 70px;
       }
     }
+    &.swiper-autoheight .swiper-wrapper {
+      align-items: center;
+    }
     .swiper-button-prev,
     .swiper-button-next {
       display: none;
@@ -832,9 +853,11 @@
     height: auto;
     overflow: hidden;
     user-select: none;
-    @media (min-width: 620px) {
-      height: 307px;
-    }
+    // @media (min-width: 620px) {
+    //   // height: 307px;
+    //   min-height: 250px;
+    //   max-height: 350px;
+    // }
   }
 }
 
@@ -868,6 +891,11 @@
 
   // .card-feedback__text
   &__text {
+    overflow: hidden;
+    @media (min-width: 620px) {
+      min-height: 200px;
+      max-height: 300px;
+    }
     p {
       font-size: 17px;
       line-height: 1.4;
