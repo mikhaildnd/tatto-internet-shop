@@ -112,12 +112,19 @@
 
   // .header__catalog
   &__catalog {
-    z-index: 98;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    display: flex;
-    max-width: 95%;
+    display: none;
+    visibility: hidden;
+    @media (min-width: $md2) {
+    }
+    &.open {
+      z-index: 98;
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 100%;
+      max-width: 95%;
+      visibility: visible;
+    }
   }
 
   // .header__search
@@ -321,7 +328,7 @@
       button {
         position: relative;
         color: inherit;
-        padding-right: 70px;
+        padding-right: 30px;
         transition: margin 0.5s linear;
         &::after {
           content: '';
@@ -374,21 +381,7 @@
 
 /* Catalog-dropdown */
 .catalog-dropdown {
-  display: none;
-  transform-origin: top;
-  transform: rotateX(90deg);
-  transition: transform 0.2s linear, opacity 0.3s linear;
   background-color: $white;
-  @media (min-width: $md2) {
-    display: block;
-    opacity: 0;
-  }
-  &.open {
-    transform: rotate(0deg);
-    @media (min-width: $md2) {
-      opacity: 1;
-    }
-  }
 
   // .catalog-dropdown__content
   &__content {

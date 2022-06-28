@@ -22,11 +22,13 @@
       grid-template-areas:
         'logo nav'
         'contacts nav';
+      column-gap: 20px;
     }
   }
 
   // .footer__logo
   &__logo {
+    justify-self: start;
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
