@@ -9,6 +9,7 @@ import 'swiper/css/lazy';
 import { debounce } from './modules/debounce.js';
 import { getMediaQuery } from './modules/get-media-query.js';
 
+/* Hero-slider */
 const heroSlider = new Swiper('.hero__slider', {
   modules: [Navigation, Pagination],
   slidesPerView: 1,
@@ -22,54 +23,16 @@ const heroSlider = new Swiper('.hero__slider', {
   },
 });
 
+/* Categories slider */
 const categoriesListSlider = new Swiper('.product-offers__nav', {
   slidesPerView: 'auto',
 });
 
-const mainTabs = new TabManager('offers-tab', {
-  tabListSelector: '.product-offers__nav',
-  tabBtnSelector: '.product-offers__nav-button',
-  tabPanelSelector: '.product-offers__catalog-category',
-
-  tabActiveClass: 'active',
-  panelActiveClass: 'show',
-
-  isChanged: (tabs) => {
-    tabs.tabsPanels.forEach((panel) => {
-      if (panel.classList.contains(tabs.panelActiveClass)) {
-        let setLastElHeight = new setHeight({
-          containerElement: panel.firstElementChild,
-          mediaQuery: {
-            getMediaFunc: getMediaQuery,
-            displayWidth: '1024',
-            displayOption: 'min-width',
-          },
-          debounce: {
-            enable: true,
-            debounceFunc: debounce,
-          },
-        });
-      }
-    });
-  },
-});
-
-const setLastElemHeightCatalog = new setHeight({
-  containerSelector: '.product-offers__catalog-list',
-  mediaQuery: {
-    getMediaFunc: getMediaQuery,
-    displayWidth: '1024',
-    displayOption: 'min-width',
-  },
-  debounce: {
-    enable: true,
-    debounceFunc: debounce,
-  },
-});
-
+/* Feedback slider */
 const feedbackSlider = new Swiper('.feedback__slider', {
   modules: [EffectCreative, Navigation, Pagination],
   effect: 'creative',
+  autoHeight: true,
   creativeEffect: {
     limitProgress: 2,
     shadowPerProgress: true,
@@ -99,6 +62,7 @@ const feedbackSlider = new Swiper('.feedback__slider', {
   },
 });
 
+/* Brands slider */
 const brandsSlider = new Swiper('.brands__slider .swiper', {
   modules: [Navigation, Pagination, Grid],
   slidesPerView: 3,
@@ -124,5 +88,48 @@ const brandsSlider = new Swiper('.brands__slider .swiper', {
   pagination: {
     el: '.brands__slider .slider-pagination',
     clickable: true,
+  },
+});
+
+/* Main tabs */
+const mainTabs = new TabManager('offers-tab', {
+  tabListSelector: '.product-offers__nav',
+  tabBtnSelector: '.product-offers__nav-button',
+  tabPanelSelector: '.product-offers__catalog-category',
+
+  tabActiveClass: 'active',
+  panelActiveClass: 'show',
+
+  isChanged: (tabs) => {
+    tabs.tabsPanels.forEach((panel) => {
+      if (panel.classList.contains(tabs.panelActiveClass)) {
+        let setLastElHeight = new setHeight({
+          containerElement: panel.firstElementChild,
+          mediaQuery: {
+            getMediaFunc: getMediaQuery,
+            displayWidth: '1024',
+            displayOption: 'min-width',
+          },
+          debounce: {
+            enable: true,
+            debounceFunc: debounce,
+          },
+        });
+      }
+    });
+  },
+});
+
+/* Set hight last catalog element for correct work */
+const setLastElemHeightCatalog = new setHeight({
+  containerSelector: '.product-offers__catalog-list',
+  mediaQuery: {
+    getMediaFunc: getMediaQuery,
+    displayWidth: '1024',
+    displayOption: 'min-width',
+  },
+  debounce: {
+    enable: true,
+    debounceFunc: debounce,
   },
 });
