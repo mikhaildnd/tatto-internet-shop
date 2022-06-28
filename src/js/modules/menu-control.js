@@ -65,25 +65,22 @@ export function menuControl({
   /* Смотрим за состоянием элемента(зафиксированного в данном случае) и выполняем действия наж ним */
   window.addEventListener('resize', fixedElementState);
 
-  let buttons = [mobileBtn, desktopBtn];
-
-  let [mobile, desktop] = buttons;
-
-  //todo разобраться с переменной, не напутал ли я с условиями
-  let needFix = false;
-
-  buttons.forEach((button) => {
+  [mobileBtn, desktopBtn].forEach((button) => {
     if (!button) return;
+
     button.addEventListener('click', () => {
-      if (button === mobile) {
+      if (button === mobileBtn) {
         mobileMenuToggle();
-      } else if (button === desktop) {
+      } else if (button === desktopBtn) {
         desktopMenuToggle();
       }
     });
   });
 
-  function mobileMenuToggle() {
+  //todo разобраться с переменной, не напутал ли я с условиями
+  let needFix = false;
+
+  const mobileMenuToggle = () => {
     mobileBtn.classList.toggle(toggleClass);
 
     if (!mobileMenu.classList.contains(toggleClass)) {
@@ -91,22 +88,23 @@ export function menuControl({
     }
 
     mobileMenu.classList.toggle(toggleClass);
+
     if (needFix) {
       fixedElem.classList.add(fixedClass);
       needFix = false;
     } else {
       fixedElem.classList.remove(fixedClass);
     }
-  }
+  };
 
-  function desktopMenuToggle() {
+  const desktopMenuToggle = () => {
     desktopBtn.classList.toggle(toggleClass);
 
     if (!needFix) {
       fixedElem.classList.remove(fixedClass);
     }
     desktopMenu.classList.toggle(toggleClass);
-  }
+  };
 
   /* Bool. Узнаем media-query */
   function getMediaQuery(dWidth, widthOption) {
@@ -114,7 +112,7 @@ export function menuControl({
 
     if (!width) {
       throw new TypeError(
-        'displayWidth must be a Number or String type and must contain numerical content'
+        'displayWidth must be a Number or String type and must contain numerical content',
       );
     }
 
