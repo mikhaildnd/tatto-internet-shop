@@ -3,11 +3,11 @@
 ![Изображение главной страницы](https://user-images.githubusercontent.com/58606474/176137809-3eb0edef-29f2-4816-8aac-b152d5690f44.jpg)
 
 ## Список доступных страниц
-* ![Главная страница](https://tatto-shop-site.netlify.app/)
-* ![Страница каталога](https://tatto-shop-site.netlify.app/catalog.html)
-* ![Страница товара](https://tatto-shop-site.netlify.app/product.html)
-* ![Страница ошибки (404)](https://tatto-shop-site.netlify.app/404.html)
-* ![Страница контактов](https://tatto-shop-site.netlify.app/contacts.html)
+* [Главная страница](https://tatto-shop-site.netlify.app/)
+* [Страница каталога](https://tatto-shop-site.netlify.app/catalog.html)
+* [Страница товара](https://tatto-shop-site.netlify.app/product.html)
+* [Страница ошибки (404)](https://tatto-shop-site.netlify.app/404.html)
+* [Страница контактов](https://tatto-shop-site.netlify.app/contacts.html)
 
 ## Установка:
 ```
