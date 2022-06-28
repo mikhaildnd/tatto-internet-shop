@@ -89,14 +89,17 @@ export class TabManager {
 
         let dir = null;
 
-        //key left
-        if (e.which === 37) {
+        const key = {
+          left: 37,
+          right: 39,
+          down: 40,
+        };
+
+        if (e.which === key.left) {
           dir = index - 1;
-          //key right
-        } else if (e.which === 39) {
+        } else if (e.which === key.right) {
           dir = index + 1;
-          //key down
-        } else if (e.which === 40) {
+        } else if (e.which === key.down) {
           dir = 'down';
         }
 
