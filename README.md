@@ -2,7 +2,8 @@
 
 ![Изображение главной страницы](https://user-images.githubusercontent.com/58606474/176137809-3eb0edef-29f2-4816-8aac-b152d5690f44.jpg)
 
-## Список доступных страниц
+## Список доступных страниц:
+> *Все страницы загружены на сервис [Netlify](https://www.netlify.com/)*
 * [Главная страница](https://tatto-shop-site.netlify.app/)
 * [Страница каталога](https://tatto-shop-site.netlify.app/catalog.html)
 * [Страница товара](https://tatto-shop-site.netlify.app/product.html)
