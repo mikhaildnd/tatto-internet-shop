@@ -2,6 +2,7 @@ import { menuControl } from './modules/menu-control.js';
 import { debounce } from './modules/debounce.js';
 import { TabManager } from './modules/tabs-manager.js';
 
+/* Header catalog tabs */
 const headerCatalogTabs = new TabManager('menu-tab', {
   tabListSelector: '.catalog-dropdown__tabs',
   tabBtnSelector: '.catalog-dropdown__button',
@@ -10,7 +11,8 @@ const headerCatalogTabs = new TabManager('menu-tab', {
   tabActiveClass: 'active',
   panelActiveClass: 'show',
 });
-//========================================================================================================================================================
+
+/* Catalog button actions */
 const catalogBtnMobile = document.querySelector('.header-nav__item--arrow button');
 const catalogListMobile = document.querySelector('.header-nav__sub-list');
 
@@ -33,7 +35,8 @@ catalogListMobile.addEventListener('focusin', () => {
     catalogListMobile.style.height = catalogListMobile.scrollHeight + 'px';
   }
 });
-//========================================================================================================================================================
+
+/* Menu-control */
 /* Тоглит класс для открытия и закрытия дропдаун-меню (в хедере)*/
 menuControl({
   toggleClass: 'open',
