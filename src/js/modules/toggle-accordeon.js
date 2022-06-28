@@ -31,7 +31,6 @@ export class Accordeon {
     let triggers = document.querySelectorAll(this.triggerSelector);
 
     if (!triggers) {
-      //нужно прокинуть ошибку
       console.error('triggers: error');
       return;
     }
@@ -44,7 +43,6 @@ export class Accordeon {
     let el = elem;
 
     if (!el) {
-      //нужно прокинуть ошибку
       console.error('setInlineHeight: error');
       return;
     }
@@ -89,7 +87,6 @@ export class Accordeon {
 
     if (!this.accordeon.contains(openingPart)) return;
 
-    //todo наверное, лучше передавать конретный элемент
     let panel = openingPart.nextElementSibling;
 
     if (!panel) return;
